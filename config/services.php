@@ -31,4 +31,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'api' => [
+        'authentication' => env('API_KEY'),
+        'cnpj' => env('API_CNPJ'),
+    ],
+
+
 ];

@@ -7,21 +7,23 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>{{ config('app.name', 'Nossbit') }}</title>
+ 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/navteste.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-black shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'Nossbit') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -72,9 +74,34 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>
+
+    <!-------------------FOOTER-------------------------------------------->
+<div class="row footer">
+    <div class="col-md-3 text-start">
+        <p class="nossbitTitle">nossbit</p>
+        <p><h5 class="fw-bold">Location:</h5>Alameda Santos 700 - cj.132</p>
+        <p>Cerqueira César - São Paulo - Brazil</p>
+        <p>CEP: 01418-100</p>
+    </div>  
+    <div class="col-md-5">
+    </div> 
+    <div class="col-md-3 text-start mt-3">
+        <h5 class="fw-bold">Social Media</h5>
+        <p>Instagram</p>
+        <p>LinkedIn</p>
+        <p>Facebook</p>
+        <p>Twitter</p>
+    </div>  
+    <div class="col-md-12 text-center mt-5">
+        <h6>Nosscompany Serviços Digitais Ltda - CNPJ 44.868.835/0001-33</h6>
+    </div>
+</div>
+
+<!--------------------------------------------------------------------------------------------------------------------->
+
 </body>
 </html>

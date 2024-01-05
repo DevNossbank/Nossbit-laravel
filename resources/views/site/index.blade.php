@@ -1,6 +1,6 @@
-@extends('layout')
+@extends('layouts.app')
 @section('title', 'Index')
-@section('conteudo')
+@section('content') 
 
 <link rel="stylesheet" type="text/css" href="/css/index.css">
 
@@ -15,7 +15,7 @@
             <h4>Se aventure no mundo crypto</h4>
             <br>
             <a href="">Negociar</a>
-        </div>
+        </div> 
     </div>
 </div>
 
