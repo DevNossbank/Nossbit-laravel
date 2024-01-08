@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route; 
+use App\Http\Controllers\Helper\EncryptionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,5 @@ Route::get('/test-config', function () {
 
     return "API Key: $apiKey, API Secret: $apiSecret";
 });
+
+Route::get('/test-encryption', [EncryptionController::class, 'testEncryption']);
