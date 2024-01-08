@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class UsersLogLogin extends Model
 {
-    protected $table = 'users_log_logins'; // Verifique se o nome da tabela está correto
-
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
+    protected $table = 'users_log_logins';
     public $timestamps = false;
 
-    // Aqui você pode definir os relacionamentos e outras configurações do modelo, se necessário
+    public static function logLogin($userId, $ipAddress)
+    {
+        $userLogLogin = new self();
+        $userLogLogin->user_id = $userId;
+        $userLogLogin->ip_address = $ipAddress;
+        $userLogLogin->save();
+    }
 }

@@ -25,10 +25,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        $userLogLogin = new UsersLogLogin();
-        $userLogLogin->user_id = $user->id;
-        $userLogLogin->ip_address = $request->ip();
-        $userLogLogin->save();
+        UsersLogLogin::logLogin($user->id, $request->ip());
     }
 }
 
