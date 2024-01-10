@@ -9,24 +9,30 @@ class EncryptionController extends Controller{
     public function testEncryption(/*$mensagem*/){
         $encryption = new Encryption(); 
 
-        $mensagemOriginal=env('API_CNPJ');
+        $mensagemCNPJ=env('API_CNPJ');
         $mensagemApi=env('API_KEY');
 
  
-        //$mensagemOriginal = $mensagem
-        echo $mensagemOriginal;
+        //$mensagemCNPJ = $mensagem
+        echo "Mensagem CNPJ: " .$mensagemCNPJ;
+        echo '<br>';
+        echo "Mensagem API: ". $mensagemApi;
 
         echo '<br>';
+        echo '<br>';
         // Criptografar a mensagem
-        /*$mensagemCriptografada = $encryption->encrypt($mensagemOriginal);
+        /*$mensagemCriptografada = $encryption->encrypt($mensagemCNPJ);
         echo "Mensagem Criptografada: " . $mensagemCriptografada . "<br>"; */
 
         // Descriptografar a mensagem
-        $mensagemDescriptografada = $encryption->decrypt($mensagemOriginal);
-        echo "Mensagem Descriptografada: " . $mensagemDescriptografada;
-
+        /*
+        $mensagemDescriptografada = $encryption->decrypt($mensagemCNPJ);
+        echo "Mensagem CNPJ: " . $mensagemDescriptografada;
+        echo"</br>";
+        */
         $mensagemDescriptografadaAPI = $encryption->decrypt($mensagemApi);
-        echo "Mensagem Descriptografada: " . $mensagemDescriptografadaAPI;
+        echo "Mensagem API: ". bin2hex($mensagemDescriptografadaAPI);
+       var_dump($mensagemDescriptografadaAPI);
   
     }
 }
