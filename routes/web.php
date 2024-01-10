@@ -34,4 +34,16 @@ Route::get('/test-config', function () {
     return "API Key: $apiKey, API Secret: $apiSecret";
 });
 
-Route::get('/test-encryption', [EncryptionController::class, 'testEncryption']);
+Route::get('/test-encryption/{testem}', [EncryptionController::class, 'testEncryption']);
+
+Route::get('/test', [EncryptionController::class, 'testEncryption']);
+
+
+Route::get('/test-teste', function () {
+    $apiKey = config('services.api.authentication');
+    $apiSecret = config('services.api.cnpj');
+
+
+
+    return "API Key: $apiKey, API Secret: $apiSecret";
+});

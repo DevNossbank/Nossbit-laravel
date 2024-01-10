@@ -12,7 +12,7 @@ class Encryption extends Model
     private $KeyValue;
 
     public function construct() {
-        $this->KeyValue = "pjmvX7ooTVO2yPir";;
+        $this->KeyValue = "KujBavHTDgDBggqR";
     }
 
      function decrypt($value)
@@ -30,7 +30,7 @@ class Encryption extends Model
      function encrypt($content)
     {
         $ivlen = openssl_cipher_iv_length('AES-128-CBC');
-        $iv = pack("x" . $ivlen);
+        $iv = pack("16" . $ivlen);
         $ciphertext = base64_encode(openssl_encrypt($content, 'AES-128-CBC', $this->KeyValue, OPENSSL_RAW_DATA, str_repeat("\0", 16)));
         $msg = json_encode(array('Data' => ['Json' => "$ciphertext"]));
         return $msg;
