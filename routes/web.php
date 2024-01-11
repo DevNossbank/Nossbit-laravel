@@ -47,3 +47,8 @@ Route::get('/test-teste', function () {
 
     return "API Key: $apiKey, API Secret: $apiSecret";
 });
+
+
+Route::get('/test2', [EncryptionController::class, 'variableEncryption']);
+
+

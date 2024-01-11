@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Helper;
 
 use App\Http\Controllers\Controller;
 use App\Models\Security\Encryption;
+use App\Models\Security\Encryption2;
+
 
 class EncryptionController extends Controller{
-    public function testEncryption(/*$mensagem*/){
+    public function testEncryption(){
         $encryption = new Encryption(); 
 
         $mensagemCNPJ=env('API_CNPJ');
@@ -15,59 +17,35 @@ class EncryptionController extends Controller{
         $mensagemApi = str_replace('pak', '9', $mensagemApi);
         
 
- 
-        //$mensagemCNPJ = $mensagem
         echo '<br><br>';
         echo "Mensagem CNPJ: " .$mensagemCNPJ;
         echo '<br><br>';
         echo "Mensagem API: ". $mensagemApi;
 
         echo '<br>';
-        echo '<br>';
-        // Criptografar a mensagem
-        /*$mensagemCriptografada = $encryption->encrypt($mensagemCNPJ);
-        echo "Mensagem Criptografada: " . $mensagemCriptografada . "<br>"; */
-
-        // Descriptografar a mensagem
-        /*
-        $mensagemDescriptografada = $encryption->decrypt($mensagemCNPJ);
-        echo "Mensagem CNPJ: " . $mensagemDescriptografada;
-        echo"</br>";
-        */
-
-       /*
-        $valor_api="8AZwaFp98ZJ2tVv8AOs0DSKMdPjLMBvEgNEOD770mer1KycarOt9uOhLI9WYFb1v";
-        $mensagemDecriptografada = $encryption->encrypt($mensagemApi);
-        echo "Mensagem API: ".$mensagemDecriptografada;
-        echo '</br></br>';
-       
-      */
-      /*
-        echo 'Mensagem DEScriptografada';
-        echo '</br></br>';
-        
-        $mensagemDescriptografadaAPI = $encryption->decrypt($mensagemApi);
-        echo "Mensagem API 2: ". $mensagemDescriptografadaAPI;
-        echo '</br></br>';
-        echo 'Mensagem criptografada';
-        echo '</br></br>';
-        */
-
-
-/*
-$stringOriginal = "dLAgiZvmP1oeYzQAUx+zOZ7eCN7x9Kkjfu5hQqGE8bCRzmYZhCs1JjKNpvvlClxaVQs38R5CgnAffCtMwnzF2tHNo+MfNXy6BAisOJQqAsee2JriFRxqEI+lXpCYgIwYgQJdkahyLM6Dm0Zi7VB2Y746AcqjVZw0vSSA4Bng16XO5AAS0b2EBT\/C9kXzvJfx9zsQ6A+7PQzi+y3e5HeMHFGV9yq5otwsO\/e4X1J8mnOL+R8r\/qvDYzjQP\/ijLG9PGOYhETy7VjvoKVu1\/A8X3Q==";
-
-$stringSubstituida = str_replace('\\', 'gabilola', $stringOriginal);
-
-echo $stringSubstituida;
-
-
-*/
-
-
-
-
-  
+        echo '<br>'; 
     }
+
+    public function variableEncryption(){
+
+      $encription2 = new Encryption2();
+
+      $businessData=env('API_CNPJ');
+      $mensagemKey=env('API_KEY');
+      $mensagemKey = str_replace( 'mfg','8', $mensagemKey);
+      $mensagemKey = str_replace('pak', '9', $mensagemKey);
+
+      $testeBusiness = $encription2->decrypt($businessData);
+
+
+      $businessInfo = array($testeBusiness, $mensagemKey);
+
+      $string_resultante = implode(', ', $businessInfo);
+
+      echo $string_resultante;
+      
+
+      return $businessInfo;
+  }
 }
 ?>
