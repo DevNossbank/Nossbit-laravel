@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Helper;
 
 use App\Http\Controllers\Controller;
 use App\Models\Security\Encryption;
+use Illuminate\Support\Facades\Hash;
 
 class EncryptionController extends Controller{
     public function testEncryption(/*$mensagem*/){
@@ -24,6 +25,12 @@ class EncryptionController extends Controller{
 
         echo '<br>';
         echo '<br>';
+       
+
+
+
+
+
         // Criptografar a mensagem
         /*$mensagemCriptografada = $encryption->encrypt($mensagemCNPJ);
         echo "Mensagem Criptografada: " . $mensagemCriptografada . "<br>"; */
