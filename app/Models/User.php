@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'cpf', // Adicione esta linha para incluir o campo 'cpf'
     ];
 
     /**
