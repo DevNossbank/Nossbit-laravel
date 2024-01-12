@@ -1,6 +1,7 @@
 body{
     background: url("/img/backgroundteste.png") no-repeat;
     background-size: cover; 
+    background-color: #1E1E1E;
     background-position: center; 
     margin: 0; 
     padding: 0; 

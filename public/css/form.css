@@ -1,0 +1,30 @@
+.card{
+    background-color: #353434 !important;
+    color: white !important;
+    border: 1px solid #f6c900;
+    border-radius: 20px !important;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    height: fit-content !important;
+}
+
+.form-control{
+    color: white !important;
+    background-color: #353434 !important;
+    border: 1px solid #e7e7e7;
+
+}
+
+.form-check-input {
+    background-color: #353434 !important;
+}
+
+.btnColor{
+    background: linear-gradient(90deg,
+    rgb(236.94, 177.62, 25.08) 0%,
+    rgb(245.44, 203.91, 56.66) 46.15%,
+    rgb(235.88, 202.14, 115.38) 100%);
+    border-radius: 100px !important;
+    font-weight: bolder !important;
+    color: #000;
+}

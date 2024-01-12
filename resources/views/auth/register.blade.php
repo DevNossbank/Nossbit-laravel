@@ -2,6 +2,8 @@
 
 @section('content')
 <link rel="stylesheet" type="text/css" href="/css/generalStyles.css">
+<link rel="stylesheet" type="text/css" href="/css/form.css">
+
 
 <div class="container">
     <div class="row justify-content-center">
@@ -84,7 +86,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btnColor">
                                     {{ __('Criar conta') }}
                                 </button>
                             </div>
