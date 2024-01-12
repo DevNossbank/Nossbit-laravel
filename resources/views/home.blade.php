@@ -14,6 +14,8 @@
                         </div>
                     @endif
 
+                    {{ __('CPF: ') . session('cpf') }}
+
                     {{ __('You are logged in!') }}
                 </div>
             </div>

@@ -25,9 +25,14 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
+        // Armazenar o CPF na sessão após o login bem-sucedido.
+        session(['cpf' => $user->cpf]);
+
         UsersLogLogin::logLogin($user->id, $request->ip());
     }
 }
+
+
 
 
 
