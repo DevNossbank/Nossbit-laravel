@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route; 
 use App\Http\Controllers\Helper\EncryptionController;
-
+use App\Http\Controllers\TesteAuth;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,3 +52,4 @@ Route::get('/test-teste', function () {
 Route::get('/test2', [EncryptionController::class, 'variableEncryption']);
 
 
+Route::get('/negociar', [TesteAuth::class, 'teste'])->middleware('auth')->name('negociar');
