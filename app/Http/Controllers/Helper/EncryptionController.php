@@ -8,24 +8,43 @@ use App\Models\Security\Encryption2;
 
 
 class EncryptionController extends Controller{
-    public function testEncryption(){
+    public function Encryption(){
         $encryption = new Encryption(); 
 
-        $mensagemCNPJ=env('API_CNPJ');
-        $mensagemApi=env('API_KEY');
-        $mensagemApi = str_replace( 'mfg','8', $mensagemApi);
-        $mensagemApi = str_replace('pak', '9', $mensagemApi);
+        $CNPJ=env('API_CNPJ');
+        $ApiKey=env('API_KEY');
+
         
+        if ($CNPJ === null) {
+          throw new Exception('API_CNPJ not set in .env');
+      }
+
+      if ($ApiKey === null) {
+          throw new Exception('API_KEY not set in .env');
+      } 
+        $ApiKey = str_replace( 'mfg','8', $ApiKey);
+        $ApiKey = str_replace('pak', '9', $ApiKey);
+        
+      /*
 
         echo '<br><br>';
-        echo "Mensagem CNPJ: " .$mensagemCNPJ;
+        echo "Mensagem CNPJ: " .$CNPJ;
         echo '<br><br>';
-        echo "Mensagem API: ". $mensagemApi;
+        echo "Mensagem API Key: ". $ApiKey;
 
         echo '<br>';
         echo '<br>'; 
+
+       */
+      
+       return [
+        'ApiKey' => $ApiKey,
+        'CNPJ' => $CNPJ,
+    ];
+        
     }
 
+    
     public function variableEncryption(){
 
       $encription2 = new Encryption2();
@@ -36,7 +55,6 @@ class EncryptionController extends Controller{
       $mensagemKey = str_replace('pak', '9', $mensagemKey);
 
       $testeBusiness = $encription2->decrypt($businessData);
-
 
       $businessInfo = array($testeBusiness, $mensagemKey);
 

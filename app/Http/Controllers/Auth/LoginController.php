@@ -27,6 +27,7 @@ class LoginController extends Controller
     {
         // Armazenar o CPF na sessão após o login bem-sucedido.
         session(['cpf' => $user->cpf]);
+    
 
         UsersLogLogin::logLogin($user->id, $request->ip());
     }

@@ -1,0 +1,7 @@
+Validação do CPF feita no caminho App/providers/APPServiceProvider 
+
+Armazenamento do cpf na sessão no campo LoginController.php
+session(['cpf' => $user->cpf]);
+
+Encriptação está sendo feita no caminho Controller/ helper/ encryptionController 
+

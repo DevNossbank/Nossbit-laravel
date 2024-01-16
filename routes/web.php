@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route; 
 use App\Http\Controllers\Helper\EncryptionController;
 use App\Http\Controllers\TesteAuth;
+use App\Http\Middleware\HeaderAuthentication;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,17 +38,22 @@ Route::get('/test-config', function () {
 
 Route::get('/test-encryption/{testem}', [EncryptionController::class, 'testEncryption']);
 
-Route::get('/test', [EncryptionController::class, 'testEncryption']);
+Route::get('/test', [EncryptionController::class, 'Encryption']);
 
 
 Route::get('/test-teste', function () {
     $apiKey = config('services.api.authentication');
     $apiSecret = config('services.api.cnpj');
-
-
-
+    
     return "API Key: $apiKey, API Secret: $apiSecret";
 });
+
+Route::middleware([HeaderAuthentication::class])->group(function () {
+    // Suas rotas protegidas pelo middleware aqui
+    Route::get('/sua-rota', 'SeuController@suaFuncao');
+    // Adicione outras rotas conforme necessário
+});
+
 
 
 Route::get('/test2', [EncryptionController::class, 'variableEncryption']);
