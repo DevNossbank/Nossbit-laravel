@@ -111,5 +111,6 @@
        </div>
     </div>
 
+    @include('site.modals.confirmTrade')
 
 @endsection
