@@ -1,6 +1,6 @@
 .navbar {
     height: 80px;
-    background-color: rgba(0, 0, 0, 0.3) !important;
+    background-color: rgba(0, 0, 0, 0.415) !important;
     color: #fff;
     font-style: bold;
     justify-content: center !important;
@@ -12,7 +12,7 @@
 
 @media only screen and (max-width: 989px) {
     .navbar-collapse {
-        background-color: rgba(0, 0, 0, 0.3) !important;
+        background-color: rgba(0, 0, 0, 0.901) !important;
     }
 }
 

@@ -12,6 +12,8 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+                    <h3 class="text-center fw-bold">Faça seu Login</h3>
+                    <p class="text-center">E desbrave o mundo crypto.</p>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -19,7 +21,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('E-mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                <input id="email" placeholder='{{ __("Insira seu email") }}' type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -33,7 +35,7 @@
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Senha') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" placeholder='{{ __("Insira sua senha") }}' type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('Senha')
                                     <span class="invalid-feedback" role="alert">

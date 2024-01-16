@@ -1,0 +1,9 @@
+.btnColor{
+    background: linear-gradient(90deg,
+    rgb(236.94, 177.62, 25.08) 0%,
+    rgb(245.44, 203.91, 56.66) 46.15%,
+    rgb(235.88, 202.14, 115.38) 100%);
+    border-radius: 100px !important;
+    font-weight: bolder !important;
+    color: #000;
+}

@@ -1,0 +1,49 @@
+.amarelo {
+    color: #ECCA73;
+}
+
+
+.exchange-quadro {
+    background-color: #353434 !important;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-radius: 0;
+    border-radius: 10px;
+    margin-top: 0 !important;
+}
+
+.saldo {
+    background: linear-gradient(90deg,
+            rgb(236.94, 177.62, 25.08) 0%,
+            rgb(245.44, 203.91, 56.66) 46.15%,
+            rgb(235.88, 202.14, 115.38) 100%);
+    color: black !important;
+    padding-left: 35px;
+    padding: 10px;
+    margin-bottom: 0 !important;
+    width: 50%;
+    border-start-start-radius: 10px;
+}
+
+.marca {
+    background-color: #1F1D1D !important;
+    padding-left: 35px;
+    padding: 10px;
+    margin-bottom: 0 !important;
+    width: 50%;
+    border-start-end-radius: 10px;
+}
+
+.input-group-text, .input-group>.form-control {
+    background-color: #353434 !important;
+    color: #fff !important;
+    box-shadow: 0 10px 20px -1px rgba(0, 0, 0, 0.296) !important; 
+}
+
+.input-group>.form-control::placeholder{
+    color: rgba(238, 238, 238, 0.422) !important;
+}
+
+.formPart {
+    padding: 20px;
+}

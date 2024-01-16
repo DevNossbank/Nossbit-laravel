@@ -60,3 +60,7 @@ Route::get('/test2', [EncryptionController::class, 'variableEncryption']);
 
 
 Route::get('/negociar', [TesteAuth::class, 'teste'])->middleware('auth')->name('negociar');
+
+Route::view('/Trade', 'site.trade')->middleware('auth')->name('trade');
+
+Route::view('/MyWallet', 'site.wallet')->middleware('auth')->name('wallet');

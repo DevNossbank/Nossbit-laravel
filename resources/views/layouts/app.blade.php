@@ -21,10 +21,13 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-black shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Nossbit') }}
+            <div class="container-fluid">
+               
+                <a class="nav-link active" aria-current="page" href="{{ url('/') }}">
+                    <img src='/img/icon/WhiteIcon.png' />
                 </a>
+                
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,8 +35,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        @if (Route::has('trade'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('trade') }}">{{ __('Negociar') }}</a>
+                            </li>
+                        @endif
 
+                        @if (Route::has('wallet'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('wallet') }}">{{ __('Minha carteira') }}</a>
+                        </li>
+                    @endif
                     </ul>
+                   
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -50,6 +64,8 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
+
+                           
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

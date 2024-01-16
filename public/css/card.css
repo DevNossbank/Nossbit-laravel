@@ -1,0 +1,27 @@
+.cardTrade {
+    background-color: #353434 !important;
+    color: #fff !important;
+    border-radius: 15px !important;
+    
+}
+
+.card-title{
+    background-color: #1F1D1D !important;
+    padding-left: 35px;
+    padding: 10px;
+    margin-bottom: 0 !important;
+}
+
+.card-body{
+    background-color: #353434 !important;
+    color: #fff !important;
+}
+
+.bodyCard{
+    border-width: 0 2px 2px 2px;  
+    border-style: solid;
+    border-color: rgb(244, 204, 62) !important;
+    border-radius: 0; 
+    border-bottom-left-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+}

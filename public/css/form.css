@@ -6,6 +6,9 @@
     margin-top: 15%;
     margin-bottom: 15%;
     height: fit-content !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
 }
 
 .form-control{
@@ -13,6 +16,10 @@
     background-color: #353434 !important;
     border: 1px solid #e7e7e7;
 
+}
+
+.form-control::placeholder{
+    color: #e7e7e7c3 !important;
 }
 
 .form-check-input {

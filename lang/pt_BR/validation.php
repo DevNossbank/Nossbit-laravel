@@ -213,7 +213,14 @@ return [
         'modality' => 'modalidade',
         'category' => 'categoria',
         'blood_type' => 'tipo sanguíneo',
-        'birth_date' => 'data de nascimento'
+        'birth_date' => 'data de nascimento',
+        'insert_email' => 'Digite seu email',
+        'insert_password' => 'Digite sua senha',
+        'insert_name' => 'Digite seu nome',
+        'insert_CPF' => 'Digite seu CPF',
+
+
+
     ],
 
 ];

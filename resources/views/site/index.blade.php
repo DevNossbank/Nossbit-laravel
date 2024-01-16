@@ -14,7 +14,7 @@
             <h1>Nossbit</h1>
             <h4>Se aventure no mundo crypto</h4>
             <br>
-            <a href="">Negociar</a>
+            <a  href="{{ route('trade') }}">Negociar</a>
         </div> 
     </div>
 </div>
