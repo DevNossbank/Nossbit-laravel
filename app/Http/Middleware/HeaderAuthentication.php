@@ -28,13 +28,14 @@ class HeaderAuthentication
 
         $cpf = session('cpf');
 
+        
 
         $headers = [
-            'Authentication: ' . $apiKey,
+            'Authentication:' . $apiKey,
             'BRBTC-FROM-ACCOUNT:' . $cpf, // Certifique-se de ter o relacionamento correto entre usuário e CPF
             'Content-Type: application/json',
         ];
-       
+        
 
         $request->headers->add($headers);
 

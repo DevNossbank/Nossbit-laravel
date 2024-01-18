@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Helper\EncryptionController;
 use App\Http\Controllers\TesteAuth;
 use App\Http\Middleware\HeaderAuthentication;
+use App\Http\Controllers\CheckBalanceController;
+
 
 
 /*
@@ -40,6 +42,7 @@ Route::get('/test-encryption/{testem}', [EncryptionController::class, 'testEncry
 
 Route::get('/test', [EncryptionController::class, 'Encryption']);
 
+Route::get('/MyWallet', [CheckBalanceController::class, 'checkBalance'])->middleware('auth')->name('wallet');
 
 Route::get('/test-teste', function () {
     $apiKey = config('services.api.authentication');
@@ -48,19 +51,16 @@ Route::get('/test-teste', function () {
     return "API Key: $apiKey, API Secret: $apiSecret";
 });
 
-Route::middleware([HeaderAuthentication::class])->group(function () {
-    // Suas rotas protegidas pelo middleware aqui
-    Route::get('/sua-rota', 'SeuController@suaFuncao');
-    // Adicione outras rotas conforme necessário
-});
-
-
 
 Route::get('/test2', [EncryptionController::class, 'variableEncryption']);
-
 
 Route::get('/negociar', [TesteAuth::class, 'teste'])->middleware('auth')->name('negociar');
 
 Route::view('/Trade', 'site.trade')->middleware('auth')->name('trade');
 
-Route::view('/MyWallet', 'site.wallet')->middleware('auth')->name('wallet');
+
+
+    
+
+
+

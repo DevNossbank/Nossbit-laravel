@@ -7,6 +7,8 @@ use App\Models\Security\Encryption;
 
 
 class EncryptionController extends Controller{
+
+  /*
     public function Encryption(){
         $encryption = new Encryption(); 
 
@@ -30,11 +32,11 @@ class EncryptionController extends Controller{
     ];
         
     }
-
+  */
     
-    public function variableEncryption(){
+    public function Encryption(){
 
-      $encription2 = new Encryption();
+      $encription = new Encryption();
 
       $CNPJ_amb=env('API_CNPJ');
       $ApiKey=env('API_KEY');
