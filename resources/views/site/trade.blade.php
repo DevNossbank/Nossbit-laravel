@@ -39,7 +39,7 @@
                             <div class="row">
                                 <div class="col-9">
                                     <div class="input-group mb-3">
-                                        <input type="text" id="valor" class="form-control" name="realInput"
+                                        <input type="text" id="TrocaValor" class="form-control" name="TrocaValor"
                                             placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                             <div class="row">
                                 <div class="col-9">
                                     <div class="input-group mb-3">
-                                        <input type="text" id="resultado" class="form-control" name="USDTInput"
+                                        <input type="text" id="ValorRes" class="form-control" name="ValorRes"
                                             placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
 
@@ -74,9 +74,9 @@
                                 <div class="col-3">
                                     <div class="select">
                                         <select id="selectReceber">
-                                            <option>Crypto</option>
-                                            <option>BRL</option>
-                                            <option>USDT</option>
+                                            <option value="">Crypto</option>
+                                            <option value="BRL">BRL</option>
+                                            <option value="USDT">USDT</option>
                                         </select>
                                         <div class="select_arrow">
                                         </div>
@@ -90,8 +90,8 @@
                                     class="btn btnColor btn-lg" 
                                     id="exchange" 
                                     name="depositarBRL"
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#testeM">
+                                    onclick="openModal()"
+                                    data-bs-toggle="modal" >
                                     <b>Efetuar Troca</b>
                                 </button>
                             </div>
@@ -101,13 +101,7 @@
 
 
                 </div>
-
-            </div>
-
-
-
-
-            
+            </div>   
        </div>
     </div>
 

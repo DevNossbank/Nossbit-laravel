@@ -24,6 +24,7 @@ class CheckBalanceController extends Controller
         $encryptionData = $encryptionController->Encryption();
         $this->apiKey = $encryptionData['ApiKey'];
         $this->cnpj = $encryptionData['CNPJ'];
+        
         /*
         $this->cpf= session('cpf');
 

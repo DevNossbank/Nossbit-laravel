@@ -41,6 +41,8 @@ class EncryptionController extends Controller{
       $CNPJ_amb=env('API_CNPJ');
       $ApiKey=env('API_KEY');
 
+      
+
       if ($CNPJ_amb === null) {
           throw new Exception('API_CNPJ not set in .env');
       }

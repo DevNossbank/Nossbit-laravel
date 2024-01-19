@@ -1,0 +1,5 @@
+.tbody, td, .input-group-text, .input-group>.form-control {
+    background-color: #353434 !important;
+    color: #fff !important;
+    box-shadow: 0 10px 20px -1px rgba(0, 0, 0, 0.296) !important; 
+}
