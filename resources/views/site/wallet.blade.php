@@ -13,13 +13,7 @@
                 </div>
                 <div class="card-body bodyCard">
                     <!-- Exibição do Saldo -->
-                    @isset($saldo['BTC'])
-                        <p>Saldo de BTC: {{ $saldo['BTC']['available'] }}</p>
-                    @endisset
-
-                    @isset($saldo['ETH'])
-                        <p>Saldo de ETH: {{ $saldo['ETH']['available'] }}</p>
-                    @endisset
+                  
 
                     @isset($saldo['USDT'])
                         <p>Saldo de USDT: {{ $saldo['USDT']['available'] }}</p>
