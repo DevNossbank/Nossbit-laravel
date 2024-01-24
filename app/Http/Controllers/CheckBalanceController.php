@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\GuzzleService;
 use App\Http\Controllers\Helper\EncryptionController;
+use App\Services\AuthenticationHeaderService;
 
 
 
@@ -15,8 +16,9 @@ class CheckBalanceController extends Controller
     protected $apiKey;
     protected $cnpj;
     protected $cpf; // Adicione a propriedade $cpf
+    protected $authenticationHeaderService; // Adicione a propriedade $authenticationHeaderServic
 
-    public function __construct(GuzzleService $guzzleService, EncryptionController $encryptionController)
+    public function __construct(GuzzleService $guzzleService, EncryptionController $encryptionController, AuthenticationHeaderService $authenticationHeaderService)
     {
         $this->guzzleService = $guzzleService;
 
@@ -24,11 +26,12 @@ class CheckBalanceController extends Controller
         $encryptionData = $encryptionController->Encryption();
         $this->apiKey = $encryptionData['ApiKey'];
         $this->cnpj = $encryptionData['CNPJ'];
+
+        $this->authenticationHeaderService = $authenticationHeaderService;
         
         /*
         $this->cpf= session('cpf');
 
-       
 
         dd($this->cpf= session('cpf'));
         */
@@ -38,7 +41,7 @@ class CheckBalanceController extends Controller
     public function checkBalance(Request $request)
     {
         // Pega CPF que está armazenado na Sessão
-        $cpf= session('cpf');
+        
         
     // Lógica para verificar o saldo
 
@@ -47,12 +50,8 @@ class CheckBalanceController extends Controller
 
     // Ajuste o corpo conforme necessário
     $body = '{}';
-   
-    $headers = [
-        'Authentication' => $this->apiKey,
-        'BRBTC-FROM-ACCOUNT' => $cpf,
-        'Content-Type' => 'application/json',
-    ];
+    $headers = $this->authenticationHeaderService->getHeaders();
+  
 
     // Faça a requisição usando o GuzzleService com verificação SSL desativada
     $response = $this->guzzleService->sendRequest('GET', $apiUrl, $body, $headers);
@@ -76,4 +75,7 @@ class CheckBalanceController extends Controller
     }
     }
 }
+
+
+
 

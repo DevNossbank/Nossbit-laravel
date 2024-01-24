@@ -1,7 +1,32 @@
 Validação do CPF feita no caminho App/providers/APPServiceProvider 
 
+-------
+
 Armazenamento do cpf na sessão no campo LoginController.php
 session(['cpf' => $user->cpf]);
 
+----
+
 Encriptação está sendo feita no caminho Controller/ helper/ encryptionController 
+
+--------
+
+para criação do $headers
+criei um serviço em app/providers/appserviceprovider.php 
+tbm criei um arquivo em app/services/authenticationHeaderService.php
+e tbm ajustei o checkbalancecontroller para receber o header
+
+appserviceprovider.php 
+
+$this->app->singleton(AuthenticationHeaderService::class, function ($app) {
+            return new AuthenticationHeaderService($app->make(EncryptionController::class));
+        });
+    }
+
+checkbalancecontroller 
+
+  protected $authenticationHeaderService; // Adicione a propriedade $authenticationHeaderServic
+
+$this->authenticationHeaderService = $authenticationHeaderService;
+
 

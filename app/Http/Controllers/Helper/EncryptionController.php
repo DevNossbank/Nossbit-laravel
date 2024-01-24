@@ -55,10 +55,12 @@ class EncryptionController extends Controller{
       $ApiKey = str_replace('pak', '9', $ApiKey);
 
       $CNPJ = $encription->decrypt($CNPJ_amb);
+      
 
       return [
         'ApiKey' => $ApiKey,
         'CNPJ' => $CNPJ,
+        
     ];
 
   }

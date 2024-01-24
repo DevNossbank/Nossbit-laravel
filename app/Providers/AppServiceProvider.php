@@ -12,7 +12,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(AuthenticationHeaderService::class, function ($app) {
+            return new AuthenticationHeaderService($app->make(EncryptionController::class));
+        });
     }
 
     /**
@@ -49,3 +51,6 @@ class AppServiceProvider extends ServiceProvider
         });
     }
 }
+
+
+
