@@ -10,22 +10,34 @@ use Illuminate\Support\Facades\Session;
 class AuthenticationHeaderService
 {
     protected $encryptionController;
+    protected $apiKey;
 
     public function __construct(EncryptionController $encryptionController)
     {
         $this->encryptionController = $encryptionController;
+        $this->apiKey = $encryptionController->Encryption()['ApiKey'];
     }
 
     public function getHeaders()
     {
         $encryptionData = $this->encryptionController->Encryption();
-        $apiKey = $encryptionData['ApiKey'];
-
         $cpf = Session::get('cpf');
 
         return [
-            'Authentication' => $apiKey,
+            'Authentication' => $this->apiKey,
             'BRBTC-FROM-ACCOUNT' => $cpf,
+            'Content-Type' => 'application/json',
+        ];
+    }
+
+    public function getHeadersRegister()
+    {
+        $encryptionData = $this->encryptionController->Encryption();
+        $cnpj = $encryptionData['CNPJ'];
+
+        return [
+            'Authentication' => $this->apiKey,
+            'BRBTC-FROM-ACCOUNT' => $cnpj,
             'Content-Type' => 'application/json',
         ];
     }

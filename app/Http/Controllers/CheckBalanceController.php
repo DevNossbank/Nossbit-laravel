@@ -29,6 +29,9 @@ class CheckBalanceController extends Controller
     $apiUrl = "https://brasilbitcoin.com.br/caas/getUserBalances";
 
     $body = '{}';
+    $teste= $this->authenticationHeaderService->getHeadersRegister();
+
+    dd($teste);
     $headers = $this->authenticationHeaderService->getHeaders();
   
     $response = $this->guzzleService->sendRequest('GET', $apiUrl, $body, $headers);
