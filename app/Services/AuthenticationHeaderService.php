@@ -20,7 +20,6 @@ class AuthenticationHeaderService
     {
         $encryptionData = $this->encryptionController->Encryption();
         $apiKey = $encryptionData['ApiKey'];
-        $cnpj = $encryptionData['CNPJ'];
 
         $cpf = Session::get('cpf');
 
