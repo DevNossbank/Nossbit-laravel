@@ -31,7 +31,7 @@ class CheckBalanceController extends Controller
     $body = '{}';
     $teste= $this->authenticationHeaderService->getHeadersRegister();
 
-    dd($teste);
+    //dd($teste);
     $headers = $this->authenticationHeaderService->getHeaders();
   
     $response = $this->guzzleService->sendRequest('GET', $apiUrl, $body, $headers);
