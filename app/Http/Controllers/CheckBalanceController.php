@@ -23,7 +23,7 @@ class CheckBalanceController extends Controller
    
     }
 
-    public function checkBalance(Request $request)
+    protected function checkBalance(Request $request)
     {
 
     $apiUrl = "https://brasilbitcoin.com.br/caas/getUserBalances";

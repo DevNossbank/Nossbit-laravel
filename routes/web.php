@@ -5,8 +5,7 @@ use App\Http\Controllers\Helper\EncryptionController;
 use App\Http\Controllers\TesteAuth;
 use App\Http\Middleware\HeaderAuthentication;
 use App\Http\Controllers\CheckBalanceController;
-
-
+use App\Http\Controllers\getTradePriceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +55,10 @@ Route::get('/test2', [EncryptionController::class, 'variableEncryption']);
 
 Route::get('/negociar', [TesteAuth::class, 'teste'])->middleware('auth')->name('negociar');
 
-Route::view('/Trade', 'site.trade')->middleware('auth')->name('trade');
+Route::post('/tradeAPI', [getTradePriceController::class, 'getTradePrice']);
+
+
+Route::view('/trade', 'site.trade')->middleware('auth')->name('trade');
 
 
 

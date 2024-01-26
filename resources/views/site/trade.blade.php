@@ -8,10 +8,6 @@
 <link rel="stylesheet" type="text/css" href="/css/buttonGradient.css">
 <link rel="stylesheet" type="text/css" href="/css/select.css">
 
-
-
-
-
     <div class="container">
        <div class="row">
             <div class="col-md-5">
@@ -39,13 +35,13 @@
                             <div class="row">
                                 <div class="col-9">
                                     <div class="input-group mb-3">
-                                        <input type="text" id="TrocaValor" class="form-control" name="TrocaValor"
+                                        <input type="text" id="ExchangeValue" class="form-control" name="ExchangeValue"
                                             placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
                                 </div>
                                 <div class="col-3">
                                     <div class="select">
-                                        <select class="selectTrocar" id="selectTrocar">
+                                        <select class="selectTrocar" id="selectExchangeCoin">
                                             <option value="">Crypto</option>
                                             <option value="USDT" data-image="img/icon/USDT-icon.png">USDT</option>
                                             <option value="BRL">BRL</option>
@@ -66,21 +62,21 @@
                             <div class="row">
                                 <div class="col-9">
                                     <div class="input-group mb-3">
-                                        <input type="text" id="ValorRes" class="form-control" name="ValorRes"
+                                        <input type="text" id="ReceiptValue" class="form-control" name="ReceiptValue"
                                             placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
 
                                 </div>
                                 <div class="col-3">
                                     <div class="select">
-                                        <select id="selectReceber">
+                                        <select id="selectReceipt">
                                             <option value="">Crypto</option>
                                             <option value="BRL">BRL</option>
                                             <option value="USDT">USDT</option>
                                         </select>
                                         <div class="select_arrow">
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
 
@@ -105,6 +101,68 @@
        </div>
     </div>
 
+    <!--Tirar daqui depois-->
+    <script>
+        document.getElementById('selectExchangeCoin').addEventListener('change', function () {
+            var selectedValue = this.value;
+
+            var selectReceber = document.getElementById('selectReceipt');
+            for (var i = 0; i < selectReceber.options.length; i++) {
+                if (selectReceber.options[i].value === selectedValue) {
+                    selectReceber.options[i].disabled = true;
+                } else {
+                    selectReceber.options[i].disabled = false;
+                }
+            }
+        });
+
+        document.getElementById('selectReceipt').addEventListener('change', function () {
+            var selectedValue = this.value;
+            var selectTrocar = document.getElementById('selectExchangeCoin');
+            for (var i = 0; i < selectTrocar.options.length; i++) {
+                if (selectTrocar.options[i].value === selectedValue) {
+                    selectTrocar.options[i].disabled = true;
+                } else {
+                    selectTrocar.options[i].disabled = false;
+                }
+            }
+        });
+    </script>
+    <!---->
+    <script type="module" src=" {{ asset('js/trade.js') }}"></script>
     @include('site.modals.confirmTrade')
+
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#ExchangeValue').on('input', function () {
+            var valor = $(this).val();
+
+            var cryptoTrocar =  $('#selectExchangeCoin').val();
+
+            var cryptoReceber =  $('#selectReceber').val();
+
+
+            console.log(cryptoTrocar);
+
+            if(valor != ""){
+                $.ajax({
+                type: 'POST',
+                url: '/tradeAPI',
+                data: { valor: valor,
+                    _token: '{{ csrf_token() }}'  },
+                success: function (response) {
+                    $('#ReceiptValue').val(response);
+                    console.log(response);
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
+            }
+           
+        });
+    });
+</script>-->
 
 @endsection
