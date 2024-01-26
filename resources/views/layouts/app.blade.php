@@ -14,9 +14,11 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/navteste.css">
     <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
 </head>
 <body>
     <div id="app">
