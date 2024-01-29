@@ -12,7 +12,7 @@
           <div class="trocarModel mb-2">
               <H4 class="text-center">TROCAR</H4>
           </div>
-          <form method="posti" action="">
+          <form method="post" action="">
               <div class="modal-body">
                   <div class="textModal text-start">
 
@@ -27,7 +27,7 @@
 
                                   </div>
                                   <div class="col-6">
-                                      <h5 id="valorTroca" class="fw-bold">: <span id="TrocarValorSubmit"></span></h5>
+                                      <h5 id="valorTroca" class="fw-bold text-end">: <span id="TrocarValorSubmit" class="text-end"></span></h5>
                                   </div>
                               </div>
 
@@ -37,7 +37,7 @@
                               <h5 class="fw-bold">Cotação:</h5>
                           </div>
                           <div class="col-4">
-                              <h5 id="cotacaoModal" class="fw-bold"></h5>
+                              <h5 id="priceModal" class="fw-bold text-end"></h5>
                           </div>
 
 
@@ -46,13 +46,13 @@
                           </div>
                           <div class="col-4">
                               <div class="row">
-                                  <div class="col-6">
-                                      <h5 id="cryptoRecebe" class="fw-bold"><span id="selectReceberSubmit"></span></h5>
+                                  <div class="col-4">
+                                      <h5 id="cryptoRecebe" class="fw-bold"><span id="selectReceberSubmit" class="text-end"></span></h5>
 
                                   </div>
-                                  <div class="col-6">
+                                  <div class="col-8">
                                       <h5 id="valorReceber" class="fw-bold">
-                                         :  <span id="ReceberValorSubmit"></span>
+                                         :  <span id="ReceberValorSubmit" class="text-end"></span>
                                     </h5>
                                   </div>
                               </div>
@@ -76,7 +76,7 @@
                   <div class="row m-3">
                       <div class="col-6 d-grid gap-2">
                           <button type="button" id="ConfirmarExchange" name="ConfirmarExchange"
-                              class="btn btnColor WB">Confirmar</button>
+                              class="btn btnColor WB" onclick="confirmExchange()">Confirmar</button>
                       </div>
                       <div class="col-6 d-grid gap-2">
                           <button type="button" class="btn btn-dark WB" data-bs-dismiss="modal"  onclick="closeModal()">Cancelar</button>
@@ -92,10 +92,12 @@
 <script>
     function openModal() {
         
-        var TrocarValorSubmit = document.getElementById('TrocaValor').value;
-        var ReceberValorSubmit = document.getElementById('ValorRes').value;
-        var selectTrocarSubmit = document.getElementById('selectTrocar').value;
-        var selectReceberSubmit = document.getElementById('selectReceber').value;
+        var TrocarValorSubmit = document.getElementById('ExchangeValue').value;
+        var ReceberValorSubmit = document.getElementById('ReceiptValue').value;
+        var selectTrocarSubmit = document.getElementById('selectExchangeCoin').value;
+        var selectReceberSubmit = document.getElementById('selectReceipt').value;
+        var priceSubmit = document.getElementById('priceValue').innerHTML;
+
 
         if(TrocarValorSubmit!="" && ReceberValorSubmit!=""
         && selectTrocarSubmit!="" && selectReceberSubmit!=""){
@@ -104,8 +106,10 @@
             document.getElementById('ReceberValorSubmit').innerHTML = ReceberValorSubmit;
             document.getElementById('selectTrocarSubmit').innerHTML = selectTrocarSubmit;
             document.getElementById('selectReceberSubmit').innerHTML = selectReceberSubmit;
+            document.getElementById('priceModal').innerHTML = priceSubmit;
 
-           
+
+            
         }
         else{
             //CONFERIR
@@ -119,5 +123,52 @@
     function closeModal() {
         document.getElementById('modalTrade').style.display = 'none';
     }
+
+    function confirmExchange(){
+        console.log('Apertou botao');
+        var EXv = TrocarValorSubmit.innerHTML;
+        var RCv = ReceberValorSubmit.innerHTML;
+        var CoinEX=selectTrocarSubmit.innerHTML;
+        var CoinRC = selectReceberSubmit.innerHTML;
+        var Price = document.getElementById('priceModal').innerHTML;
+
+        console.log("Exchange Value: "+EXv+" Receive Value: "+RCv+" Coin for exchange: "+CoinEX+" Coin that will receive: "+CoinRC+" Price: "+Price);
+
+        try{
+            $.ajax({
+                type: 'POST',
+                url: '/tradeConfirmation',
+                data: {
+                    EXv: EXv,
+                    RCv: RCv,
+                    CoinEX: CoinEX,
+                    CoinRC: CoinRC,
+                    Price: Price,
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (response) {
+                    console.log(response);
+                    if(response == 1){
+                        alert('Operação efetuada com sucesso');
+                        location.reload();
+                    }else{
+                        alert('Algo deu errado, por favor tente novamente.')
+                        location.reload();
+                    }
+                
+                },
+                error: function (error) {
+                    console.error(error);
+                    alert('Tente novamente mais tarde');
+                    location.reload();
+                }
+            });
+        }
+        catch(error){
+            location.reload();
+        }
+    }
+
+
 
 </script>

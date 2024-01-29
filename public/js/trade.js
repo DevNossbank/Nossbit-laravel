@@ -36,7 +36,7 @@ function tradePrice(){
                 _token: $('meta[name="csrf-token"]').attr('content')
             },
             success: function (response) {
-               $('#cotacao').text("Cotação: "+response[1]);
+               $('#priceValue').text(response[1]);
                $('#ReceiptValue').val(response[0]);
             },
             error: function (error) {

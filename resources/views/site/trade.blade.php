@@ -54,7 +54,7 @@
 
                             <ul>
                                 <li>Taxa: </li>
-                                <li id="cotacao" data-value="abc">Cotação:</li>
+                                <li id="priceValue" data-value="abc">Cotação:</li>
                             </ul>
 
 

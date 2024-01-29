@@ -6,6 +6,7 @@ use App\Http\Controllers\TesteAuth;
 use App\Http\Middleware\HeaderAuthentication;
 use App\Http\Controllers\CheckBalanceController;
 use App\Http\Controllers\getTradePriceController;
+use App\Http\Controllers\TradeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,9 @@ Route::post('/tradeAPI', [getTradePriceController::class, 'getTradePrice']);
 
 
 Route::view('/trade', 'site.trade')->middleware('auth')->name('trade');
+
+Route::post('/tradeConfirmation',  [TradeController::class, 'tradeMethod']);
+
 
 
 
