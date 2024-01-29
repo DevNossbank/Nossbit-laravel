@@ -49,7 +49,7 @@ class getTradePriceController extends Controller
     public function getTradePrice(Request $request) 
     {
         $request->validate([
-            'valor' => ['required', 'int'],
+            'valor' => 'required',
             'cryptoExchange' => 'required',
             'cryptoReceipt'=> 'required'
         ]);

@@ -4,6 +4,8 @@
 <link rel="stylesheet" type="text/css" href="/css/generalStyles.css">
 <link rel="stylesheet" type="text/css" href="/css/card.css">
 <link rel="stylesheet" type="text/css" href="/css/table.css">
+<link rel="stylesheet" type="text/css" href="/css/buttonGradient.css">
+<link rel="stylesheet" type="text/css" href="/css/trade.css">
 
 
 <div class="container">
@@ -42,6 +44,93 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="col-md-6 mt-4 mb-4">
+                <div class="card cardTrade">
+                    <div class="card-title">
+                        <h4>NOVO DEPOSITO<h4>
+
+                    </div>
+                    <div class="card-body bodyCard">
+                        <form method="post" action="">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">R$</span>
+                                <input type="text" class="form-control" name="BRLdeposit" placeholder="0,00"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <center>
+                            <button type="submit" class="btn btnColor" name="depositarBRL" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Depositar</button>
+                            </center>
+                        </form>
+                    
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="col-md-6 mt-4 mb-4">
+                <div class="card cardTrade">
+                    <div class="card-title">
+                        <h4>SAQUE<h4>
+
+                    </div>
+                    <div class="card-body bodyCard">
+
+                        <form method="post" action="">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">R$</span>
+                                <input type="text" class="form-control" name="BRLwithdraw" placeholder="0,00"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Chave PIX</span>
+                                <input type="text" class="form-control" name="chavePIX" placeholder="0,00"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <center>
+                            <button type="submit" class="btn btnColor" name="sacarBRL" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Sacar</button>
+                            </center>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 </div>
 

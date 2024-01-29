@@ -70,10 +70,18 @@ class TradeController extends Controller
         $market = $this->determineMarket($coinOfReceive, $coinOfExchange);
 
         $apiUrl = "https://brasilbitcoin.com.br/caas/executeTrade";
+
+        if($side=="buy"){
+            $value=$receivedValue;
+        }
+        if($side=="sell"){
+            $value=$exchangeValue;
+        }
+
         $headers = $this->authenticationHeaderService->getHeaders();
 
 
-        $body = '{"market": "'.$market.'","amount": '.$exchangeValue.', "side": "'.$side.'","price": '.$priceForTrade.'}';
+        $body = '{"market": "'.$market.'","amount": '.$value.', "side": "'.$side.'","price": '.$priceForTrade.'}';
         $response = $this->guzzleService->sendRequest('POST', $apiUrl, $body, $headers);
 
         $content = $response->getBody()->getContents();
@@ -84,7 +92,7 @@ class TradeController extends Controller
             $success = $data['success'];
 
             return $success;
-        } else {
+       } else {
             return response()->json(['error' => 'Erro ao fazer trade.']);
         }
        
