@@ -7,6 +7,8 @@ use App\Http\Middleware\HeaderAuthentication;
 use App\Http\Controllers\CheckBalanceController;
 use App\Http\Controllers\getTradePriceController;
 use App\Http\Controllers\TradeController;
+use App\Http\Controllers\TransferCryptoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,8 @@ Route::get('/test-encryption/{testem}', [EncryptionController::class, 'testEncry
 Route::get('/test', [EncryptionController::class, 'Encryption']);
 
 Route::get('/MyWallet', [CheckBalanceController::class, 'checkBalance'])->middleware('auth')->name('wallet');
+
+Route::get('/TransferCrypto', [TransferCryptoController::class, 'transferCrypto'])->middleware('auth')->name('transferCrypto');
 
 Route::get('/test-teste', function () {
     $apiKey = config('services.api.authentication');
