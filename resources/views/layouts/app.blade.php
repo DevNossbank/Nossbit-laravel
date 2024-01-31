@@ -47,7 +47,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('wallet') }}">{{ __('Minha carteira') }}</a>
                         </li>
-                    @endif
+                         @endif
+
+                         @if (Route::has('wallet'))
+                         <li class="nav-item">
+                             <a class="nav-link" href="{{ route('wallet') }}">{{ __('Enviar Cryptomoedas') }}</a>
+                         </li>
+                          @endif
                     </ul>
                    
 
@@ -98,28 +104,28 @@
     </div>
 
     <!-------------------FOOTER-------------------------------------------->
-<div class="row footer">
-    <div class="col-md-3 text-start">
-        <p class="nossbitTitle">nossbit</p>
-        <p><h5 class="fw-bold">Location:</h5>Alameda Santos 700 - cj.132</p>
-        <p>Cerqueira César - São Paulo - Brazil</p>
-        <p>CEP: 01418-100</p>
-    </div>  
-    <div class="col-md-5">
-    </div> 
-    <div class="col-md-3 text-start mt-3">
-        <h5 class="fw-bold">Social Media</h5>
-        <p>Instagram</p>
-        <p>LinkedIn</p>
-        <p>Facebook</p>
-        <p>Twitter</p>
-    </div>  
-    <div class="col-md-12 text-center mt-5">
-        <h6>Nosscompany Serviços Digitais Ltda - CNPJ 44.868.835/0001-33</h6>
+    <div class="row footer">
+        <div class="col-md-3 text-start">
+            <p class="nossbitTitle">nossbit</p>
+            <p><h5 class="fw-bold">Location:</h5>Alameda Santos 700 - cj.132</p>
+            <p>Cerqueira César - São Paulo - Brazil</p>
+            <p>CEP: 01418-100</p>
+        </div>  
+        <div class="col-md-5">
+        </div> 
+        <div class="col-md-3 text-start mt-3">
+            <h5 class="fw-bold">Social Media</h5>
+            <p>Instagram</p>
+            <p>LinkedIn</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+        </div>  
+        <div class="col-md-12 text-center mt-5">
+            <h6>Nosscompany Serviços Digitais Ltda - CNPJ 44.868.835/0001-33</h6>
+        </div>
     </div>
-</div>
-
-<!--------------------------------------------------------------------------------------------------------------------->
+    
+    <!--------------------------------------------------------------------------------------------------------------------->
 
 </body>
 </html>

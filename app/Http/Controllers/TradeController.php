@@ -51,7 +51,7 @@ class TradeController extends Controller
     {
 
         $request->validate([
-            'EXv' => ['required'],
+            'EXv' => 'required',
             'RCv' => 'required',
             'CoinEX'=> 'required',
             'CoinRC'=> 'required',
