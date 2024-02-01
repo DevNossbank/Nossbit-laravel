@@ -128,41 +128,6 @@
             }
         });
     </script>
-    <!---->
     <script type="module" src=" {{ asset('js/trade.js') }}"></script>
     @include('site.modals.confirmTrade')
-
-    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#ExchangeValue').on('input', function () {
-            var valor = $(this).val();
-
-            var cryptoTrocar =  $('#selectExchangeCoin').val();
-
-            var cryptoReceber =  $('#selectReceber').val();
-
-
-            console.log(cryptoTrocar);
-
-            if(valor != ""){
-                $.ajax({
-                type: 'POST',
-                url: '/tradeAPI',
-                data: { valor: valor,
-                    _token: '{{ csrf_token() }}'  },
-                success: function (response) {
-                    $('#ReceiptValue').val(response);
-                    console.log(response);
-                },
-                error: function (error) {
-                    console.error(error);
-                }
-            });
-            }
-           
-        });
-    });
-</script>-->
-
 @endsection

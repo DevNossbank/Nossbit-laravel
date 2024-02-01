@@ -1,0 +1,16 @@
+.status.sent {
+    color: rgb(0, 204, 0) !important;
+}
+
+.status.canceled {
+    color: rgb(204, 0, 0) !important;
+}
+
+.status.credited {
+    color: rgb(0, 204, 0) !important;
+}
+
+.status.estorned {
+    color: rgb(204, 0, 0) !important;
+}
+

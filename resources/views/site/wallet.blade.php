@@ -6,6 +6,8 @@
 <link rel="stylesheet" type="text/css" href="/css/table.css">
 <link rel="stylesheet" type="text/css" href="/css/buttonGradient.css">
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
+<link rel="stylesheet" type="text/css" href="/css/statusColor.css">
+
 
 
 <div class="container">
@@ -60,6 +62,7 @@
                                 <input type="text" class="form-control" name="BRLdeposit" placeholder="0,00"
                                     aria-label="Username" aria-describedby="basic-addon1">
                             </div>
+                            <br><br>
                             <center>
                             <button type="submit" class="btn btnColor" name="depositarBRL" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">Depositar</button>
@@ -100,7 +103,96 @@
                 </div>
             </div>
 
-            
+            <hr>
+
+        <h4 class="text-center mt-3">Histórico</h4>
+
+            <div class="col-md-12 mt-3 mb-5">
+                <div class="card cardTrade">
+    
+                    <div class="card-title">
+                        <h5>DEPÓSITO E SAQUE EM REAIS<h5>
+    
+                    </div>
+
+                    <div class="card-body bodyCard">  
+                        <h5>Depósitos em reais:</h5>
+    
+                        <div class="table-responsive">
+                            <table class="table table-dark">
+                                <thead>
+                                <tr>
+                                    <th scope="col">HORA (ano-mês-dia)</th>
+                                    <th scope="col">MOEDA</th>
+                                    <th scope="col">VALOR</th>
+                                    <th scope="col">BANCO</th>
+                                    <th scope="col">STATUS</th>
+    
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($deposits as $item)
+                                        <tr>
+                                            <td>{{ \Carbon\Carbon::createFromTimestamp($item['timestamp'])->toDateTimeString() }}</td>
+                                            <td>{{ $item['coin'] }}</td>
+                                            <td>{{ $item['value'] }}</td>
+                                            <td>{{ $item['bank'] }}</td>
+                                            <td class="status {{ strtolower($item['status']) }}">{{ $item['status'] }}</td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="6">Nenhum dado disponível</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+
+                        
+                        
+
+                        <hr>
+    
+
+                        <H5>Saques em reais:</H5>
+                        <div class="table-responsive">
+                            <table class="table table-dark">
+                                <thead>
+                                <tr>
+                                    <th scope="col">HORA (ano-mês-dia)</th>
+                                    <th scope="col">MOEDA</th>
+                                    <th scope="col">VALOR</th>
+                                    <th scope="col">BANCO</th>
+                                    <th scope="col">PIX</th>
+                                    <th scope="col">TAXA</th>
+                                    <th scope="col">STATUS</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($withdraws as $item)
+                                        <tr>
+                                            <td>{{ \Carbon\Carbon::createFromTimestamp($item['timestamp'])->toDateTimeString() }}</td>
+                                            <td>{{ $item['coin'] }}</td>
+                                            <td>{{ $item['value'] }}</td>
+                                            <td>{{ $item['bank'] }}</td>
+                                            <td>{{ $item['pixKey'] }}</td>
+                                            <td>{{ $item['withdrawFee'] }}</td>
+                                            <td class="status {{ strtolower($item['status']) }}">{{ $item['status'] }}</td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="6">Nenhum dado disponível</td>
+                                        </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+    
+                        
+    
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
 

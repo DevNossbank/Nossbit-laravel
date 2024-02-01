@@ -6,9 +6,11 @@
 <link rel="stylesheet" type="text/css" href="/css/table.css">
 <link rel="stylesheet" type="text/css" href="/css/buttonGradient.css">
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
+<link rel="stylesheet" type="text/css" href="/css/statusColor.css">
+
 
 <div class="container">
-    <h4 class="text-center mt-4">Transferência</h4>
+    <h4 class="text-center mt-4">Transferência entre carteiras de crypto</h4>
     <div class="row">
         <div class="col-md-6">
             <div class="card cardTrade mt-5">
@@ -67,50 +69,14 @@
 
                 </div>
                 <div class="card-body bodyCard">
-                    <!-- Exibição do Saldo --> 
-                  
-                    <H5>Envios de Cryptomoedas:</H5>
-                    <div class="table-responsive">
-                        <table class="table table-dark">
-                            <thead>
-                            <tr>
-                                <th scope="col">HORA</th>
-                                <th scope="col">MOEDA</th>
-                                <th scope="col">QUANTIDADE</th>
-                                <th scope="col">TAXA</th>
-                                <th scope="col">HASH</th>
-                                <th scope="col">STATUS</th>
 
-                            </tr>
-                            </thead>
-                            <tbody>
-                                @forelse ($withdrawsCrypto as $item)
-                                    <tr>
-                                        <td>{{ \Carbon\Carbon::createFromTimestamp($item['timestamp'])->toDateTimeString() }}</td>
-                                        <td>{{ $item['coin'] }}</td>
-                                        <td>{{ $item['amount'] }}</td>
-                                        <td>{{ $item['fee'] }}</td>
-                                        <td>{{ $item['hash'] }}</td>
-                                        <td>{{ $item['status'] }}</td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="6">Nenhum dado disponível</td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <hr>
-
-                    <h5>Depósitos de Cryptomoedas:</h5>
+                    <h5>Recebimentos de Cryptomoedas:</h5>
 
                     <div class="table-responsive">
                         <table class="table table-dark">
                             <thead>
                             <tr>
-                                <th scope="col">HORA</th>
+                                <th scope="col">HORA (ano-mês-dia)</th>
                                 <th scope="col">MOEDA</th>
                                 <th scope="col">QUANTIDADE</th>
                                 <th scope="col">TAXA</th>
@@ -127,7 +93,43 @@
                                         <td>{{ $item['amount'] }}</td>
                                         <td>{{ $item['fee'] }}</td>
                                         <td>{{ $item['hash'] }}</td>
-                                        <td>{{ $item['status'] }}</td>
+                                        <td class="status {{ strtolower($item['status']) }}">{{ $item['status'] }}</td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="6">Nenhum dado disponível</td>
+                                    </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+
+                    
+                    <hr>
+
+                    <H5>Envios de Cryptomoedas:</H5>
+                    <div class="table-responsive">
+                        <table class="table table-dark">
+                            <thead>
+                            <tr>
+                                <th scope="col">HORA (ano-mês-dia)</th>
+                                <th scope="col">MOEDA</th>
+                                <th scope="col">QUANTIDADE</th>
+                                <th scope="col">TAXA</th>
+                                <th scope="col">HASH</th>
+                                <th scope="col">STATUS</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($withdrawsCrypto as $item)
+                                    <tr>
+                                        <td>{{ \Carbon\Carbon::createFromTimestamp($item['timestamp'])->toDateTimeString() }}</td>
+                                        <td>{{ $item['coin'] }}</td>
+                                        <td>{{ $item['amount'] }}</td>
+                                        <td>{{ $item['fee'] }}</td>
+                                        <td>{{ $item['hash'] }}</td>
+                                        <td class="status {{ strtolower($item['status']) }}">{{ $item['status'] }}</td>
                                     </tr>
                                 @empty
                                     <tr>
