@@ -46,35 +46,13 @@ class CheckBalanceController extends Controller
         }
     }
 
-    private function getUserCryptoWithdraws()
-    {
-        $apiUrl = "https://brasilbitcoin.com.br/caas/getUserCryptoWithdraws";
-
-        $body = '{}';
-
-        $headers = $this->authenticationHeaderService->getHeaders();
-
-        $response = $this->guzzleService->sendRequest('GET', $apiUrl, $body, $headers);
-
-        $content = $response->getBody()->getContents();
-
-        $data = json_decode($content, true);
-
-       if (is_array($data) && count($data) > 0) {
-            // Retornar as propriedades desejadas
-            return $data;
-        }
     
-       return [];
-    }
 
     protected function checkBalance(Request $request)
     {
         $saldo = $this->getUserBalance();
 
-        $withdraws = $this->getUserCryptoWithdraws();
-
-        return view('site.wallet', compact('saldo','withdraws'));
+        return view('site.wallet', compact('saldo'));
 
     }
 }

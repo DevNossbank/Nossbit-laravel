@@ -33,7 +33,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/test-config', function () {
+/*Route::get('/test-config', function () {
     $apiKey = config('services.api.authentication');
     $apiSecret = config('services.api.cnpj');
 
@@ -42,13 +42,13 @@ Route::get('/test-config', function () {
 
 Route::get('/test-encryption/{testem}', [EncryptionController::class, 'testEncryption']);
 
-Route::get('/test', [EncryptionController::class, 'Encryption']);
+Route::get('/test', [EncryptionController::class, 'Encryption']);*/
 
 Route::get('/MyWallet', [CheckBalanceController::class, 'checkBalance'])->middleware('auth')->name('wallet');
 
 Route::get('/TransferCrypto', [TransferCryptoController::class, 'transferCrypto'])->middleware('auth')->name('transferCrypto');
 
-Route::get('/test-teste', function () {
+/*Route::get('/test-teste', function () {
     $apiKey = config('services.api.authentication');
     $apiSecret = config('services.api.cnpj');
     
@@ -56,7 +56,7 @@ Route::get('/test-teste', function () {
 });
 
 
-Route::get('/test2', [EncryptionController::class, 'variableEncryption']);
+Route::get('/test2', [EncryptionController::class, 'variableEncryption']);*/
 
 Route::get('/negociar', [TesteAuth::class, 'teste'])->middleware('auth')->name('negociar');
 
