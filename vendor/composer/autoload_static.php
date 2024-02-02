@@ -594,6 +594,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\CheckBalanceController' => __DIR__ . '/../..' . '/app/Http/Controllers/CheckBalanceController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\GenerateFiatDepositController' => __DIR__ . '/../..' . '/app/Http/Controllers/GenerateFiatDepositController.php',
         'App\\Http\\Controllers\\Helper\\EncryptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Helper/EncryptionController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\NewFiatWithdrawController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewFiatWithdrawController.php',

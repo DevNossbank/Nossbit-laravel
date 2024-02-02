@@ -97,6 +97,7 @@
 
 
                 </div>
+                <a href="#" class="text-end">Ver todas as minhas negociações</a>
             </div>   
        </div>
     </div>

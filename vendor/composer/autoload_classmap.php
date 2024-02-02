@@ -16,6 +16,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerificationController' => $baseDir . '/app/Http/Controllers/Auth/VerificationController.php',
     'App\\Http\\Controllers\\CheckBalanceController' => $baseDir . '/app/Http/Controllers/CheckBalanceController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\GenerateFiatDepositController' => $baseDir . '/app/Http/Controllers/GenerateFiatDepositController.php',
     'App\\Http\\Controllers\\Helper\\EncryptionController' => $baseDir . '/app/Http/Controllers/Helper/EncryptionController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\NewFiatWithdrawController' => $baseDir . '/app/Http/Controllers/NewFiatWithdrawController.php',

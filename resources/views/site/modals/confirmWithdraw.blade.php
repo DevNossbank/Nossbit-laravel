@@ -5,14 +5,13 @@
 <div class="modal" id="modalWithdraw" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content text-center">
-          <div class="modal-header" class="text-end">
 
-          </div>
           <iframe src="https://lottie.host/embed/f48b50f1-f89d-46c8-acbc-d0994a59c985/UakZdDBVV3.json"></iframe>
           <div class="trocarModel mb-2">
               <H4 class="text-center">SAQUE (BRL)</H4>
           </div>
           <form method="post" action="">
+            @csrf
             <div class="modal-body">
                 <div class="textModal text-start">
 
@@ -122,7 +121,6 @@
                 
                 },
                 error: function (error) {
-                    console.error(error);
                     alert('Tente novamente mais tarde');
                     location.reload();
                 }

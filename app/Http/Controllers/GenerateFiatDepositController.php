@@ -8,8 +8,7 @@ use App\Http\Controllers\Helper\EncryptionController;
 use App\Services\AuthenticationHeaderService;
 
 
-
-class NewFiatWithdrawController extends Controller
+class GenerateFiatDepositController extends Controller
 {
     protected $guzzleService;
     protected $authenticationHeaderService; 
@@ -22,28 +21,27 @@ class NewFiatWithdrawController extends Controller
    
     }
 
-    
     /**
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function withdrawMethod(Request $request) 
+    public function depositMethod(Request $request) 
     {
 
         $request->validate([
-            'PIXSubmit' => 'required',
-            'BRLwithdrawSubmit' => 'required',
+            'BRLdeposit' => 'required',
         ]);
 
-        $pix = $request->input('PIXSubmit');
-        $BRLwithdrawValue = $request->input('BRLwithdrawSubmit');
+        $valeuFromView = $request->input('BRLdeposit');
 
-        $apiUrl = "https://brasilbitcoin.com.br/caas/newFiatWithdraw";
+       // $value = 0;
+
+        $apiUrl = "https://brasilbitcoin.com.br/caas/generateFiatDepositQrCode";
 
         $headers = $this->authenticationHeaderService->getHeaders();
 
 
-        $body = '{"value": '.$BRLwithdrawValue.',  "pixKey": "'.$pix.'" }';
+        $body = '{"value": '.$valeuFromView.'}';
         
         $response = $this->guzzleService->sendRequest('POST', $apiUrl, $body, $headers);
 
@@ -51,11 +49,12 @@ class NewFiatWithdrawController extends Controller
 
         $data = json_decode($content, true);
 
-        if ($data['id']!="") {
+        if ($data['success']) {
 
-            $status = $data['status'];
+            $paymentString = $data['paymentString'];
 
-            return $status;
+
+            return $paymentString;
        } else {
 
         }

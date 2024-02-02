@@ -9,7 +9,9 @@ use App\Http\Controllers\getTradePriceController;
 use App\Http\Controllers\TradeController;
 use App\Http\Controllers\TransferCryptoController;
 use App\Http\Controllers\NewFiatWithdrawController;
+use App\Http\Controllers\GenerateFiatDepositController;
 
+use TCG\Voyager\Facades\Voyager;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +56,7 @@ Route::post('/tradeConfirmation',  [TradeController::class, 'tradeMethod']);
 
 Route::post('/withdrawConfirmation',  [NewFiatWithdrawController::class, 'withdrawMethod']);
 
+Route::post('/deposit',  [GenerateFiatDepositController::class, 'depositMethod']);
 
 
 
