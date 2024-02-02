@@ -137,3 +137,4 @@ Route::group(['as' => 'voyager.'], function () {
 
     event(new RoutingAfter());
 });
+
