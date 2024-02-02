@@ -122,10 +122,10 @@
 
     function closeModal() {
         document.getElementById('modalTrade').style.display = 'none';
+
     }
 
     function confirmExchange(){
-        console.log('Apertou botao');
         var EXv = TrocarValorSubmit.innerHTML;
         var RCv = ReceberValorSubmit.innerHTML;
         var CoinEX=selectTrocarSubmit.innerHTML;

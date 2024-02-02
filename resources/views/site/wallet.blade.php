@@ -86,17 +86,22 @@
                         <form method="post" action="">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">R$</span>
-                                <input type="text" class="form-control" name="BRLwithdraw" placeholder="0,00"
+                                <input type="text" class="form-control" id="BRLwithdraw" placeholder="0,00"
                                     aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Chave PIX</span>
-                                <input type="text" class="form-control" name="chavePIX" placeholder="0,00"
+                                <input type="text" class="form-control" id="PIX" placeholder="0,00"
                                     aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                             <center>
-                            <button type="submit" class="btn btnColor" name="sacarBRL" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Sacar</button>
+                                <button 
+                                type="button" 
+                                class="btn btnColor btn-lg" 
+                                onclick="openModalWithdraw()"
+                                data-bs-toggle="modal" >
+                                Sacar
+                            </button>
                             </center>
                         </form>
                     </div>
@@ -195,5 +200,8 @@
             </div>
     </div>
 </div>
+
+@include('site.modals.confirmWithdraw')
+
 
 @endsection
