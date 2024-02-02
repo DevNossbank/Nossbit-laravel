@@ -58,7 +58,6 @@ Route::post('/withdrawConfirmation',  [NewFiatWithdrawController::class, 'withdr
 
 
 
-    
-
-
-
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
