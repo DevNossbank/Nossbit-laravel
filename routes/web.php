@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route; 
+use App\Http\Controllers\AllTradeController;
 use App\Http\Controllers\CheckBalanceController;
 use App\Http\Controllers\getTradePriceController;
 use App\Http\Controllers\TradeController;
@@ -42,6 +43,7 @@ Route::get('/MyWallet', [CheckBalanceController::class, 'checkBalance'])->middle
 
 Route::get('/TransferCrypto', [TransferCryptoController::class, 'transferCrypto'])->middleware('auth')->name('transferCrypto');
 
+Route::get('/MyTrades', [AllTradeController::class, 'allTrade'])->middleware('auth')->name('trades');
 
 
 Route::view('/trade', 'site.trade')->middleware('auth')->name('trade');
