@@ -14,3 +14,18 @@
     color: rgb(204, 0, 0) !important;
 }
 
+.status.filled {
+    color: rgb(0, 204, 0) !important;
+}
+
+.status.filled {
+    color: rgb(0, 204, 0) !important;
+}
+
+.side.buy{
+    color: rgb(0, 204, 0) !important;
+}
+
+.side.sell{
+    color: rgb(204, 0, 0) !important;
+}

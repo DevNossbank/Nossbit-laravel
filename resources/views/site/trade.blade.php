@@ -97,8 +97,11 @@
 
 
                 </div>
-                <a href="#" class="text-end">Ver todas as minhas negociações</a>
-            </div>   
+            </div>  
+            
+            @if (Route::has('trades'))
+            <h5><u><a class="nav-link text-end mt-4" href="{{ route('trades') }}">{{ __('Ver todas as minhas negociações') }}</a></u></h5>
+        @endif 
        </div>
     </div>
 

@@ -63,6 +63,43 @@ class TransferCryptoController extends Controller
        return [];
     }
 
+    private function userWallet(){
+
+        $apiUrl = "https://brasilbitcoin.com.br/caas/getUserWallets";
+
+        $body = '{}';
+
+        $headers = $this->authenticationHeaderService->getHeaders();
+
+        $response = $this->guzzleService->sendRequest('GET', $apiUrl, $body, $headers);
+
+        $content = $response->getBody()->getContents();
+
+        $data = json_decode($content, true);
+
+       // return $content;
+
+       if (is_array($data) && count($data) > 0) {
+        
+            $USDT=$data['USDT'][0]['address'];
+
+            return $USDT;
+          
+        }
+    
+    }
+
+    private function createAnUserWallet(){
+        $apiUrl = "https://brasilbitcoin.com.br/caas/generateNewCryptoAddress";
+
+        $body = '{}';
+
+        $headers = $this->authenticationHeaderService->getHeaders();
+
+       // $response = $this->
+
+    }
+
     protected function transferCrypto(Request $request)
     {
 
@@ -70,7 +107,9 @@ class TransferCryptoController extends Controller
 
         $depositsCrypto = $this->getUserCryptoDeposits();
 
-        return view('site.transferCrypto', compact('withdrawsCrypto','depositsCrypto'));
+        $userWallet = $this->userWallet();
+
+        return view('site.transferCrypto', compact('withdrawsCrypto','depositsCrypto','userWallet'));
 
     }
 }

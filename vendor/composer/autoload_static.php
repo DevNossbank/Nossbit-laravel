@@ -596,6 +596,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AllTradeController' => __DIR__ . '/../..' . '/app/Http/Controllers/AllTradeController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -608,6 +609,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Http\\Controllers\\Helper\\EncryptionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Helper/EncryptionController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\NewFiatWithdrawController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewFiatWithdrawController.php',
+        'App\\Http\\Controllers\\SendCryptoController' => __DIR__ . '/../..' . '/app/Http/Controllers/SendCryptoController.php',
         'App\\Http\\Controllers\\TesteAuth' => __DIR__ . '/../..' . '/app/Http/Controllers/TesteAuth.php',
         'App\\Http\\Controllers\\TradeController' => __DIR__ . '/../..' . '/app/Http/Controllers/TradeController.php',
         'App\\Http\\Controllers\\TransferCryptoController' => __DIR__ . '/../..' . '/app/Http/Controllers/TransferCryptoController.php',
@@ -631,6 +633,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\GuzzleServiceProvider' => __DIR__ . '/../..' . '/app/Providers/GuzzleServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Providers\\TelescopeServiceProvider' => __DIR__ . '/../..' . '/app/Providers/TelescopeServiceProvider.php',
         'App\\Services\\AuthenticationHeaderService' => __DIR__ . '/../..' . '/app/Services/AuthenticationHeaderService.php',
         'App\\Services\\GuzzleService' => __DIR__ . '/../..' . '/app/Services/GuzzleService.php',
         'Arrilot\\Widgets\\AbstractWidget' => __DIR__ . '/..' . '/arrilot/laravel-widgets/src/AbstractWidget.php',

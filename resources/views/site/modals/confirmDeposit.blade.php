@@ -7,7 +7,9 @@
       <div class="modal-content text-center">
           <iframe src="https://lottie.host/embed/f48b50f1-f89d-46c8-acbc-d0994a59c985/UakZdDBVV3.json"></iframe>
           <div class="trocarModel mb-2">
-              <H4 class="text-center">DEPÓSITO (BRL)</H4>
+              <H4 class="text-center">DEPÓSITO (BRL)
+                <img src="/img/icon/brl-icon.png"  width="35">
+              </H4>
           </div>
           <form method="post" action="">
             @csrf
@@ -50,7 +52,7 @@
                 <div class="row m-3">
                     <div class="col-6 d-grid gap-2">
                         <button type="button" id="ConfirmarExchange"
-                            class="btn btnColor WB" onclick="">Pagamento realizado</button>
+                            class="btn btnColor WB" onclick="PaymentComplete()">Pagamento realizado</button>
                     </div>
                     <div class="col-6 d-grid gap-2">
                         <button type="button" class="btn btn-dark WB" data-bs-dismiss="modal"  onclick="closeModalDeposit()">Cancelar</button>
@@ -103,7 +105,9 @@
                    console.log(response)
                    document.getElementById('modalDeposit').style.display = 'block';
                    document.getElementById('depositValue').innerHTML = BRLdeposit;
+                   document.getElementById('textCopy').value = response;
 
+                   
                 },
                 error: function (error) {
                     console.log(error)
@@ -118,6 +122,10 @@
         }
     }
 
+    function PaymentComplete(){
+        location.reload();
+
+    }
   
 
 

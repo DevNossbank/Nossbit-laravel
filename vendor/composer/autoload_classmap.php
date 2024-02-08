@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\AllTradeController' => $baseDir . '/app/Http/Controllers/AllTradeController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
@@ -20,6 +21,7 @@ return array(
     'App\\Http\\Controllers\\Helper\\EncryptionController' => $baseDir . '/app/Http/Controllers/Helper/EncryptionController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\NewFiatWithdrawController' => $baseDir . '/app/Http/Controllers/NewFiatWithdrawController.php',
+    'App\\Http\\Controllers\\SendCryptoController' => $baseDir . '/app/Http/Controllers/SendCryptoController.php',
     'App\\Http\\Controllers\\TesteAuth' => $baseDir . '/app/Http/Controllers/TesteAuth.php',
     'App\\Http\\Controllers\\TradeController' => $baseDir . '/app/Http/Controllers/TradeController.php',
     'App\\Http\\Controllers\\TransferCryptoController' => $baseDir . '/app/Http/Controllers/TransferCryptoController.php',
@@ -43,6 +45,7 @@ return array(
     'App\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'App\\Providers\\GuzzleServiceProvider' => $baseDir . '/app/Providers/GuzzleServiceProvider.php',
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
+    'App\\Providers\\TelescopeServiceProvider' => $baseDir . '/app/Providers/TelescopeServiceProvider.php',
     'App\\Services\\AuthenticationHeaderService' => $baseDir . '/app/Services/AuthenticationHeaderService.php',
     'App\\Services\\GuzzleService' => $baseDir . '/app/Services/GuzzleService.php',
     'Arrilot\\Widgets\\AbstractWidget' => $vendorDir . '/arrilot/laravel-widgets/src/AbstractWidget.php',

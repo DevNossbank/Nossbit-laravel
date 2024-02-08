@@ -8,7 +8,9 @@
 
           <iframe src="https://lottie.host/embed/f48b50f1-f89d-46c8-acbc-d0994a59c985/UakZdDBVV3.json"></iframe>
           <div class="trocarModel mb-2">
-              <H4 class="text-center">SAQUE (BRL)</H4>
+              <H4 class="text-center">SAQUE (BRL)
+                <img src="/img/icon/brl-icon.png"  width="35">
+              </H4>
           </div>
           <form method="post" action="">
             @csrf

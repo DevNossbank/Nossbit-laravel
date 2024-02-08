@@ -83,7 +83,8 @@
             <div class="col-md-6 mt-4 mb-5">
                 <div class="card cardTrade">
                     <div class="card-title">
-                        <h5>SAQUE<h5>
+                        <h5>SAQUE 
+                            <img src="/img/icon/brl-icon.png"  width="35"><h5>
 
                     </div>
                     <div class="card-body bodyCard">

@@ -1,16 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route; 
-use App\Http\Controllers\Helper\EncryptionController;
-use App\Http\Controllers\TesteAuth;
-use App\Http\Middleware\HeaderAuthentication;
 use App\Http\Controllers\CheckBalanceController;
 use App\Http\Controllers\getTradePriceController;
 use App\Http\Controllers\TradeController;
 use App\Http\Controllers\TransferCryptoController;
 use App\Http\Controllers\NewFiatWithdrawController;
 use App\Http\Controllers\GenerateFiatDepositController;
-
+use App\Http\Controllers\SendCryptoController;
 use TCG\Voyager\Facades\Voyager;
 
 
@@ -47,10 +44,6 @@ Route::get('/TransferCrypto', [TransferCryptoController::class, 'transferCrypto'
 
 
 
-Route::get('/negociar', [TesteAuth::class, 'teste'])->middleware('auth')->name('negociar');
-
-
-
 Route::view('/trade', 'site.trade')->middleware('auth')->name('trade');
 
 
@@ -62,7 +55,7 @@ Route::post('/withdrawConfirmation',  [NewFiatWithdrawController::class, 'withdr
 
 Route::post('/deposit',  [GenerateFiatDepositController::class, 'depositMethod']);
 
-
+Route::post('/transferCryptoConfirmation',  [SendCryptoController::class, 'sendMethod']);
 
 
 Route::group(['prefix' => 'admin'], function () {

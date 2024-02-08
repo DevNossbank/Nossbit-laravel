@@ -18,7 +18,17 @@
                     <h4>CARTEIRAS<h4>
                 </div>
                 <div class="card-body bodyCard">
+                   
+                    @isset($userWallet)
 
+                        <h5 class="mt-3">Endereço de depósito:</h5>
+
+                        <hr>
+                        <p class="mt-3"><img src="/img/icon/USDT-icon.png"  width="35"> USDT:</p>
+                         <p>{{ $userWallet }}</p>
+
+                         <hr>
+                    @endisset   
                 </div>
             </div>
         </div>
@@ -36,19 +46,24 @@
                         <div class="input-group mb-3">
 
                             <span class="input-group-text" id="basic-addon1">USDT</span>
-                            <input type="text" class="form-control" name="moedaCrypto" id="valorTrans"
+                            <input type="text" class="form-control" name="moedaCrypto" id="valueSendCrypto"
                                 placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                         <label for="exampleFormControlInput1" class="form-label mt-2">Endereço carteira:</label>
                         <div class="input-group mb-3">
 
-                            <input id="endTrans" type="text" class="form-control" name="walletAddress"
+                            <input type="text" class="form-control" name="walletAddress" id="walletID"
                                 placeholder="Insira o endereço da carteira" aria-label="Username"
                                 aria-describedby="basic-addon1">
                         </div>
                         <center>
-                            <button id="transfer" type="button" class="btn btnColor" name="transferCrypto"
-                                data-bs-toggle="modal" data-bs-target="#exampleModal">Transferir</button>
+                            <button 
+                            type="button" 
+                            class="btn btnColor" 
+                            onclick="openModalTransfer()"
+                            data-bs-toggle="modal" >
+                            Enviar
+                        </button>
                         </center>
                     </form>
 
@@ -146,5 +161,7 @@
 
     </div>
 </div>
+
+@include('site.modals.confirmCryptoTransfer')
 
 @endsection
