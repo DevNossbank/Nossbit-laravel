@@ -32,16 +32,18 @@ class GenerateFiatDepositController extends Controller
             'BRLdeposit' => 'required',
         ]);
 
-        $valeuFromView = $request->input('BRLdeposit');
 
-       // $value = 0;
+        $valueWithoutFormatation = $request->input('BRLdeposit');
+
+        $value = str_replace(',', '', $valueWithoutFormatation);
+
 
         $apiUrl = "https://brasilbitcoin.com.br/caas/generateFiatDepositQrCode";
 
         $headers = $this->authenticationHeaderService->getHeaders();
 
 
-        $body = '{"value": '.$valeuFromView.'}';
+        $body = '{"value": '.$value.'}';
         
         $response = $this->guzzleService->sendRequest('POST', $apiUrl, $body, $headers);
 

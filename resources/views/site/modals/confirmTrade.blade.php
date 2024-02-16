@@ -22,13 +22,13 @@
                           </div>
                           <div class="col-4">
                               <div class="row">
-                                  <div class="col-6">
+                                  <!--<div class="col-6">
                                       <h5 id="cryptoTroca" class="fw-bold"><span id="selectTrocarSubmit"></span></h5>
 
-                                  </div>
-                                  <div class="col-6">
-                                      <h5 id="valorTroca" class="fw-bold text-end">: <span id="TrocarValorSubmit" class="text-end"></span></h5>
-                                  </div>
+                                  </div>-->
+                                  <!--<div class="col-">-->
+                                      <h5 id="valorTroca" class="fw-bold text-end"> <span id="selectTrocarSubmit"></span>: <span id="TrocarValorSubmit" class="text-end"></span></h5>
+                                  <!--</div>-->
                               </div>
 
                           </div>
@@ -46,15 +46,9 @@
                           </div>
                           <div class="col-4">
                               <div class="row">
-                                  <div class="col-4">
-                                      <h5 id="cryptoRecebe" class="fw-bold"><span id="selectReceberSubmit" class="text-end"></span></h5>
-
-                                  </div>
-                                  <div class="col-8">
-                                      <h5 id="valorReceber" class="fw-bold">
-                                         :  <span id="ReceberValorSubmit" class="text-end"></span>
+                                      <h5 id="valorReceber" class="fw-bold text-end">
+                                        <span id="selectReceberSubmit" class="text-end"></span> :  <span id="ReceberValorSubmit" class="text-end"></span>
                                     </h5>
-                                  </div>
                               </div>
 
                           </div>

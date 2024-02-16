@@ -47,7 +47,8 @@
 
                             <span class="input-group-text" id="basic-addon1">USDT</span>
                             <input type="text" class="form-control" name="moedaCrypto" id="valueSendCrypto"
-                                placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1">
+                                placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1"
+                                data-mask='#,##0.00'>
                         </div>
                         <label for="exampleFormControlInput1" class="form-label mt-2">Endereço carteira:</label>
                         <div class="input-group mb-3">
@@ -163,5 +164,8 @@
 </div>
 
 @include('site.modals.confirmCryptoTransfer')
+
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+
 
 @endsection

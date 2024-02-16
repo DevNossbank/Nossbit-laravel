@@ -53,9 +53,9 @@ class TradeController extends Controller
         $request->validate([
             'EXv' => 'required',
             'RCv' => 'required',
-            'CoinEX'=> 'required',
-            'CoinRC'=> 'required',
-            'Price'=> 'required',
+            'CoinEX'=> 'required|max:255',
+            'CoinRC'=> 'required|max:255',
+            'Price'=> 'required|max:255',
         ]);
 
         $exchangeValue = $request->input('EXv');

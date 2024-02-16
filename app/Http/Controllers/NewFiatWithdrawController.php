@@ -32,18 +32,21 @@ class NewFiatWithdrawController extends Controller
 
         $request->validate([
             'PIXSubmit' => 'required',
-            'BRLwithdrawSubmit' => 'required',
+            'BRLwithdrawSubmit' => 'required|min:1',
         ]);
 
         $pix = $request->input('PIXSubmit');
-        $BRLwithdrawValue = $request->input('BRLwithdrawSubmit');
+        $BRLwithdrawValueWithoutFormatation = $request->input('BRLwithdrawSubmit');
+
+        $value = str_replace(',', '', $BRLwithdrawValueWithoutFormatation);
+
 
         $apiUrl = "https://brasilbitcoin.com.br/caas/newFiatWithdraw";
 
         $headers = $this->authenticationHeaderService->getHeaders();
 
 
-        $body = '{"value": '.$BRLwithdrawValue.',  "pixKey": "'.$pix.'" }';
+        $body = '{"value": '.$value.',  "pixKey": "'.$pix.'" }';
         
         $response = $this->guzzleService->sendRequest('POST', $apiUrl, $body, $headers);
 

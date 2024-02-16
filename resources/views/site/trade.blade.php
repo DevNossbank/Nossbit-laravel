@@ -36,7 +36,8 @@
                                 <div class="col-9">
                                     <div class="input-group mb-3">
                                         <input type="text" id="ExchangeValue" class="form-control" name="ExchangeValue"
-                                            placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1">
+                                            placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1"
+                                            data-mask='#,##0.00'>
                                     </div>
                                 </div>
                                 <div class="col-3">
@@ -63,7 +64,8 @@
                                 <div class="col-9">
                                     <div class="input-group mb-3">
                                         <input type="text" id="ReceiptValue" class="form-control" name="ReceiptValue"
-                                            placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1">
+                                            placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1"
+                                            readonly>
                                     </div>
 
                                 </div>
@@ -104,6 +106,9 @@
         @endif 
        </div>
     </div>
+
+    <script src="https://jsuites.net/v4/jsuites.js"></script>
+
 
     <!--Tirar daqui depois-->
     <script>

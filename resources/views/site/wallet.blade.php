@@ -60,7 +60,8 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">R$</span>
                                 <input type="text" class="form-control" id="BRLdeposit" name="BRLdeposit" placeholder="0.00"
-                                    aria-label="Username" aria-describedby="basic-addon1">
+                                    aria-label="Username" aria-describedby="basic-addon1"
+                                    data-mask='#,##0.00'>
                             </div>
                             <br><br>
                             <center>
@@ -93,7 +94,8 @@
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">R$</span>
                                 <input type="text" class="form-control" id="BRLwithdraw" placeholder="0,00"
-                                    aria-label="Username" aria-describedby="basic-addon1">
+                                    aria-label="Username" aria-describedby="basic-addon1"
+                                    data-mask='#,##0.00'>
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">Chave PIX</span>
@@ -211,5 +213,6 @@
 
 @include('site.modals.confirmWithdraw')
 
+<script src="https://jsuites.net/v4/jsuites.js"></script>
 
 @endsection

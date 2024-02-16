@@ -50,14 +50,17 @@ class getTradePriceController extends Controller
     {
         $request->validate([
             'valor' => 'required',
-            'cryptoExchange' => 'required',
-            'cryptoReceipt'=> 'required'
+            'cryptoExchange' => 'required|max:255',
+            'cryptoReceipt'=> 'required|max:255'
         ]);
         $cryptoExchange = $request->input('cryptoExchange');
         $cryptoReceipt = $request->input('cryptoReceipt');
 
+        //$value = $request->input('valor');
 
-        $value = $request->input('valor');
+        $valueWithoutFormatation = $request->input('valor');
+
+        $value = str_replace(',', '', $valueWithoutFormatation);
 
         $side = $this->determineOperation($cryptoExchange);
         
