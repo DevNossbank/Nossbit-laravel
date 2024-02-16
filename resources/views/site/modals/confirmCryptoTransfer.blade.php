@@ -50,13 +50,13 @@
 
                             <h5 class="fw-bold mt-4">Para prosseguir com a transação, confirme abaixo: </h5>
                             <div class="form-check mt-1">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" value="" id="checkbox1">
                                 <label class="form-check-label" for="flexCheckDefault">
                                         Certifico que conferi o endereço de carteira inserido.
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="fleCheckDefault">
+                                <input class="form-check-input" type="checkbox" value="" id="checkbox2">
                                 <label class="form-check-label" for="flexCheckDefault">
                                         Certifico que os envios são irreversíveis e dados inseridos incorretamente podem causar perdas.
                                 </label>
@@ -120,36 +120,46 @@
         var Value = valueSendCryptoSubmit;
         var Wallet = walletIDSubmit;
 
-       try{
-            $.ajax({
-                type: 'POST',
-                url: '/transferCryptoConfirmation',
-                data: {
-                    Value: Value,
-                    Wallet: Wallet,
-                    _token: $('meta[name="csrf-token"]').attr('content')
-                },
-                success: function (response) {
-                    console.log(response);
-                    if(response == 1){
-                        alert('Transferencia efetuada com sucesso');
-                        location.reload();
-                    }else{
-                        alert('Algo deu errado, por favor tente novamente.')
+        let checkbox = document.getElementById('checkbox1');
+        let checkbox2 = document.getElementById('checkbox2');
+
+
+        if(checkbox.checked  && checkbox2.checked){
+                try{
+                $.ajax({
+                    type: 'POST',
+                    url: '/transferCryptoConfirmation',
+                    data: {
+                        Value: Value,
+                        Wallet: Wallet,
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        console.log(response);
+                        if(response == 1){
+                            alert('Transferencia efetuada com sucesso');
+                            location.reload();
+                        }else{
+                            alert('Algo deu errado, por favor tente novamente.')
+                            location.reload();
+                        }
+                    
+                    },
+                    error: function (error) {
+                        console.error(error);
+                        alert('Tente novamente mais tarde');
                         location.reload();
                     }
-                
-                },
-                error: function (error) {
-                    console.error(error);
-                    alert('Tente novamente mais tarde');
-                    location.reload();
-                }
-            });
+                });
+            }
+            catch(error){
+                location.reload();
+            }
+        }else{
+            
         }
-        catch(error){
-            location.reload();
-        }
+
+       
     }
 
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Services\GuzzleService;
 use App\Http\Controllers\Helper\EncryptionController;
 use App\Services\AuthenticationHeaderService;
+use Exception;
 
 class TransferCryptoController extends Controller
 {
@@ -77,13 +78,18 @@ class TransferCryptoController extends Controller
 
         $data = json_decode($content, true);
 
-       // return $content;
-
        if (is_array($data) && count($data) > 0) {
         
+        try{
             $USDT=$data['USDT'][0]['address'];
 
             return $USDT;
+        }
+        catch(Exception $e) {
+            $USDT = $this->createAnUserWallet();
+
+            return $USDT;
+        }
           
         }
     
@@ -96,7 +102,19 @@ class TransferCryptoController extends Controller
 
         $headers = $this->authenticationHeaderService->getHeaders();
 
-       // $response = $this->
+        $response = $this->guzzleService->sendRequest('GET', $apiUrl, $body, $headers);
+
+        $content = $response->getBody()->getContents();
+
+        $data = json_decode($content, true);
+
+        if ($data['success']) {
+            $adress = $data['data']['address'];
+
+            return $adress;
+       } else {
+            return response()->json(['error' => 'Erro ao criar carteira.']);
+        }
 
     }
 
