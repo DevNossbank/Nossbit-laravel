@@ -33,13 +33,26 @@
                             </thead>
                             <tbody>
                             <tr>
+                                <td>BRL</td>
+                                <td>{{ $saldo['BRL']['available'] }}</td>
+                            </tr>
+                            <tr>
                                 <td>USDT</td>
                                 <td>{{ $saldo['USDT']['available'] }}</td>
                             </tr>
                             <tr>
-                                <td>BRL</td>
-                                <td>{{ $saldo['BRL']['available'] }}</td>
+                                <td>BTC</td>
+                                <td>{{ $saldo['BTC']['available'] }}</td>
                             </tr>
+                            <tr>
+                                <td>ETH</td>
+                                <td>{{ $saldo['ETH']['available'] }}</td>
+                            </tr>
+                            <tr>
+                                <td>SOL</td>
+                                <td>{{ $saldo['SOL']['available'] }}</td>
+                            </tr>
+
                             </tbody>
                         </table>
                     @endisset    

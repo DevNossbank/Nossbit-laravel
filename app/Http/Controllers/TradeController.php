@@ -82,6 +82,7 @@ class TradeController extends Controller
 
 
         $body = '{"market": "'.$market.'","amount": '.$value.', "side": "'.$side.'","price": '.$priceForTrade.'}';
+
         $response = $this->guzzleService->sendRequest('POST', $apiUrl, $body, $headers);
 
         $content = $response->getBody()->getContents();

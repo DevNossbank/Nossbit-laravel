@@ -43,9 +43,14 @@
                                 <div class="col-3">
                                     <div class="select">
                                         <select class="selectTrocar" id="selectExchangeCoin">
-                                            <option value="">Crypto</option>
-                                            <option value="USDT" data-image="img/icon/USDT-icon.png">USDT</option>
+                                            <option value="">Select</option>
+
                                             <option value="BRL">BRL</option>
+                                            <option value="USDT">USDT</option>
+                                            <option value="BTC">BTC</option>
+                                            <option value="ETH">ETH</option>
+                                            <option value="SOL">SOL</option>
+
                                         </select>
                                         <div class="select_arrow">
                                         </div>
@@ -72,9 +77,12 @@
                                 <div class="col-3">
                                     <div class="select">
                                         <select id="selectReceipt">
-                                            <option value="">Crypto</option>
+                                            <option value="">Select</option>
                                             <option value="BRL">BRL</option>
                                             <option value="USDT">USDT</option>
+                                            <option value="BTC">BTC</option>
+                                            <option value="ETH">ETH</option>
+                                            <option value="SOL">SOL</option>
                                         </select>
                                         <div class="select_arrow">
                                         </div>
@@ -112,31 +120,34 @@
 
     <!--Tirar daqui depois-->
     <script>
-        document.getElementById('selectExchangeCoin').addEventListener('change', function () {
-            var selectedValue = this.value;
+ // Seleciona os elementos
+var selectExchangeCoin = document.getElementById('selectExchangeCoin');
+var selectReceipt = document.getElementById('selectReceipt');
 
-            var selectReceber = document.getElementById('selectReceipt');
-            for (var i = 0; i < selectReceber.options.length; i++) {
-                if (selectReceber.options[i].value === selectedValue) {
-                    selectReceber.options[i].disabled = true;
-                } else {
-                    selectReceber.options[i].disabled = false;
-                }
-            }
-        });
+// Função para ajustar as opções
+function adjustOptions(selectedValue, selectElement) {
+    var options = selectElement.options;
+    for (var i = 0; i < options.length; i++) {
+        if (selectedValue === 'BRL' && options[i].value !== 'BRL') {
+            options[i].disabled = false;
+        } else if (selectedValue !== 'BRL' && options[i].value === 'BRL') {
+            options[i].disabled = false;
+        } else {
+            options[i].disabled = true;
+        }
+    }
+}
 
-        document.getElementById('selectReceipt').addEventListener('change', function () {
-            var selectedValue = this.value;
-            var selectTrocar = document.getElementById('selectExchangeCoin');
-            for (var i = 0; i < selectTrocar.options.length; i++) {
-                if (selectTrocar.options[i].value === selectedValue) {
-                    selectTrocar.options[i].disabled = true;
-                } else {
-                    selectTrocar.options[i].disabled = false;
-                }
-            }
-        });
-    </script>
+// Adiciona os listeners de evento
+selectExchangeCoin.addEventListener('change', function() {
+    adjustOptions(this.value, selectReceipt);
+});
+
+selectReceipt.addEventListener('change', function() {
+    adjustOptions(this.value, selectExchangeCoin);
+});
+
+   </script>
     <script type="module" src=" {{ asset('js/trade.js') }}"></script>
     @include('site.modals.confirmTrade')
 @endsection
