@@ -120,32 +120,31 @@
 
     <!--Tirar daqui depois-->
     <script>
- // Seleciona os elementos
-var selectExchangeCoin = document.getElementById('selectExchangeCoin');
-var selectReceipt = document.getElementById('selectReceipt');
+        // Seleciona os elementos
+        var selectExchangeCoin = document.getElementById('selectExchangeCoin');
+        var selectReceipt = document.getElementById('selectReceipt');
 
-// Função para ajustar as opções
-function adjustOptions(selectedValue, selectElement) {
-    var options = selectElement.options;
-    for (var i = 0; i < options.length; i++) {
-        if (selectedValue === 'BRL' && options[i].value !== 'BRL') {
-            options[i].disabled = false;
-        } else if (selectedValue !== 'BRL' && options[i].value === 'BRL') {
-            options[i].disabled = false;
-        } else {
-            options[i].disabled = true;
+        // Função para ajustar as opções
+        function adjustOptions(selectedValue, selectElement) {
+            var options = selectElement.options;
+            for (var i = 0; i < options.length; i++) {
+                if (selectedValue === 'BRL' && options[i].value !== 'BRL') {
+                    options[i].disabled = false;
+                } else if (selectedValue !== 'BRL' && options[i].value === 'BRL') {
+                    options[i].disabled = false;
+                } else {
+                    options[i].disabled = true;
+                }
+            }
         }
-    }
-}
 
-// Adiciona os listeners de evento
-selectExchangeCoin.addEventListener('change', function() {
-    adjustOptions(this.value, selectReceipt);
-});
+        selectExchangeCoin.addEventListener('change', function() {
+            adjustOptions(this.value, selectReceipt);
+        });
 
-selectReceipt.addEventListener('change', function() {
-    adjustOptions(this.value, selectExchangeCoin);
-});
+        selectReceipt.addEventListener('change', function() {
+            adjustOptions(this.value, selectExchangeCoin);
+        });
 
    </script>
     <script type="module" src=" {{ asset('js/trade.js') }}"></script>

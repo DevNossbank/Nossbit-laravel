@@ -27,7 +27,7 @@ function tradePrice(){
 
     console.log(valor + ",  + "+cryptoExchange+ ",  + "+cryptoReceipt);
 
-    if (valor != "" && cryptoExchange!= "" && cryptoReceipt!="") {
+    if (valor != "" && cryptoReceipt!=null && cryptoExchange!="" ) {
         $.ajax({
             type: 'POST',
             url: '/tradeAPI',
