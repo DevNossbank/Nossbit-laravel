@@ -33,23 +33,23 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>BRL</td>
+                                <td>BRL  <img src="/img/icon/brl-icon.png"  width="30"> </td>
                                 <td>{{ $saldo['BRL']['available'] }}</td>
                             </tr>
                             <tr>
-                                <td>USDT</td>
+                                <td>USDT<img src="/img/icon/USDT-icon.png"  width="30"> </td>
                                 <td>{{ $saldo['USDT']['available'] }}</td>
                             </tr>
                             <tr>
-                                <td>BTC</td>
+                                <td>BTC <img src="/img/icon/btc-icon.png"  width="30"> </td>
                                 <td>{{ $saldo['BTC']['available'] }}</td>
                             </tr>
                             <tr>
-                                <td>ETH</td>
+                                <td>ETH <img src="/img/icon/ETH-icon.png"  width="30"> </td>
                                 <td>{{ $saldo['ETH']['available'] }}</td>
                             </tr>
                             <tr>
-                                <td>SOL</td>
+                                <td>SOL <img src="/img/icon/sol-icon.png"  width="30"> </td>
                                 <td>{{ $saldo['SOL']['available'] }}</td>
                             </tr>
 
@@ -70,6 +70,7 @@
                     </div>
                     <div class="card-body bodyCard">
                         <form method="post" action="">
+                            @csrf
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">R$</span>
                                 <input type="text" class="form-control" id="BRLdeposit" name="BRLdeposit" placeholder="0.00"
@@ -104,6 +105,7 @@
                     <div class="card-body bodyCard">
 
                         <form method="post" action="">
+                            @csrf
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">R$</span>
                                 <input type="text" class="form-control" id="BRLwithdraw" placeholder="0,00"

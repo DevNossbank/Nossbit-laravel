@@ -48,7 +48,9 @@
 
                             </div>
 
-                            <h5 class="fw-bold mt-4">Para prosseguir com a transação, confirme abaixo: </h5>
+                            <hr class="mt-3">
+
+                            <h5 class="fw-bold mt-3">Para prosseguir com a transação, confirme abaixo: </h5>
                             <div class="form-check mt-1">
                                 <input class="form-check-input" type="checkbox" value="" id="checkbox1">
                                 <label class="form-check-label" for="flexCheckDefault">

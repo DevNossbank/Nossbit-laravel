@@ -1,0 +1,36 @@
+
+
+.form-group{
+    color: #dcdbdb !important;
+    
+}
+
+.form-control{
+    background-color: rgba(27, 27, 27, 0.501);
+    color: #dcdbdb !important;
+    /*border-style: none;*/
+    border-color: rgb(244, 204, 62) !important;
+    border-width: 0 0px 2px 0px;  
+
+    width: fit-content;
+
+}
+
+.form-control:hover,.form-control:focus{
+    background-color: rgba(27, 27, 27, 0.918);
+    color: #dcdbdb !important;
+    border-style: none;
+    width: fit-content;
+
+}
+
+.accordion-button{
+    background-color: rgba(0, 0, 0, 0.901) !important;
+    color: white !important;
+}
+
+.accordion-collapse{
+    background-color: rgba(0, 0, 0, 0.901) !important;
+    color: white;
+}
+

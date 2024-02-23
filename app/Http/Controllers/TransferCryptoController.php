@@ -78,25 +78,33 @@ class TransferCryptoController extends Controller
 
         $data = json_decode($content, true);
 
-       if (is_array($data) && count($data) > 0) {
-        
-        try{
-            $USDT=$data['USDT'][0]['address'];
+        $coins = ['ETH', 'USDT','BTC','SOL'];
+        $wallets = [];
 
-            return $USDT;
+        foreach ($coins as $coin) {
+            if (isset($data[$coin]) && count($data[$coin]) > 0) {
+                $wallets[$coin] = [
+                    'coin' => $data[$coin][0]['coin'],
+                    'networkName' => $data[$coin][0]['networkName'],
+                    'address' => $data[$coin][0]['address']
+                ];
+            } else {
+                // Chame o método para criar um novo endereço de carteira
+                $newWallet = $this->createNewAddress($coin);
+                $wallets[$coin] = [
+                    'coin' => $newWallet['coin'],
+                    'networkName' => $newWallet['networkName'],
+                    'address' => $newWallet['address']
+                ];               
+            }
         }
-        catch(Exception $e) {
-            $USDT = $this->createAnUserWallet();
 
-            return $USDT;
-        }
-          
-        }
+        return $wallets;
     
     }
 
-    private function createAnUserWallet(){
-        $apiUrl = "https://brasilbitcoin.com.br/caas/generateNewCryptoAddress";
+    private function createNewAddress($coin){
+        $apiUrl = "https://brasilbitcoin.com.br/caas/generateNewCryptoAddress?coin=".$coin;
 
         $body = '{}';
 
@@ -108,12 +116,16 @@ class TransferCryptoController extends Controller
 
         $data = json_decode($content, true);
 
-        if ($data['success']) {
-            $adress = $data['data']['address'];
-
-            return $adress;
-       } else {
-            return response()->json(['error' => 'Erro ao criar carteira.']);
+        if ($data['success'] && isset($data['data'])) {
+            // Retorne os dados da nova carteira
+            return [
+                'coin' => $data['data']['coin'],
+                'networkName' => $data['data']['networkName'],
+                'address' => $data['data']['address']
+            ];
+        } else {
+            // Trate o erro aqui
+            // ...
         }
 
     }
@@ -125,9 +137,9 @@ class TransferCryptoController extends Controller
 
         $depositsCrypto = $this->getUserCryptoDeposits();
 
-        $userWallet = $this->userWallet();
+        $wallets = $this->userWallet();
 
-        return view('site.transferCrypto', compact('withdrawsCrypto','depositsCrypto','userWallet'));
+        return view('site.transferCrypto', compact('withdrawsCrypto','depositsCrypto','wallets'));
 
     }
 }

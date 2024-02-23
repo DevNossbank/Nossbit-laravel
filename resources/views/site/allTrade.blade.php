@@ -8,11 +8,56 @@
 <link rel="stylesheet" type="text/css" href="/css/buttonGradient.css">
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
 <link rel="stylesheet" type="text/css" href="/css/statusColor.css">
+<link rel="stylesheet" type="text/css" href="/css/filter.css">
+
 
 <div class="container">
 
     <div class="row">
         <h4 class="text-center mt-5">Minhas negociações</h4>
+                    <form method="GET" action="/MyTrades">
+            
+                        <div class="form-group">
+                            <h5 for="coin">Filtrar por mercado:</h5>
+                            <select class="form-control" id="coin" name="coin">
+                                <option value="">Selecione um valor</option>
+                                <option value="USDT">USDT</option>
+                                <option value="ETH">ETH</option>
+                                <option value="BTC">BTC</option>
+                                <option value="SOL">SOL</option>
+            
+                                <!-- ... -->
+                            </select>
+                        </div>
+                        <!--<div class="form-group">
+                            <label for="type">Operação</label>
+                            <select class="form-control" id="type" name="type">
+                             
+                                <option value=""></option>
+                                <option value="buy">Comprar</option>
+                                <option value="sell">Vender</option>
+                                
+                            </select>
+                        </div>-->
+            
+                        <button type="submit" class="btn btn-primary mt-2">Filtrar</button>
+                    </form>
+        </div>          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div class="col-md-12 mt-3 mb-5">
             <div class="card cardTrade">

@@ -20,9 +20,25 @@ class AllTradeController extends Controller
 
     }
 
-    private function getUserTrades()
+    private function getUserTrades($coin = null)
     {
+        $query = [];
+        if ($coin) {
+            $query['coin'] = $coin;
+        }
+       /* if ($type) {
+            $query['type'] = $type;
+        }*/
+
+        //$apiUrl = "https://brasilbitcoin.com.br/caas/getUserTrades".$query;
+
         $apiUrl = "https://brasilbitcoin.com.br/caas/getUserTrades";
+        if (!empty($query)) {
+            $apiUrl .= '?' . http_build_query($query);
+        }
+
+        //$teste = json_encode($query, true);
+
 
         $body = '{}';
 
@@ -44,7 +60,14 @@ class AllTradeController extends Controller
 
     protected function allTrade(Request $request)
     {
-        $trades = $this->getUserTrades();
+        $request->validate([
+            'coin' => 'nullable|in:USDT,ETH,BTC,SOL',
+        ]);
+
+
+        $coin = $request->query('coin');
+
+        $trades = $this->getUserTrades($coin);
 
 
         return view('site.allTrade', compact('trades'));

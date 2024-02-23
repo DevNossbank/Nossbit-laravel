@@ -7,28 +7,38 @@
 <link rel="stylesheet" type="text/css" href="/css/buttonGradient.css">
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
 <link rel="stylesheet" type="text/css" href="/css/statusColor.css">
+<link rel="stylesheet" type="text/css" href="/css/accordion.css">
 
 
 <div class="container">
     <h4 class="text-center mt-4">Transferência entre carteiras de crypto</h4>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mb-4">
             <div class="card cardTrade mt-5">
                 <div class="card-title">
                     <h4>CARTEIRAS<h4>
                 </div>
                 <div class="card-body bodyCard">
-                   
-                    @isset($userWallet)
+                    <h5 class="mt-3">Endereços de depósito:</h5>
 
-                        <h5 class="mt-3">Endereço de depósito:</h5>
-
-                        <hr>
-                        <p class="mt-3"><img src="/img/icon/USDT-icon.png"  width="35"> USDT:</p>
-                         <p>{{ $userWallet }}</p>
-
-                         <hr>
-                    @endisset   
+                    <div class="accordion" id="accordionExample">
+                        @foreach ($wallets as $coin => $wallet)
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $coin }}" aria-expanded="true" aria-controls="collapse{{ $coin }}">
+                                        {{ $coin }} <img src="/img/icon/{{ $coin }}-icon.png"  width="35"> 
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ $coin }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <h5>Rede: {{ $wallet['networkName'] }}</h5>
+                                        <p>Endereço: {{ $wallet['address'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -41,11 +51,35 @@
                 <div class="card-body bodyCard">
 
                     <form method="post" action="">
-                        <label for="exampleFormControlInput1" class="form-label">Valor da Transferência -
-                            USDT:</label>
-                        <div class="input-group mb-3">
+                        @csrf
 
-                            <span class="input-group-text" id="basic-addon1">USDT</span>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Selecione uma moeda:</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Crypto</option>
+                                    <option value="USDT">USDT</option>
+                                    <option value="BTC">BTC</option>
+                                    <option value="ETH">ETH</option>
+                                    <option value="SOL">SOL</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h6>Selecione a rede:</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Rede</option>
+                                    <option value="eth20">Ethereum [ERC-20]</option>
+                                    <option value="bitcoin">Bitcoin</option>
+                                    <option value="solana">Solana</option>
+
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <label for="exampleFormControlInput1" class="form-label mt-4">Valor da Transferência:</label>
+                        <div class="input-group mb-3">
                             <input type="text" class="form-control" name="moedaCrypto" id="valueSendCrypto"
                                 placeholder="0,00" aria-label="Username" aria-describedby="basic-addon1"
                                 data-mask='#,##0.00'>

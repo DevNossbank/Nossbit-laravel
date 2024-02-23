@@ -5,7 +5,7 @@
 <div class="modal" id="modalDeposit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content text-center">
-          <iframe src="https://lottie.host/embed/f48b50f1-f89d-46c8-acbc-d0994a59c985/UakZdDBVV3.json"></iframe>
+          <!--<iframe src="https://lottie.host/embed/f48b50f1-f89d-46c8-acbc-d0994a59c985/UakZdDBVV3.json"></iframe>-->
           <div class="trocarModel mb-2">
               <H4 class="text-center">DEPÓSITO (BRL)
                 <img src="/img/icon/brl-icon.png"  width="35">
@@ -27,6 +27,9 @@
                             <h5 class="fw-bold text-end">BRL <span id="depositValue" class="text-end"></span></h5>
                         </div>
 
+                        <div id="qrCodeContainer" class="justify-content-center text-center align-itens-center mb-3">
+                        </div>
+
                         <hr>
                         <h5 class="mt-3 fw-bold">Pix copia e cola:</h5>
 
@@ -38,7 +41,7 @@
                                 </svg>
                                 <p>COPIAR</p>
                             </button>
-                            <input id="textCopy" class="form-control" type="text" value=""/>
+                            <input id="textCopy" class="form-control" type="text" value="" readonly/>
                         </div>
 
                     </div>
@@ -66,6 +69,7 @@
       </div>
   </div>
 </div>
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 
 <script>
     var BRLdeposit;
@@ -86,6 +90,8 @@
 
     function closeModalDeposit() {
         document.getElementById('modalDeposit').style.display = 'none';
+        location.reload();
+
 
     }
 
@@ -107,7 +113,12 @@
                    document.getElementById('depositValue').innerHTML = BRLdeposit;
                    document.getElementById('textCopy').value = response;
 
-                   
+                   var qrcode = new QRCode(document.getElementById("qrCodeContainer"), {
+                        text: response,
+                        width: 200,
+                        height: 200
+                    });
+                  
                 },
                 error: function (error) {
                     console.log(error)
@@ -130,3 +141,4 @@
 
 
 </script>
+
