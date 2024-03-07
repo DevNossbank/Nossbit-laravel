@@ -25,9 +25,7 @@ function tradePrice(){
 
     var cryptoReceipt = $('#selectReceipt').val();
 
-    console.log(valor + ",  + "+cryptoExchange+ ",  + "+cryptoReceipt);
-
-    if (valor != "" && cryptoReceipt!=null && cryptoExchange!="" ) {
+    if (valor && cryptoReceipt && cryptoExchange && cryptoExchange != "Select" && cryptoReceipt != "Select") {
         $.ajax({
             type: 'POST',
             url: '/tradeAPI',
@@ -40,12 +38,10 @@ function tradePrice(){
             success: function (response) {
                $('#priceValue').text(response[1]);
                $('#ReceiptValue').val(response[0]);
-               console.log(response)
             },
             error: function (error) {
-                console.error(error);
                 alert('Tente novamente mais tarde');
-               // location.reload();
+                location.reload();
             }
         });
     }else{

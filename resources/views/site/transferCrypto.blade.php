@@ -56,8 +56,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <h6>Selecione uma moeda:</h6>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Crypto</option>
+                                <select class="form-select" id="selectTransferCoin" aria-label="Default select example">
+                                    <option value="" selected>Crypto</option>
                                     <option value="USDT">USDT</option>
                                     <option value="BTC">BTC</option>
                                     <option value="ETH">ETH</option>
@@ -67,13 +67,11 @@
 
                             <div class="col-md-6">
                                 <h6>Selecione a rede:</h6>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Rede</option>
+                                <select class="form-select"id="selectTransferNetwork" aria-label="Default select example">
+                                    <option value="" selected>Rede</option>
                                     <option value="eth20">Ethereum [ERC-20]</option>
                                     <option value="bitcoin">Bitcoin</option>
                                     <option value="solana">Solana</option>
-
-
                                 </select>
                             </div>
                         </div>
@@ -200,6 +198,40 @@
 @include('site.modals.confirmCryptoTransfer')
 
 <script src="https://jsuites.net/v4/jsuites.js"></script>
+
+
+<script>
+
+var selectTransferCoin = document.getElementById('selectTransferCoin');
+var selectTransferNetwork = document.getElementById('selectTransferNetwork');
+
+selectTransferNetwork.disabled = true;
+
+var optionsMap = {
+    'USDT': ['Ethereum [ERC-20]'],
+    'BTC': ['Bitcoin'],
+    'ETH': ['Ethereum [ERC-20]'],
+    'SOL': ['Solana'],
+};
+
+selectTransferCoin.addEventListener('change', function() {
+    selectTransferNetwork.disabled = false;
+
+    var options = optionsMap[selectTransferCoin.value];
+    
+    while (selectTransferNetwork.firstChild) {
+        selectTransferNetwork.removeChild(selectTransferNetwork.firstChild);
+    }
+
+    for (var i = 0; i < options.length; i++) {
+        var option = document.createElement('option');
+        option.value = options[i];
+        option.text = options[i];
+        selectTransferNetwork.appendChild(option);
+    }
+});
+
+</script>
 
 
 @endsection

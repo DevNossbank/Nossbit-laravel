@@ -9,14 +9,71 @@
 <link rel="stylesheet" type="text/css" href="/css/select.css">
 
     <div class="container">
-       <div class="row">
-            <div class="col-md-5">
-                <h1 class="display-5">Efetue negociações com o Nossbit!</h1>
-                <h5 class="amarelo">Compre e venda de forma simplificada</h5>
-            </div>
+       <div class="row mt-5 mb-5">
+        <h1 class="display-5">Efetue negociações com o Nossbit!</h1>
+                <h5 class="amarelo mb-5">Compre e venda de forma simplificada</h5>
+
+                <div class="col-md-5 mt-2">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div class="tradingview-widget-container__widget"></div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+                                    {
+                                    "symbols": [
+                                    [
+                                        "BINANCE:USDTBRL|60M"
+                                    ],
+                                    [
+                                        "BINANCE:ETHBRL|60M"
+                                    ],
+                                    [
+                                        "BINANCE:BTCBRL|60M"
+                                    ],
+                                    [
+                                        "BINANCE:SOLBRL|60M"
+                                    ]
+                                    ],
+                                    "chartOnly": true,
+                                    "width": "100%",
+                                    "height": "100%",
+                                    "locale": "br",
+                                    "colorTheme": "dark",
+                                    "autosize": true,
+                                    "showVolume": false,
+                                    "showMA": false,
+                                    "hideDateRanges": false,
+                                    "hideMarketStatus": false,
+                                    "hideSymbolLogo": false,
+                                    "scalePosition": "right",
+                                    "scaleMode": "Normal",
+                                    "fontFamily": "Trebuchet MS, sans-serif",
+                                    "fontSize": "10",
+                                    "noTimeScale": false,
+                                    "valuesTracking": "1",
+                                    "changeMode": "price-and-percent",
+                                    "chartType": "area",
+                                    "maLineColor": "#2962FF",
+                                    "maLineWidth": 1,
+                                    "maLength": 9,
+                                    "backgroundColor": "rgba(0, 0, 0, 0.296)",
+                                    "lineWidth": 2,
+                                    "lineType": 0,
+                                    "dateRanges": [
+                                    "1d|1",
+                                    "1m|30",
+                                    "3m|60",
+                                    "12m|1D",
+                                    "60m|1W"
+                                    ],
+                                    "dateFormat": "MMM dd, yyyy"
+                                }
+                        </script>
+                    </div>
+                <!-- TradingView Widget END -->
+                </div>
             <!------------------------------------------------------------------>
 
-            <div class="col-md-7">
+            <div class="col-md-7 mt-2">
                 <div class="exchange-quadro">
                     <div class="input-group mb-3">
                         <div class="saldo">

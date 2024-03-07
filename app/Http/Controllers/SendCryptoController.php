@@ -19,18 +19,42 @@ class SendCryptoController extends Controller
         $this->authenticationHeaderService = $authenticationHeaderService;
     }
 
+    private function getNetwork($value){
+        $network = '';
+
+        switch ($value) {
+            case 'Solana':
+                $network = 'sol';
+                break;
+            case 'Bitcoin':
+                $network = 'btc';
+                break;
+            case 'Ethereum [ERC-20]':
+                $network = 'eth';
+                break;
+        }
+
+        return $network;
+    }
+
     protected function sendMethod(Request $request)
     {
 
         $request->validate([
             'Value' => 'required|max:255',
             'Wallet' => 'required|min:25',
+            'Coin' => 'required|in:USDT,ETH,BTC,SOL',
+            'Network' => 'required|in:Ethereum [ERC-20],Bitcoin,Solana',
         ]);
 
         $cryptoValueWithoutFormatation = $request->input('Value');
         $walletID = $request->input('Wallet');
+        $coin = $request->input('Coin');
+        $network = $request->input('Network');
 
         $value = str_replace(',', '', $cryptoValueWithoutFormatation);
+
+        $networkForAPI = $this->getNetwork($network);
 
 
         $apiUrl = "https://brasilbitcoin.com.br/caas/sendCrypto";
@@ -38,7 +62,7 @@ class SendCryptoController extends Controller
         $headers = $this->authenticationHeaderService->getHeaders();
 
 
-        $body = '{"address":"'.$walletID.'",  "coin": "USDT", "amount": '.$value.', "network": "eth" }';
+        $body = '{"address":"'.$walletID.'",  "coin": "'.$coin.'", "amount": '.$value.', "network": "'.$networkForAPI.'" }';
 
         $response = $this->guzzleService->sendRequest('POST', $apiUrl, $body, $headers);
 

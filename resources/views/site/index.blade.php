@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="/css/index.css">
 
 <div>
-    <div class="container">
+    <div class="container indexContainer">
         <video autoplay loop muted plays-inline class="background-clip">
             <source src="/img/Video.mp4" type="video/mp4">
         </video>

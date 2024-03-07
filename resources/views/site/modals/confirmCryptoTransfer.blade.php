@@ -14,13 +14,14 @@
                     <div class="textModal text-start">
 
                         <div class="row">
+                            <h5 class="text-end">Rede: <span id="selectTransferNetworkSubmit"></span></h5>
                             <div class="col-8">
                                 <h5 class="fw-bold">Valor Transferência: </h5>
                             </div>
                             <div class="col-4">
                                 <div class="row">
                                     <div class="col-6">
-                                        <h5 id="cryptoTroca" class="fw-bold text-end">USDT<span id="selectTrocarSubmit"></span></h5>
+                                        <h5 id="cryptoTroca" class="fw-bold text-end"><span id="selectTransferCoinSubmit"></span></h5>
 
                                     </div>
                                     <div class="col-6">
@@ -63,6 +64,12 @@
                                         Certifico que os envios são irreversíveis e dados inseridos incorretamente podem causar perdas.
                                 </label>
                             </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="checkbox3">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                        Certifico que conferi a rede selecionada.
+                                </label>
+                            </div>
 
                         </div>
 
@@ -97,13 +104,21 @@
         
         valueSendCryptoSubmit = document.getElementById('valueSendCrypto').value;
         walletIDSubmit = document.getElementById('walletID').value;
+        selectTransferCoinSubmit = document.getElementById('selectTransferCoin').value;
+        selectTransferNetworkSubmit = document.getElementById('selectTransferNetwork').value;
+        selectTransferCoinSubmit = document.getElementById('selectTransferCoin').value;
 
-        if(valueSendCryptoSubmit!="" && walletIDSubmit!=""){
+        
+        if(valueSendCryptoSubmit!="" && walletIDSubmit!="" && selectTransferCoinSubmit!=""&& selectTransferNetworkSubmit!=""){
 
             document.getElementById('modalTransfer').style.display = 'block';
             
             document.getElementById('AmountCrypto').innerHTML = valueSendCryptoSubmit;
             document.getElementById('WalletReceive').innerHTML = walletIDSubmit;
+            document.getElementById('selectTransferCoinSubmit').innerHTML = selectTransferCoinSubmit;
+            document.getElementById('selectTransferNetworkSubmit').innerHTML = selectTransferNetworkSubmit;
+
+
         }
         else{
             //CONFERIR
@@ -121,12 +136,15 @@
     function confirmTransfer(){
         var Value = valueSendCryptoSubmit;
         var Wallet = walletIDSubmit;
+        var Coin = selectTransferCoinSubmit;
+        var Network = selectTransferNetworkSubmit;
 
         let checkbox = document.getElementById('checkbox1');
         let checkbox2 = document.getElementById('checkbox2');
+        let checkbox3 = document.getElementById('checkbox3');
 
 
-        if(checkbox.checked  && checkbox2.checked){
+        if(checkbox.checked  && checkbox2.checked && checkbox3.checked){
                 try{
                 $.ajax({
                     type: 'POST',
@@ -134,6 +152,8 @@
                     data: {
                         Value: Value,
                         Wallet: Wallet,
+                        Coin: Coin,
+                        Network: Network,
                         _token: $('meta[name="csrf-token"]').attr('content')
                     },
                     success: function (response) {
