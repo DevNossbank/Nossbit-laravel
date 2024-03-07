@@ -258,6 +258,7 @@
                                                     @include('voyager::bread.partials.actions', ['action' => $action])
                                                 @endif
                                             @endforeach
+                                            <button class="btn btn-sm btn-primary pull-right edit"> Liberar</button>
                                         </td>
                                     </tr>
                                     @endforeach

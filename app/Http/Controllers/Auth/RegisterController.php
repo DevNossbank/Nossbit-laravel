@@ -8,6 +8,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\EmailController;
+
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -38,7 +41,10 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        
         $this->middleware('guest');
+        
+        
     }
 
     /**
@@ -49,12 +55,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'cpf' => ['required', 'string','cpf', 'unique:users'],
         ]);
+
+        
+        
     }
 
     /**
@@ -65,15 +75,92 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'cpf' => $data['cpf'],
-            'password' => Hash::make($data['password']),
-        ]);
-        
+        //dd($data);
 
+        /*
+ // Redirecionar para a rota de envio de e-mail com os dados necessários
+ return redirect()->route('enviar-email', [
+    'name' => $data['name'],
+    'email' => $data['email'],
+    'cpf' => $data['cpf'],
+    'proof_of_address' => $data['proof_of_address'],
+    'photo_proof' => $data['photo_proof'],
+]);
+
+*/
+//dd($request->all());
+if (request()->hasFile('proof_of_address')) {
+    // Obtenha o arquivo do request
+    $proofOfAddress = request()->file('proof_of_address');
+    
+
+    //dd("Passou papai");
+
+}
+    //$proofOfAddress = $data['proof_of_address'];
+
+    
+
+    // Enviar e-mail de teste
+  //  $proofOfAddress = $data['proof_of_address'];
+    $emailController = new EmailController();
+    /*
+    $emailController->enviarEmailTeste($data, $proofOfAddress);
+    */
+    $emailController->enviarEmailTeste($data, $proofOfAddress);
+
+    $user= User::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'cpf' => $data['cpf'],
+        'password' => Hash::make($data['password']),
+    ]);
+
+    //dd($request->all());
+    //dd("Caralho2");
+    
+
+    return $user;
+       
+        
+        /*Abaixo é o novo*/ 
+    // Criar usuário no banco de dados sem os arquivos
+
+ // Enviar e-mail com informações e arquivos
+/*
+
+ $proofOfAddress = $data['proof_of_address'];
+ $photoProof = $data['photo_proof'];
+
+ $emailController = new EmailController();
+ $emailController->enviarEmailTeste($data, $proofOfAddress, $photoProof);
+ dd($emailController);
+
+ */
+ // Redirecionar para a página inicial ou qualquer página desejada
+
+
+ //return redirect()->route('home');
+
+ 
+/*
+
+
+    $user = User::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'cpf' => $data['cpf'],
+        'password' => Hash::make($data['password']),
+    ]);
+
+    // Armazenar informações do usuário (detalhes adicionais)
+    $userDetails = UserDetails::create([
+        'user_id' => $user->id,
+        // Adicione outros campos de detalhes do usuário conforme necessário
+    ]);
+
+   
+*/
        
     }
 }

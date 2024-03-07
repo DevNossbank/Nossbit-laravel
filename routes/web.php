@@ -10,10 +10,14 @@ use App\Http\Controllers\NewFiatWithdrawController;
 use App\Http\Controllers\GenerateFiatDepositController;
 use App\Http\Controllers\SendCryptoController;
 use TCG\Voyager\Facades\Voyager;
-
-
-
+use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Mail;
+
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -64,23 +68,10 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+/*
 
+Route::get('/enviar-email-teste', [EmailController::class, 'enviarEmailTeste']);
 
+*/
 
-
-Route::get('/enviar-email-teste', function () {
-    try {
-        // Substitua 'seu-email@example.com' pelo endereço de e-mail para o qual deseja enviar o teste
-        $recipientEmail = 'fernanda.miranda@nossbank.com.br';
-
-        // Envia o e-mail de teste diretamente na rota
-        Mail::raw('Teste do e-mail deu certo Opa heeee', function ($message) use ($recipientEmail) {
-            $message->to($recipientEmail)
-                ->subject('Assunto nenhum só teste mesmo');
-        });
-
-        return "E-mail de teste enviado para $recipientEmail.";
-    } catch (\Exception $e) {
-        return "Erro ao enviar e-mail de teste: " . $e->getMessage();
-    }
-});
+Route::post('/enviar-email', [EmailController::class, 'enviarEmailTeste'])->name('enviar-email');

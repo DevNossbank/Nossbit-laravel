@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <h3 class="text-center fw-bold">Faça seu Cadastro</h3>
                     <p class="text-center">E desbrave o mundo crypto.</p>
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="row mb-3">
@@ -78,11 +78,26 @@
                             </div>
                         </div>
 
+                        
                         <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirmar senha') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" placeholder='{{ __("Digite sua senha") }}' type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="proof_of_address" class="col-md-4 col-form-label text-md-end">{{ __('Comprovante de Endereço') }}</label>
+                            <div class="col-md-6">
+                                <input id="proof_of_address" enctype="multipart/form-data" type="file" class="form-control" name="proof_of_address" accept="image/*" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="photo_proof" class="col-md-4 col-form-label text-md-end">{{ __('Comprovante de Foto') }}</label>
+                            <div class="col-md-6">
+                                <input id="photo_proof" enctype="multipart/form-data" type="file" class="form-control" name="photo_proof" accept="image/*" required>
                             </div>
                         </div>
 
@@ -93,6 +108,8 @@
                                 </button>
                             </div>
                         </div>
+
+                        
                     </form>
                 </div>
             </div>
