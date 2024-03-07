@@ -68,10 +68,10 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-/*
+
 
 Route::get('/enviar-email-teste', [EmailController::class, 'enviarEmailTeste']);
 
-*/
 
-Route::post('/enviar-email', [EmailController::class, 'enviarEmailTeste'])->name('enviar-email');
+
+//Route::post('/enviar-email', [EmailController::class, 'enviarEmailTeste'])->name('enviar-email');
