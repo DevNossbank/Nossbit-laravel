@@ -1,21 +1,24 @@
 body{
   background-color: #101010;
+  overflow-x: hidden;
 }
 
-.indexContainer{
+
+
+/*.indexContainer{
   height: 85vh;
-}
+}*/
 
 .container{
     width: 100%;
     color: #fff;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
   }
   
   .content{
-    text-align: center;
+    text-align: start;
   }
   
   .content h1{
@@ -25,11 +28,11 @@ body{
   }
   
   .content a{
-    font-size: 23px;
+    font-size: 20px;
     color: #fff;
     text-decoration: none;
     border: 3px solid #f0be41;
-    padding: 15px 25px;
+    padding: 10px 15px;
     border-radius: 50px;
     transition: 0.3s;
   }
@@ -62,6 +65,40 @@ body{
         height: 100%;
     }
   }
+
+  .containerInfoHome {
+    width: 100%;
+    height: fit-content;
+    background: rgb(237, 177, 25);
+    background: linear-gradient(90deg, rgba(237, 177, 25, 1) 30%, rgba(244, 201, 53, 1) 55%, rgba(236, 202, 115, 1) 80%);
+    color: black !important;
+    padding-left: 150px;
+    padding-right: 150px;
+
+}
+
+.containerPossibilites{
+  background: url("/img/index/BG.png") no-repeat;
+  background-size: cover; 
+  background-position: center; 
+  color: white;
+}
+
+.rowInfo{
+    max-width: 90%;
+}
   
   
-  
+.containerLoseTime{
+  background-image: url('/img/index/Marble.png');
+   height: fit-content;
+}
+
+.perguntas{
+  color: #fff;
+}
+
+.accordion{
+  width: 80%;
+  margin: 0 auto
+}
