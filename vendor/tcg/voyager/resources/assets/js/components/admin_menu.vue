@@ -1,5 +1,6 @@
 <template>
     <ul class="nav navbar-nav">
+       
         <li v-for="(item, i) in items" :class="classes(item)">
             <a :target="item.target" :href="item.children.length > 0 ? '#'+item.id+'-dropdown-element' : item.href" :style="'color:'+color(item)" v-bind:data-toggle="item.children.length > 0 ? 'collapse' : false" :aria-expanded="item.children.length > 0 ? String(item.active) : false">
                 <span :class="'icon '+item.icon_class"></span>
@@ -22,6 +23,8 @@ export default {
         }
     },
     methods: {
+
+        
         classes: function(item) {
             var classes = [];
             if (item.children.length > 0) {
@@ -30,7 +33,6 @@ export default {
             if (item.active) {
                 classes.push('active');
             }
-
 
             return classes.join(' ');
         },

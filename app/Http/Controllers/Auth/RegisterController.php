@@ -75,39 +75,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        //dd($data);
+        
 
-        /*
- // Redirecionar para a rota de envio de e-mail com os dados necessários
- return redirect()->route('enviar-email', [
-    'name' => $data['name'],
-    'email' => $data['email'],
-    'cpf' => $data['cpf'],
-    'proof_of_address' => $data['proof_of_address'],
-    'photo_proof' => $data['photo_proof'],
-]);
+/* corrigir essa parte abaixo depois   */
 
-*/
-//dd($request->all());
 if (request()->hasFile('proof_of_address')) {
     // Obtenha o arquivo do request
     $proofOfAddress = request()->file('proof_of_address');
-    
-
-    //dd("Passou papai");
-
-}
-    //$proofOfAddress = $data['proof_of_address'];
-
-    
-
-    // Enviar e-mail de teste
-  //  $proofOfAddress = $data['proof_of_address'];
+    $photoProof = request()->file('photo_proof');
+} 
     $emailController = new EmailController();
-    /*
-    $emailController->enviarEmailTeste($data, $proofOfAddress);
-    */
-    $emailController->enviarEmailTeste($data, $proofOfAddress);
+    $emailController->enviarEmail($data, $proofOfAddress, $photoProof);
 
     $user= User::create([
         'name' => $data['name'],
@@ -115,52 +93,11 @@ if (request()->hasFile('proof_of_address')) {
         'cpf' => $data['cpf'],
         'password' => Hash::make($data['password']),
     ]);
-
-    //dd($request->all());
-    //dd("Caralho2");
     
-
     return $user;
        
         
-        /*Abaixo é o novo*/ 
-    // Criar usuário no banco de dados sem os arquivos
-
- // Enviar e-mail com informações e arquivos
-/*
-
- $proofOfAddress = $data['proof_of_address'];
- $photoProof = $data['photo_proof'];
-
- $emailController = new EmailController();
- $emailController->enviarEmailTeste($data, $proofOfAddress, $photoProof);
- dd($emailController);
-
- */
- // Redirecionar para a página inicial ou qualquer página desejada
-
-
- //return redirect()->route('home');
-
- 
-/*
-
-
-    $user = User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'cpf' => $data['cpf'],
-        'password' => Hash::make($data['password']),
-    ]);
-
-    // Armazenar informações do usuário (detalhes adicionais)
-    $userDetails = UserDetails::create([
-        'user_id' => $user->id,
-        // Adicione outros campos de detalhes do usuário conforme necessário
-    ]);
-
-   
-*/
+    
        
     }
 }

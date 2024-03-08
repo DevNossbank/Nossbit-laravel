@@ -1,3 +1,18 @@
+<style>
+.nav.navbar-nav li:nth-child(1),
+.nav.navbar-nav li:nth-child(2),
+.nav.navbar-nav li:nth-child(4),
+.nav.navbar-nav li:nth-child(5),
+.nav.navbar-nav li:nth-child(6) {
+    display: none!important;
+}
+body{
+    background:black!important;
+}
+.voyager {
+    background-color: black;
+}
+</style>
 <nav class="navbar navbar-default navbar-fixed-top navbar-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -32,6 +47,8 @@
             </ol>
             @show
         </div>
+
+     
         <ul class="nav navbar-nav @if (__('voyager::generic.is_rtl') == 'true') navbar-left @else navbar-right @endif">
             <li class="dropdown profile">
                 <a href="#" class="dropdown-toggle text-right" data-toggle="dropdown" role="button"

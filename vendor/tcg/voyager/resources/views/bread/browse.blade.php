@@ -252,13 +252,20 @@
                                                 @endif
                                             </td>
                                         @endforeach
+                                        
                                         <td class="no-sort no-click bread-actions">
+
+                                        {{-- Abaixo apaguei para demonstração --}}
+
+                                          <!--
                                             @foreach($actions as $action)
                                                 @if (!method_exists($action, 'massAction'))
                                                     @include('voyager::bread.partials.actions', ['action' => $action])
                                                 @endif
                                             @endforeach
-                                            <button class="btn btn-sm btn-primary pull-right edit"> Liberar</button>
+                                        -->
+                                            {{-- Acima apaguei para demonstração --}}
+                                            <button class="btn btn-sm btn-danger pull-right delete"> Liberar Usuário</button>
                                         </td>
                                     </tr>
                                     @endforeach

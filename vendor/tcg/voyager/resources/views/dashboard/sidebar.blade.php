@@ -11,7 +11,12 @@
                             <img src="{{ Voyager::image($admin_logo_img) }}" alt="Logo Icon">
                         @endif
                     </div>
+                    <!-- Abaixo alterado apresentação demonstração -->
+                    <!--
                     <div class="title">{{Voyager::setting('admin.title', 'VOYAGER')}}</div>
+                    -->
+                    <!-- acima alterado apresentação demonstração -->
+                    <div class="title">Nossbit</div>
                 </a>
             </div><!-- .navbar-header -->
 
