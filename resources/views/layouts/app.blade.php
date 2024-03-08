@@ -51,7 +51,7 @@
 
                          @if (Route::has('transferCrypto'))
                          <li class="nav-item">
-                             <a class="nav-link" href="{{ route('transferCrypto') }}">{{ __('Enviar Cryptomoedas') }}</a>
+                             <a class="nav-link" href="{{ route('transferCrypto') }}">{{ __('Enviar Criptomoedas') }}</a>
                          </li>
                           @endif
                     </ul>

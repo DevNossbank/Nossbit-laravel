@@ -8,10 +8,12 @@
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
 <link rel="stylesheet" type="text/css" href="/css/statusColor.css">
 <link rel="stylesheet" type="text/css" href="/css/accordion.css">
+<link rel="stylesheet" type="text/css" href="/css/scroll.css">
+
 
 
 <div class="container">
-    <h4 class="text-center mt-4">Transferência entre carteiras de crypto</h4>
+    <h4 class="text-center mt-4">Transferência entre carteiras de cripto</h4>
     <div class="row">
         <div class="col-md-6 mb-4">
             <div class="card cardTrade mt-5">
@@ -46,7 +48,7 @@
         <div class="col-md-6 mt-5 mb-4">
             <div class="card cardTrade">
                 <div class="card-title">
-                    <h4>ENDEREÇO<h4>
+                    <h4>ENVIAR CRIPTO<h4>
                 </div>
                 <div class="card-body bodyCard">
 

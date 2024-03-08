@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
 <link rel="stylesheet" type="text/css" href="/css/statusColor.css">
 <link rel="stylesheet" type="text/css" href="/css/filter.css">
+<link rel="stylesheet" type="text/css" href="/css/scroll.css">
 
 
 <div class="container">

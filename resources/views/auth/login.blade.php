@@ -3,6 +3,7 @@
 @section('content')
 <link rel="stylesheet" type="text/css" href="/css/generalStyles.css">
 <link rel="stylesheet" type="text/css" href="/css/form.css">
+<link rel="stylesheet" type="text/css" href="/css/scroll.css">
 
 
 <div class="container">

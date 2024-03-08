@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
 <link rel="stylesheet" type="text/css" href="/css/buttonGradient.css">
 <link rel="stylesheet" type="text/css" href="/css/select.css">
+<link rel="stylesheet" type="text/css" href="/css/scroll.css">
+
 
     <div class="container">
        <div class="row mt-5 mb-5">
