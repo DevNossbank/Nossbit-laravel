@@ -12,6 +12,7 @@ use App\Http\Controllers\SendCryptoController;
 use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Auth\RegisterController;
 
 
 
@@ -73,3 +74,5 @@ Route::get('/enviar-email-teste', [EmailController::class, 'enviarEmailTeste'])-
 
 
 //Route::post('/enviar-email', [EmailController::class, 'enviarEmailTeste'])->name('enviar-email');
+
+Route::post('/send-verification-code', [RegisterController::class, 'sendVerificationCode'])->name('send-verification-code');

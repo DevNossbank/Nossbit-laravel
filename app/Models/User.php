@@ -21,7 +21,8 @@ class User extends \TCG\Voyager\Models\User
         'name',
         'email',
         'password',
-        'cpf', // Adicione esta linha para incluir o campo 'cpf'
+        'cpf', 
+        'verification_code',
     ];
 
     /**

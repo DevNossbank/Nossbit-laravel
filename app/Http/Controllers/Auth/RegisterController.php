@@ -9,8 +9,11 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\EmailController;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\VerificationCodeEmail;
 use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -41,10 +44,10 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        
+
         $this->middleware('guest');
-        
-        
+
+
     }
 
     /**
@@ -55,16 +58,17 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        
+
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'cpf' => ['required', 'string','cpf', 'unique:users'],
+            'cpf' => ['required', 'string', 'cpf', 'unique:users'],
+            'verification_code' => ['required', 'string'],
         ]);
 
-        
-        
+
+
     }
 
     /**
@@ -75,29 +79,44 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        
+        if ($data['verification_code'] !== session('verification_code')) {
+            throw new \Exception('O código de verificação inserido é inválido.');
+        }
 
-/* corrigir essa parte abaixo depois   */
+        if (request()->hasFile('proof_of_address')) {
+            $proofOfAddress = request()->file('proof_of_address');
+            $photoProof = request()->file('photo_proof');
+        }
+        $emailController = new EmailController();
+        $emailController->enviarEmail($data, $proofOfAddress, $photoProof);
 
-if (request()->hasFile('proof_of_address')) {
-    // Obtenha o arquivo do request
-    $proofOfAddress = request()->file('proof_of_address');
-    $photoProof = request()->file('photo_proof');
-} 
-    $emailController = new EmailController();
-    $emailController->enviarEmail($data, $proofOfAddress, $photoProof);
+        $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'cpf' => $data['cpf'],
+            'password' => Hash::make($data['password']),
+            'verification_code' => $data['verification_code'],
+        ]);
 
-    $user= User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'cpf' => $data['cpf'],
-        'password' => Hash::make($data['password']),
-    ]);
-    
-    return $user;
-       
-        
-    
-       
+        session()->forget('verification_code');
+
+        return $user;
+    }
+
+    public function sendVerificationCode(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+        ]);
+
+        $verificationCode = Str::random(9);
+        session(['verification_code' => $verificationCode]);
+        session(['email_to_verify' => $request->email]);
+
+        // Enviar e-mail de verificação
+        Mail::to($request->email)->send(new VerificationCodeEmail($verificationCode));
+
+        return response()->json(['message' => 'Código de verificação enviado com sucesso.']);
+
     }
 }

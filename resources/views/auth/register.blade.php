@@ -34,7 +34,6 @@
                         
 
 
-
                         <div class="row mb-3">
                             <label for="cpf" class="col-md-4 col-form-label text-md-end">{{ __('CPF') }}</label>
 
@@ -64,6 +63,33 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <button type="button" class="btn btn-secondary" id="sendVerificationCode">Enviar Código de Verificação</button>
+
+                        <div class="form-group">
+                            <label for="verification_code">Código de Verificação</label>
+                            <input id="verification_code" type="text" class="form-control @error('verification_code') is-invalid @enderror" name="verification_code" required>
+                            @error('verification_code')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Senha') }}</label>
@@ -117,4 +143,33 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('sendVerificationCode').addEventListener('click', function() {
+        var email = document.getElementById('email').value;
+        var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        fetch('/send-verification-code', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': token,
+
+            },
+            body: JSON.stringify({ email: email }),
+        })
+        .then(function(response) {
+            console.log(response)
+            if (response.ok) {
+                alert('Código de verificação enviado para o seu e-mail.');
+            } else {
+                throw new Error('Ocoruureu um erro ao enviar o código de verificação.');
+                console.log(response)
+            }
+        })
+        .catch(function(error) {
+            alert(error.message);
+        });
+    });
+</script>
 @endsection
