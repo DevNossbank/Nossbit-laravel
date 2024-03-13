@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Route;
 class LiberarAcesso extends AbstractAction
 {
     public function getTitle()
-    {
-        
+    { 
         return __('Liberar acesso');
     }
 
@@ -24,7 +23,6 @@ class LiberarAcesso extends AbstractAction
         return 'voyager-lock';
     }
 
-
     public function getPolicy()
     {
         return 'read';
@@ -32,14 +30,16 @@ class LiberarAcesso extends AbstractAction
 
     public function getAttributes()
     {
-        
-        
+        $dataId = $this->data->{$this->data->getKeyName()};
+    
         return [
-            'class'   => 'btn btn-sm btn-success pull-right restore',
-            'data-id' => $this->data->{$this->data->getKeyName()},
-            'id'      => 'restoree-'.$this->data->{$this->data->getKeyName()},
+            'class'    => 'btn btn-sm btn-success pull-right restore',
+            'data-id'  => $dataId,
+            'id'       => 'Liberaracesso'.$dataId,
+            'onclick'  => 'liberarAcesso(event, ' . $dataId . ')', // Adiciona o evento como argumento
         ];
     }
+    
 
     public function getDefaultRoute()
     {
@@ -47,7 +47,7 @@ class LiberarAcesso extends AbstractAction
         
         return route('voyager.'.$this->dataType->slug.'.restore', $this->data->{$this->data->getKeyName()});
 */
-return route('trades');
+        
 
 
         
@@ -60,3 +60,5 @@ return route('trades');
      // Adiciona a função teste() à classe LiberarAcesso
      
 }
+
+

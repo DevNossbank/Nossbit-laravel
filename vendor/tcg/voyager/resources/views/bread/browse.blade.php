@@ -405,3 +405,29 @@
         });
     </script>
 @stop
+<script>
+
+
+function liberarAcesso(event, dataId) {
+    alert(dataId);
+    event.preventDefault(); // Evita o comportamento padrão do link
+
+    // Faz uma requisição Ajax para executar a action
+    $.ajax({
+        url: '/admin/actions/liberar_acesso/' + dataId, // Substitua pela URL correta da sua action
+        type: 'POST',
+        data: {
+            _token: '{{ csrf_token() }}', // Adicione o token CSRF para segurança
+        },
+        success: function(response) {
+            // Lida com a resposta do servidor, se necessário
+            console.log(response);
+        },
+        error: function(xhr, status, error) {
+            // Lida com erros, se necessário
+            console.error(error);
+        }
+    });
+}
+</script>
+
