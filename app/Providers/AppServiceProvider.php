@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
 
+use TCG\Voyager\Facades\Voyager;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -49,6 +51,8 @@ class AppServiceProvider extends ServiceProvider
     
             return true;
         });
+
+        Voyager::addAction(\TCG\Voyager\Actions\LiberarAcesso::class);
     }
 }
 

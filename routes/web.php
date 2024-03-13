@@ -65,10 +65,11 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-
+/*
 
 Route::get('/enviar-email-teste', [EmailController::class, 'enviarEmailTeste']);
-
+*/
+Route::get('/enviar-email-teste', [EmailController::class, 'enviarEmailTeste'])->name('passou-papai');
 
 
 //Route::post('/enviar-email', [EmailController::class, 'enviarEmailTeste'])->name('enviar-email');

@@ -109,6 +109,7 @@
                                     <tr>
                                         @if($showCheckboxColumn)
                                             <td>
+
                                                 <input type="checkbox" name="row_id" id="checkbox_{{ $data->getKey() }}" value="{{ $data->getKey() }}">
                                             </td>
                                         @endif
@@ -257,15 +258,18 @@
 
                                         {{-- Abaixo apaguei para demonstração --}}
 
-                                          <!--
+                                          
                                             @foreach($actions as $action)
                                                 @if (!method_exists($action, 'massAction'))
                                                     @include('voyager::bread.partials.actions', ['action' => $action])
                                                 @endif
                                             @endforeach
-                                        -->
+                                        
+                                        <!--
                                             {{-- Acima apaguei para demonstração --}}
                                             <button class="btn btn-sm btn-danger pull-right delete"> Liberar Usuário</button>
+-->
+
                                         </td>
                                     </tr>
                                     @endforeach

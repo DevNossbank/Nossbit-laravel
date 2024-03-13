@@ -51,23 +51,17 @@
                         <?php $admin_logo_img = Voyager::setting('admin.icon_image', ''); ?>
                         @if($admin_logo_img == '')
 
-                         <!-- Abaixo alterado apresentação demonstração -->
-                        <!--
+                        
                             <img class="img-responsive pull-left flip logo hidden-xs animated fadeIn" src="{{ voyager_asset('images/logo-icon-light.png') }}" alt="Logo Icon">
-                        -->
-                        <img class="img-responsive pull-left flip logo hidden-xs animated fadeIn" width="max-width: 200px!important;" src="http://127.0.0.1:8000/img/icon/WhiteIcon.png" alt="Logo Icon">
-
-                         <!-- acima alterado apresentação demonstração -->
+                        
                         @else
                             <img class="img-responsive pull-left flip logo hidden-xs animated fadeIn" src="{{ Voyager::image($admin_logo_img) }}" alt="Logo Icon">
                         @endif
                         <div class="copy animated fadeIn">
-                            <!-- Abaixo alterado apresentação demonstração -->
-                            <!--
+                            
                             <h1>{{ Voyager::setting('admin.title', 'Voyager') }}</h1>
                             <p>{{ Voyager::setting('admin.description', __('voyager::login.welcome')) }}</p>
-                            -->
-                            <!-- acima alterado apresentação demonstração -->
+                     
                            
                         </div>
                     </div> <!-- .logo-title-container -->

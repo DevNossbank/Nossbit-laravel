@@ -15,7 +15,7 @@ class EmailController extends Controller
        //$dato;
       // dd($photoProof);
         try {
-            $recipientEmail = 'marcosgabrielmirandaflor@gmail.com';
+            $recipientEmail = 'desenvolvimentonossbank@gmail.com';
     
             // Adicione um timestamp ao nome do arquivo
             $timestamp = now()->timestamp;

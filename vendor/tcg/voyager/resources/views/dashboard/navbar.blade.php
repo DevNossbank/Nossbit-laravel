@@ -1,18 +1,4 @@
-<style>
-.nav.navbar-nav li:nth-child(1),
-.nav.navbar-nav li:nth-child(2),
-.nav.navbar-nav li:nth-child(4),
-.nav.navbar-nav li:nth-child(5),
-.nav.navbar-nav li:nth-child(6) {
-    display: none!important;
-}
-body{
-    background:black!important;
-}
-.voyager {
-    background-color: black;
-}
-</style>
+
 <nav class="navbar navbar-default navbar-fixed-top navbar-top">
     <div class="container-fluid">
         <div class="navbar-header">

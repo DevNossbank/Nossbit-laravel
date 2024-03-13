@@ -11,6 +11,7 @@ abstract class AbstractAction implements ActionInterface
     {
         $this->dataType = $dataType;
         $this->data = $data;
+        
     }
 
     public function getDataType()
