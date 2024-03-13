@@ -6,6 +6,9 @@ use App\Http\Controllers\CheckBalanceController;
 use App\Http\Controllers\getTradePriceController;
 use App\Http\Controllers\TradeController;
 use App\Http\Controllers\TransferCryptoController;
+use App\Http\Controllers\DepositController;
+use App\Http\Controllers\WithdrawController;
+
 use App\Http\Controllers\NewFiatWithdrawController;
 use App\Http\Controllers\GenerateFiatDepositController;
 use App\Http\Controllers\SendCryptoController;
@@ -42,6 +45,12 @@ Auth::routes();
 
 
 Route::get('/MyWallet', [CheckBalanceController::class, 'checkBalance'])->middleware('auth')->name('wallet');
+
+Route::get('/Deposit', [DepositController::class, 'depositView'])->middleware('auth')->name('deposit');
+
+Route::get('/Withdraw', [WithdrawController::class, 'withdrawView'])->middleware('auth')->name('withdraw');
+
+
 
 Route::get('/TransferCrypto', [TransferCryptoController::class, 'transferCrypto'])->middleware('auth')->name('transferCrypto');
 

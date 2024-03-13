@@ -45,15 +45,33 @@
 
                         @if (Route::has('wallet'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('wallet') }}">{{ __('Minha carteira') }}</a>
+                            <a class="nav-link" href="{{ route('wallet') }}">{{ __('Meu Saldo') }}</a>
                         </li>
                          @endif
+
+                         @if (Route::has('deposit'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('deposit') }}">{{ __('Depositar') }}</a>
+                        </li>
+                         @endif
+
+                         @if (Route::has('withdraw'))
+                         <li class="nav-item">
+                             <a class="nav-link" href="{{ route('withdraw') }}">{{ __('Sacar') }}</a>
+                         </li>
+                          @endif
 
                          @if (Route::has('transferCrypto'))
                          <li class="nav-item">
                              <a class="nav-link" href="{{ route('transferCrypto') }}">{{ __('Enviar Criptomoedas') }}</a>
                          </li>
                           @endif
+
+                          @if (Route::has('transferCrypto'))
+                          <li class="nav-item">
+                              <a class="nav-link" href="{{ route('transferCrypto') }}">{{ __('Receber Criptomoedas') }}</a>
+                          </li>
+                           @endif
                     </ul>
                    
 
