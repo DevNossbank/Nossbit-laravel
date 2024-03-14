@@ -13,37 +13,15 @@
 
 
 <div class="container">
-    <h4 class="text-center mt-4">Transferência entre carteiras de cripto</h4>
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <div class="card cardTrade mt-5">
-                <div class="card-title">
-                    <h4>CARTEIRAS<h4>
-                </div>
-                <div class="card-body bodyCard">
-                    <h5 class="mt-3">Endereços de depósito:</h5>
 
-                    <div class="accordion" id="accordionExample">
-                        @foreach ($wallets as $coin => $wallet)
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $coin }}" aria-expanded="true" aria-controls="collapse{{ $coin }}">
-                                        {{ $coin }} <img src="/img/icon/{{ $coin }}-icon.png"  width="35"> 
-                                    </button>
-                                </h2>
-                                <div id="collapse{{ $coin }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <h5>Rede: {{ $wallet['networkName'] }}</h5>
-                                        <p>Endereço: {{ $wallet['address'] }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    
-                </div>
-            </div>
+    <div class="row">
+
+        <div class="col-md-6 mt-5 mb-5">
+            <p class="display-5 fw-bold mt-5">Transferir <img src="/img/icon/arrow-swap-horizontal.svg"  width="80"></p>
+            <h5>Envie suas criptos para outras carteiras através da área de transferência, selecionando a moeda e rede, informando valor e definindo endereço da carteira a receber.</h5>
         </div>
+    
+      
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->
         <div class="col-md-6 mt-5 mb-4">
             <div class="card cardTrade">
@@ -94,10 +72,10 @@
                         <center>
                             <button 
                             type="button" 
-                            class="btn btnColor" 
+                            class="btn btnColor mt-2 mb-2" 
                             onclick="openModalTransfer()"
                             data-bs-toggle="modal" >
-                            Enviar
+                            Transferir
                         </button>
                         </center>
                     </form>
