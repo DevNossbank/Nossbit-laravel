@@ -112,4 +112,7 @@
             $('#delete_modal').modal('show');
         });
     </script>
+
+
+
 @stop
