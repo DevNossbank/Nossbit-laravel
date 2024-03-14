@@ -74,11 +74,6 @@
                          </li>
                           @endif
 
-                          @if (Route::has('transferCrypto'))
-                          <li class="nav-item">
-                              <a class="nav-link" href="{{ route('transferCrypto') }}">{{ __('Receber Criptomoedas') }}</a>
-                          </li>
-                           @endif
                     </ul>
                    
 
