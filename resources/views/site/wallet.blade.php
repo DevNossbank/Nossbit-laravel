@@ -2,64 +2,155 @@
 @section('title', 'My Wallet')
 @section('content') 
 <link rel="stylesheet" type="text/css" href="/css/generalStyles.css">
-<link rel="stylesheet" type="text/css" href="/css/card.css">
-<link rel="stylesheet" type="text/css" href="/css/table.css">
-<link rel="stylesheet" type="text/css" href="/css/buttonGradient.css">
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
-<link rel="stylesheet" type="text/css" href="/css/statusColor.css">
 <link rel="stylesheet" type="text/css" href="/css/scroll.css">
+<link rel="stylesheet" type="text/css" href="/css/wallet.css">
+
 
 
 
 <div class="container">
     <div class="row">
-        <h4 class="text-center mt-4">Minha carteira</h4>
-        <div class="col-md-12 mt-3 mb-5">
-            <div class="card cardTrade">
-                <div class="card-title">
-                    <h5>Moedas</h5>
-                    <p>Sua lista de moedas para efetuar trocas e realizar saques</p>
-                </div>
-                <div class="card-body bodyCard">
-                    <!-- Exibição do Saldo --> 
-                  
-
-                    @isset($saldo['USDT'])
-                        <table class="table table-dark">
-                            <thead>
-                            <tr>
-                                <th scope="col">MOEDA</th>
-                                <th scope="col">DISPONÍVEL</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>BRL  <img src="/img/icon/brl-icon.png"  width="30"> </td>
-                                <td>{{ $saldo['BRL']['available'] }}</td>
-                            </tr>
-                            <tr>
-                                <td>USDT<img src="/img/icon/USDT-icon.png"  width="30"> </td>
-                                <td>{{ $saldo['USDT']['available'] }}</td>
-                            </tr>
-                            <tr>
-                                <td>BTC <img src="/img/icon/btc-icon.png"  width="30"> </td>
-                                <td>{{ $saldo['BTC']['available'] }}</td>
-                            </tr>
-                            <tr>
-                                <td>ETH <img src="/img/icon/ETH-icon.png"  width="30"> </td>
-                                <td>{{ $saldo['ETH']['available'] }}</td>
-                            </tr>
-                            <tr>
-                                <td>SOL <img src="/img/icon/sol-icon.png"  width="30"> </td>
-                                <td>{{ $saldo['SOL']['available'] }}</td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    @endisset    
-                </div>
-            </div>
+        <div class="col-md-5">
+            <h4 class="mt-5 display-5 fw-bold">Minha carteira <img src="/img/icon/wallet.svg"  width="50"></h4>
+            <p>Acompanhe o saldo completo de sua carteira por aqui!
+                Sempre atualizado de acordo com sua movimentação.</p>
         </div>
+
+        <div class="col-12 row mt-4 mb-5 d-flex flex-wrap gap-2">
+
+            <div class="col brlsaldo saldoEmMoedas">
+
+                <div class="row padding pt-4">
+                    <div class="col-md-7">
+                        <h3 class="fw-bold">BRL </h3>
+                        <h5>BRL</h5>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="/img/wallet/brlW.svg"  width="73">
+                    </div>
+                </div>
+
+                <hr class="">
+
+                <div class="padding pb-4">
+
+                    <p>Saldo:</p>
+                    <h3>{{ $saldo['BRL']['available'] }}</h3>
+
+                </div>
+
+
+            </div>
+
+            <div class="col usdtsaldo saldoEmMoedas  ">
+
+                <div class="row padding pt-4">
+                    <div class="col-md-7">
+                        <h3 class="fw-bold">USDT </h3>
+                        <h5>USDT</h5>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="/img/wallet/usdtW.svg"  width="57">
+                    </div>
+                </div>
+
+                <hr class="">
+
+                <div class="padding pb-4">
+
+                    <p>Saldo:</p>
+                    <h3>{{ $saldo['USDT']['available'] }}</h3>
+
+                </div>
+
+
+            </div>
+
+            <div class="col solsaldo saldoEmMoedas">
+
+                <div class="row padding pt-4">
+                    <div class="col-md-7">
+                        <h3 class="fw-bold">SOL </h3>
+                        <h5>SOL</h5>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="/img/wallet/solW.svg"  width="57">
+                    </div>
+                </div>
+
+                <hr class="">
+
+                <div class="padding pb-4">
+
+                    <p>Saldo:</p>
+                    <h3>{{ $saldo['SOL']['available'] }}</h3>
+
+                </div>
+
+
+            </div>
+
+            <div class="col btcsaldo saldoEmMoedas">
+
+                <div class="row padding pt-4">
+                    <div class="col-md-7">
+                        <h3 class="fw-bold">BTC </h3>
+                        <h5>BTC</h5>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="/img/wallet/btcW.svg"  width="70">
+                    </div>
+                </div>
+
+                <hr class="">
+
+                <div class="padding pb-4">
+
+                    <p>Saldo:</p>
+                    <h3>{{ $saldo['BTC']['available'] }}</h3>
+
+                </div>
+
+
+            </div>
+
+            <div class="col ethsaldo saldoEmMoedas ">
+
+                <div class="row padding pt-4">
+                    <div class="col-md-7">
+                        <h3 class="fw-bold">ETH </h3>
+                        <h5>ETH</h5>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="/img/wallet/ethW.svg"  width="60">
+                    </div>
+                </div>
+
+                <hr class="">
+
+                <div class="padding pb-4">
+
+                    <p>Saldo:</p>
+                    <h3>{{ $saldo['ETH']['available'] }}</h3>
+
+                </div>
+
+
+            </div>
+
+           
+
+
+
+           
+
+           
+        </div>
+
+        
+        
+       
     </div>
 </div>
           

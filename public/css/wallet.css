@@ -1,0 +1,32 @@
+.saldoEmMoedas{
+    border-radius: 10%;
+   /* margin-left: 10px;*/
+
+}
+
+
+.padding{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.brlsaldo{
+    background-color: #028F37;
+}
+
+.usdtsaldo{
+    background-color: #1A9973;
+
+}
+
+.solsaldo{
+    background-color: #0C192B;
+}
+
+.btcsaldo{
+    background-color: #E57E00;
+}
+
+.ethsaldo{
+    background-color: #5672DE;
+}

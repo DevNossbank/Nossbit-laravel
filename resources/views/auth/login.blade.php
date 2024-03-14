@@ -10,7 +10,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <h3 class="text-center fw-bold">Faça seu Login</h3>
