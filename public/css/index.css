@@ -21,12 +21,26 @@ body{
     text-align: start;
   }
   
-  .content h1{
-    font-size: 95px;
-    color: #fff;
-    margin-bottom: 50px;
+  .txt-baixo-titulo{
+    font-size: 18px;
+    font-weight: 200;
   }
-  
+  .btn-negociar{
+      background: linear-gradient(90deg, rgb(236.94, 177.62, 25.08) 0%, rgb(245.44, 203.91, 56.66) 46.15%, rgb(235.88, 202.14, 115.38) 100%);
+      color: #000;
+      font-weight: 500;
+      letter-spacing: 1.3px;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 20px;
+      color: black;
+      text-decoration: none;
+      border: 3px solid #f0be41;
+      padding: 10px 50px;
+      border-radius: 50px;
+      transition: 0.3s;
+  }
+  /*
   .content a{
     font-size: 20px;
     color: #fff;
@@ -36,7 +50,8 @@ body{
     border-radius: 50px;
     transition: 0.3s;
   }
-  
+  */
+  /*
   .content a:hover{
     background: linear-gradient(90deg,
       rgb(236.94, 177.62, 25.08) 0%,
@@ -44,7 +59,7 @@ body{
       rgb(235.88, 202.14, 115.38) 100%);
     color: #000;
   }
-  
+  */
   .background-clip{
     position: absolute;
     right: 0;
@@ -92,6 +107,11 @@ body{
 .containerLoseTime{
   background-image: url('/img/index/Marble.png');
    height: fit-content;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+.imageInfoHome{
+  max-width: 90%;
 }
 
 .perguntas{
@@ -101,4 +121,10 @@ body{
 .accordion{
   width: 80%;
   margin: 0 auto
+}
+
+@media only screen and (max-width: 768px) {
+  .mockup-celular{
+    margin-top: 20px;
+  }
 }
