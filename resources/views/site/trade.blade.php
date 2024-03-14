@@ -102,7 +102,7 @@
                                 <div class="col-3">
                                     <div class="select">
                                         <select class="selectTrocar" id="selectExchangeCoin">
-                                            <option selected>Select</option>
+                                            <option selected>Selecionar</option>
 
                                             <option value="BRL">BRL</option>
                                             <option value="USDT">USDT</option>
@@ -136,7 +136,7 @@
                                 <div class="col-3">
                                     <div class="select">
                                         <select id="selectReceipt">
-                                            <option selected>Select</option>
+                                            <option selected>Selecionar</option>
                                             <option value="BRL">BRL</option>
                                             <option value="USDT">USDT</option>
                                             <option value="BTC">BTC</option>

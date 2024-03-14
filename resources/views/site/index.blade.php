@@ -16,16 +16,16 @@
 
         <div class="content">
             <div class="row">
-                <div class="col-md-5 mt-5">
+                <div class="col-md-5 my-auto">
 
-                    <h2 class="mt-5 display-4">Compra e venda diversos ativos com segurança.</h2>
-                    <h5>Bitcoin, Ethereum, USDT e entre os mais diversos e populares criptoativos do mercado.</h5>
+                    <h1 class="mt-10 display-5 fw-bold">Compra e venda diversos ativos com segurança.</h1>
+                    <p class="txt-baixo-titulo">Bitcoin, Ethereum, USDT e entre os mais diversos e populares criptoativos do mercado.</p>
                     <br>
-                    <a  href="{{ route('trade') }}">Negociar</a>
+                    <a class="btn-negociar" href="{{ route('trade') }}">Negociar</a>
 
                 </div>
                 <div class="col-md-7">
-                    <img class="img-fluid" src="/img/index/celular.png" />
+                    <img class="img-fluid mockup-celular" src="/img/index/celular.png" />
                     
                 </div>
             </div>
@@ -71,7 +71,7 @@
             <div class="row align-items-center">
                 <div class="col-md-5 text-start mt-5 mb-1 p-4">
                     <h1 class="fw-bold display-5">Não perca tempo e venha para a NOSSBIT</h1>
-                    <h6>Junte-se à revolução financeira com a Nossbit! Cadastre-se agora e tenha acesso a uma plataforma de crypto exchange segura e intuitiva. Explore um mundo de oportunidades no mercado de criptomoedas. Registre-se hoje e comece a investir no seu futuro!</h6>
+                    <p class="txt-baixo-titulo">Junte-se à revolução financeira com a Nossbit! Cadastre-se agora e tenha acesso a uma plataforma de crypto exchange segura e intuitiva. Explore um mundo de oportunidades no mercado de criptomoedas. Registre-se hoje e comece a investir no seu futuro!</p>
                 </div>
                 <div class="col-md-7 mt-5 mb-3 p-4">
                     <img class="imgLoseTime img-fluid " src="/img/index/relogio.png"  />
@@ -81,13 +81,13 @@
     </div>
     <div class="containerPossibilites mt-5">
         <div class="text-center">
-            <h2 class="mt-5 display-6">Com a NOSSBIT você tem</h2>
-            <h2 class="display-6">Infinitas Possibilidades</h2>
+            <h2 class="mt-5 fw-bold display-6">Com a NOSSBIT você tem</h2>
+            <h2 class="display-6 ">Infinitas Possibilidades</h2>
             <img class="imageInfoHome img-fluid" src="/img/index/formasMoedas.png" />           
         </div>
     </div>
     <div class="mt-5 perguntas">
-        <h2 class="mt-5 display-6 text-center">Perguntas Frequentes</h2>
+        <h2 class="mt-6 mb-5 display-6 text-center fw-bold">Perguntas Frequentes</h2>
         <div class="accordion mt-3" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header">

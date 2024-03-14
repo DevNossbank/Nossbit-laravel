@@ -38,6 +38,9 @@ class GuzzleService
     // Retorna a resposta da requisição
     return $response;
 }
+
+
+
 }
 
 
