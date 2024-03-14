@@ -86,7 +86,7 @@
             <img class="imageInfoHome img-fluid" src="/img/index/formasMoedas.png" />           
         </div>
     </div>
-    <div class="mt-5 perguntas">
+    <div class="mt-5 mb-5 perguntas">
         <h2 class="mt-6 mb-5 display-6 text-center fw-bold">Perguntas Frequentes</h2>
         <div class="accordion mt-3" id="accordionExample">
             <div class="accordion-item">
@@ -130,24 +130,24 @@
     <div class="containerInfoHome mt-5">
         <div class="text-center">
             <div class="row">
-                <div class="col-md-12 mb-5 mt-5">
+                <div class="col-md-12 mb-5 mt-5 titulo-experiencia">
                     <h2><b>A experiência mais completa em criptoativos</b></h2>
                     <h6>com total segurança e fluidez para atender o mercado crypto com excelência!</h6>
                 </div>
                 <div class="col-md-3 mb-4 mt-3">
                     <img class="imageInfoHome" src="/img/index/infoHome1.png" />
                     <h5 class="mt-2 mb-2 fw-bold">Verificação de preço de criptoativos em tempo real</h5>
-                    <h6>Consulte em tempo real os preços dos ciptoativos na tela de bloqueio sem executar aplicativo</h6>
+                    <p class="txt-experiencia">Consulte em tempo real os preços dos ciptoativos na tela de bloqueio sem executar aplicativo</p>
                 </div>
                 <div class="col-md-3  mb-4 mt-3">
                     <img class="imageInfoHome" src="/img/index/infoHome2.png"  />
                     <h5 class="mt-2 mb-2 fw-bold">Seguro e fácil de operar</h5>
-                    <h6>Realize suas transações protegidas por tecnologia de ponta. Nossos parceiros são especalistas em segurança e líderes da indústria.</h6>
+                    <p class="txt-experiencia">Realize suas transações protegidas por tecnologia de ponta. Nossos parceiros são especalistas em segurança e líderes da indústria.</p>
                 </div>
                 <div class="col-md-3  mb-5 mt-3">
                     <img class="imageInfoHome" src="/img/index/infoHome3.png"  />
                     <h5 class="mt-2 mb-2 fw-bold">Tendências de criptoativos em tempo real</h5>
-                    <h6>Com um servidor estável e uma equipe de desenvolvimento com foco na agilidade e nas negociações, investir em criptoativos ficou muito mais fácil.</h6>
+                    <p class="txt-experiencia">Com um servidor estável e uma equipe de desenvolvimento com foco na agilidade e nas negociações, investir em criptoativos ficou muito mais fácil.</p>
                 </div>
                 <div class="col-md-3 mb-5 mt-3">
                     <img class="imageInfoHome" src="/img/index/infoHome4.png"  />
