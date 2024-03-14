@@ -13,7 +13,7 @@
     <div class="row">
 
         <div class="col-md-6 mt-5 mb-5">
-            <p class="display-5 fw-bold mt-5">Sacar <img src="/img/icon/money-send.png"  width="50"></p>
+            <p class="display-5 fw-bold mt-5">Sacar <img src="/img/icon/money-send.svg"  width="50"></p>
             <h5>Aqui você pode retirar seu saldo em reais para sua conta de origem, informando quantidade e chave PIX.</h5>
         </div>
 

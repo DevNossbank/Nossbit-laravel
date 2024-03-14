@@ -13,7 +13,7 @@
     <div class="row">
 
         <div class="col-md-6 mt-5 mb-5">
-            <p class="display-5 fw-bold mt-5">Depositar <img src="/img/icon/money-recive.png"  width="50"></p>
+            <p class="display-5 fw-bold mt-5">Depositar <img src="/img/icon/money-recive.svg"  width="50"></p>
             <h5>Aqui você informa o quanto quer depositar em sua conta para efetuar a compra de criptos na plataforma.</h5>
         </div>
 
