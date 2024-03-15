@@ -136,23 +136,23 @@
                 </div>
                 <div class="col-md-3 mb-4 mt-3">
                     <img class="imageInfoHome" src="/img/index/infoHome1.png" />
-                    <h5 class="mt-2 mb-2 fw-bold">Verificação de preço de criptoativos em tempo real</h5>
+                    <h5 class="mt-4 mb-2 fw-bold sub-titulo">Verificação de preço de criptoativos em tempo real</h5>
                     <p class="txt-experiencia">Consulte em tempo real os preços dos ciptoativos na tela de bloqueio sem executar aplicativo</p>
                 </div>
                 <div class="col-md-3  mb-4 mt-3">
                     <img class="imageInfoHome" src="/img/index/infoHome2.png"  />
-                    <h5 class="mt-2 mb-2 fw-bold">Seguro e fácil de operar</h5>
+                    <h5 class="mt-4 mb-2 fw-bold sub-titulo">Seguro e fácil de operar</h5>
                     <p class="txt-experiencia">Realize suas transações protegidas por tecnologia de ponta. Nossos parceiros são especalistas em segurança e líderes da indústria.</p>
                 </div>
                 <div class="col-md-3  mb-5 mt-3">
                     <img class="imageInfoHome" src="/img/index/infoHome3.png"  />
-                    <h5 class="mt-2 mb-2 fw-bold">Tendências de criptoativos em tempo real</h5>
+                    <h5 class="mt-4 mb-2 fw-bold sub-titulo">Tendências de criptoativos em tempo real</h5>
                     <p class="txt-experiencia">Com um servidor estável e uma equipe de desenvolvimento com foco na agilidade e nas negociações, investir em criptoativos ficou muito mais fácil.</p>
                 </div>
                 <div class="col-md-3 mb-5 mt-3">
                     <img class="imageInfoHome" src="/img/index/infoHome4.png"  />
-                    <h5 class="mt-2 mb-2 fw-bold">Ativos virtuais cuidadosamente selecionados</h5>
-                    <h6>Consulte em tempo real os preços dos ciptoativos na tela de bloqueio sem executar aplicativo</h6>
+                    <h5 class="mt-4 mb-2 fw-bold sub-titulo">Ativos virtuais cuidadosamente selecionados</h5>
+                    <p class="txt-experiencia">Consulte em tempo real os preços dos ciptoativos na tela de bloqueio sem executar aplicativo</p>
                 </div>
             </div>
         </div>

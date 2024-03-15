@@ -16,10 +16,11 @@
 
     <div class="row">
 
-        <div class="col-md-6 mt-5 mb-5">
+        <div class="col-md-6 mt-5 mb-5 " style="padding-right:120px;">
             <p class="display-5 fw-bold mt-5">Transferir <img src="/img/icon/arrow-swap-horizontal.svg"  width="80"></p>
-            <h5>Envie suas criptos para outras carteiras através da área de transferência, selecionando a moeda e rede, informando valor e definindo endereço da carteira a receber.</h5>
+            <p>Envie suas criptos para outras carteiras através da área de transferência, selecionando a moeda e rede, informando valor e definindo endereço da carteira a receber.</p>
         </div>
+        
     
       
         <!-------------------------------------------------------------------------------------------------------------------------------------------------------------------->

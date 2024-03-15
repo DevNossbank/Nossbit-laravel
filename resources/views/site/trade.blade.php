@@ -10,10 +10,10 @@
 <link rel="stylesheet" type="text/css" href="/css/scroll.css">
 
 
-    <div class="container">
+    <div class="container trade">
        <div class="row mt-5 mb-5">
-        <h1 class="display-5">Efetue negociações com o Nossbit!</h1>
-                <h5 class="amarelo mb-5">Compre e venda de forma simplificada</h5>
+        <h1 class="txt-bem-vindo">Negociar</h1>
+                <span class="amarelo ">Compre e venda cripto de forma simplificada com a nossa plataforma hoje mesmo!</span>
 
                 <div class="col-md-5 mt-2">
                     <!-- TradingView Widget BEGIN -->
@@ -76,14 +76,13 @@
             <!------------------------------------------------------------------>
 
             <div class="col-md-7 mt-2">
+            
                 <div class="exchange-quadro">
-                    <div class="input-group mb-3">
+                    <div class="input-groupi mb-3">
                         <div class="saldo">
-                            <h4 class="text-center">Saldo</h4>
+                            <p class="text-center txt-saldo">Seu Saldo: R$220,00</p>
                         </div>
-                        <div class="marca">
-                            <h4 class="text-center">NOSSBIT</h4>
-                        </div>
+                        
                     </div>
 
                     <form method="POST" action="{{ route('login') }} " class="formPart">
@@ -104,7 +103,7 @@
                                         <select class="selectTrocar" id="selectExchangeCoin">
                                             <option selected>Selecionar</option>
 
-                                            <option value="BRL">BRL</option>
+                                            <option value="BRL">BRL <img src="http://127.0.0.1:8000/img/index/celular.png" alt="BRL"></option>
                                             <option value="USDT">USDT</option>
                                             <option value="BTC">BTC</option>
                                             <option value="ETH">ETH</option>
@@ -152,12 +151,12 @@
                             <div class="d-grid gap-2 mt-4">
                                 <button 
                                     type="button" 
-                                    class="btn btnColor btn-lg" 
+                                    class="btn btnColor btn-lg btn-efetuar-troca" 
                                     id="exchange" 
                                     name="depositarBRL"
                                     onclick="openModal()"
                                     data-bs-toggle="modal" >
-                                    <b>Efetuar Troca</b>
+                                    EFETUAR TROCA
                                 </button>
                             </div>
 

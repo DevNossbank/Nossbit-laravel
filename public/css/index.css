@@ -89,6 +89,7 @@ body{
     color: black !important;
     padding-left: 150px;
     padding-right: 150px;
+    padding-bottom: 100px;
 
 }
 
@@ -107,8 +108,8 @@ body{
 .containerLoseTime{
   background-image: url('/img/index/Marble.png');
    height: fit-content;
-   padding-top: 20px;
-   padding-bottom: 20px;
+   padding-top: 50px;
+   padding-bottom: 40px;
 }
 .imageInfoHome{
   max-width: 90%;
@@ -120,9 +121,12 @@ body{
   padding-top: 50px;
 }
 .titulo-experiencia{
- padding-bottom: 10px;
+ padding-bottom: 40px;
 }
-.txt
+.txt-experiencia{
+  font-size: 14px;
+  line-height: 17px;
+ }
 
 .accordion{
   width: 80%;

@@ -8,13 +8,14 @@
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
 <link rel="stylesheet" type="text/css" href="/css/statusColor.css">
 <link rel="stylesheet" type="text/css" href="/css/scroll.css">
+<link rel="stylesheet" type="text/css" href="/css/withdraw.css">
 
-<div class="container">
+<div class="container withdraw">
     <div class="row">
 
-        <div class="col-md-6 mt-5 mb-5">
+        <div class="col-md-6 mt-5 mb-5 container-txts">
             <p class="display-5 fw-bold mt-5">Sacar <img src="/img/icon/money-send.svg"  width="50"></p>
-            <h5>Aqui você pode retirar seu saldo em reais para sua conta de origem, informando quantidade e chave PIX.</h5>
+            <p>Aqui você pode retirar seu saldo em reais para sua conta de origem, informando quantidade e chave PIX.</p>
         </div>
 
 
