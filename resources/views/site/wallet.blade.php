@@ -17,7 +17,7 @@
                 Sempre atualizado de acordo com sua movimentação.</p>
         </div>
 
-        <div class="col-12 row mt-4 mb-5 d-flex flex-wrap gap-2">
+        <div class="col-12 row mt-4 mb-5 d-flex flex-wrap gap-2" style="padding-bottom:100px;padding-top:50px;">
 
             <div class="col brlsaldo saldoEmMoedas">
 
