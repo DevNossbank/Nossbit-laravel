@@ -8,13 +8,14 @@
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
 <link rel="stylesheet" type="text/css" href="/css/statusColor.css">
 <link rel="stylesheet" type="text/css" href="/css/scroll.css">
+<link rel="stylesheet" type="text/css" href="/css/deposit.css">
 
-<div class="container">
+<div class="container deposit ">
     <div class="row">
 
-        <div class="col-md-6 mt-5 mb-5">
+        <div class="col-md-6 mt-5 pr-4 mb-5 container-txts">
             <p class="display-5 fw-bold mt-5">Depositar <img src="/img/icon/money-recive.svg"  width="50"></p>
-            <h5>Aqui você informa o quanto quer depositar em sua conta para efetuar a compra de criptos na plataforma.</h5>
+            <p class="baixo-titulo">Aqui você informa o quanto quer depositar em sua conta para efetuar a compra de criptos na plataforma.</p>
         </div>
 
 
