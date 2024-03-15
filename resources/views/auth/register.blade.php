@@ -124,24 +124,43 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="proof_of_address" class="col-md-4 col-form-label text-md-end">{{ __('Comprovante de Endereço') }}</label>
+
+
+                        <div class="row mb-3 mt-5">
+                            <label for="doc_id" class="col-md-4 col-form-label text-md-end">{{ __('Documento de identificação') }}</label>
                             <div class="col-md-6">
-                                <input id="proof_of_address" enctype="multipart/form-data" type="file" class="form-control" name="proof_of_address" accept="image/*" required>
+                                <input id="doc_id" enctype="multipart/form-data" type="file" class="form-control" name="doc_id" accept="image/*" required>
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="photo_proof" class="col-md-4 col-form-label text-md-end">{{ __('Comprovante de Foto') }}</label>
+
+                        <div class="row mb-3 mt-4">
+                            <label for="proof_of_address" class="col-md-4 col-form-label text-md-end">{{ __('Comprovante de residência') }}</label>
                             <div class="col-md-6">
-                                <input id="photo_proof" enctype="multipart/form-data" type="file" class="form-control" name="photo_proof" accept="image/*" required>
+                                <input id="proof_of_address" enctype="multipart/form-data" type="file" class="form-control" name="proof_of_address" accept="image/*" required>
+                                <p class="text-end mt-1"><font color="#B9B9B9">(Até 90 dias após vencimento)</font></p>
                             </div>
                         </div>
+
+                        <div class="row mb-3 mt-3">
+                            <label for="photo_proof" class="col-md-4 col-form-label text-md-end">{{ __('Foto com Documento de Identificação') }}</label>
+                            <div class="col-md-6">
+                                <input id="photo_proof" enctype="multipart/form-data" type="file" class="form-control" name="photo_proof" accept="image/*" required>
+                                <p class="text-end mt-1"><font color="#B9B9B9">(Segurar documento ao lado do rosto)</font></p>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btnColor">
-                                    {{ __('Criar conta') }}
+                                <button type="submit" class="btn btnColor p-2">
+                                    {{ __('Cadastrar') }}
                                 </button>
                             </div>
                         </div>
