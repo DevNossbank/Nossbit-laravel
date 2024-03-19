@@ -8,6 +8,7 @@ use App\Http\Controllers\TradeController;
 use App\Http\Controllers\TransferCryptoController;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\WithdrawController;
+use App\Http\Controllers\ExchangeController;
 
 use App\Http\Controllers\NewFiatWithdrawController;
 use App\Http\Controllers\GenerateFiatDepositController;
@@ -57,7 +58,7 @@ Route::get('/TransferCrypto', [TransferCryptoController::class, 'transferCrypto'
 Route::get('/MyTrades', [AllTradeController::class, 'allTrade'])->middleware('auth')->name('trades');
 
 
-Route::view('/trade', 'site.trade')->middleware('auth')->name('trade');
+Route::get('/trade', [ExchangeController::class, 'exchangeView'])->middleware('auth')->name('trade');
 
 
 Route::post('/tradeAPI', [getTradePriceController::class, 'getTradePrice']);

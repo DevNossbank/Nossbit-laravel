@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Services\GuzzleService;
 use App\Services\AuthenticationHeaderService;
-use Illuminate\Http\Request;
-use App\Traits\MethodsAPI\GetUserFiatDeposits;
+Use App\Traits\MethodsAPI\GetUserBalanceTrait;
 
 
-class DepositController extends Controller
+class ExchangeController extends Controller
 {
-
-    use GetUserFiatDeposits;
+    use GetUserBalanceTrait;
 
     protected $guzzleService;
     protected $authenticationHeaderService;
@@ -23,13 +22,12 @@ class DepositController extends Controller
         $this->authenticationHeaderService = $authenticationHeaderService;
 
     }
-   
-    protected function depositView(Request $request)
+    
+    protected function exchangeView(Request $request)
     {
+        $saldo = $this->getUserBalance();
 
-        $deposits = $this->getUserFiatDeposits();
-
-        return view('site.deposit', compact('deposits'));
+        return view('site.trade', compact('saldo'));
 
     }
 }

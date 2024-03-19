@@ -1,8 +1,0 @@
-1. Criar sistema de Login Cadastro e recuperação de senha
-
-2. Armazenar e construir os controller da autentificação (Pesquisar como podemos deixar essa parte mais segura)
-
-3. Passar todas as view para o Laravel
-
-4. Pensar como implementar as outras logicas
- 

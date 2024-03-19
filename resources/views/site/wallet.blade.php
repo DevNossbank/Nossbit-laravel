@@ -40,6 +40,10 @@
 
                 </div>
 
+                <div class="darkEnd">
+                    <p class="text-center pt-3"><img src="/img/wallet/wallet.svg"  width="20"> Ver endereço</p>
+                </div>
+
 
             </div>
 
@@ -51,7 +55,7 @@
                         <h5>USDT</h5>
                     </div>
                     <div class="col-md-5">
-                        <img src="/img/wallet/usdtW.svg"  width="57">
+                        <img src="/img/wallet/usdtW.svg"  width="73">
                     </div>
                 </div>
 
@@ -64,6 +68,9 @@
 
                 </div>
 
+                <div class="darkEnd">
+                    <p class="text-center pt-3"><img src="/img/wallet/wallet.svg"  width="20"> Ver endereço</p>
+                </div>
 
             </div>
 
@@ -75,7 +82,7 @@
                         <h5>SOL</h5>
                     </div>
                     <div class="col-md-5">
-                        <img src="/img/wallet/solW.svg"  width="57">
+                        <img src="/img/wallet/solW.svg"  width="73">
                     </div>
                 </div>
 
@@ -88,6 +95,9 @@
 
                 </div>
 
+                <div class="darkEnd">
+                    <p class="text-center pt-3"><img src="/img/wallet/wallet.svg"  width="20"> Ver endereço</p>
+                </div>
 
             </div>
 
@@ -99,7 +109,7 @@
                         <h5>BTC</h5>
                     </div>
                     <div class="col-md-5">
-                        <img src="/img/wallet/btcW.svg"  width="70">
+                        <img src="/img/wallet/btcW.svg"  width="73">
                     </div>
                 </div>
 
@@ -112,6 +122,9 @@
 
                 </div>
 
+                <div class="darkEnd">
+                    <p class="text-center pt-3"><img src="/img/wallet/wallet.svg"  width="20"> Ver endereço</p>
+                </div>
 
             </div>
 
@@ -123,7 +136,7 @@
                         <h5>ETH</h5>
                     </div>
                     <div class="col-md-5">
-                        <img src="/img/wallet/ethW.svg"  width="60">
+                        <img src="/img/wallet/ethW.svg"  width="73">
                     </div>
                 </div>
 
@@ -136,21 +149,14 @@
 
                 </div>
 
+                <div class="darkEnd">
+                    <p class="text-center pt-3"><img src="/img/wallet/wallet.svg"  width="20"> Ver endereço</p>
+                </div>
 
             </div>
-
-           
-
-
-
-           
-
            
         </div>
 
-        
-        
-       
     </div>
 </div>
           

@@ -80,7 +80,7 @@
                 <div class="exchange-quadro">
                     <div class="input-groupi mb-3">
                         <div class="saldo">
-                            <p class="text-center txt-saldo">Seu Saldo: R$220,00</p>
+                            <p class="text-center txt-saldo">Seu Saldo: R$ {{ $saldo['BRL']['available'] }}</p>
                         </div>
                         
                     </div>
@@ -117,8 +117,8 @@
                             </div>
 
                             <ul>
-                                <li>Taxa: </li>
-                                <li id="priceValue" data-value="abc">Cotação:</li>
+                                <li>Taxa:</li>
+                                <li id="">Cotação: <span id="priceValue"></span></li>
                             </ul>
 
 

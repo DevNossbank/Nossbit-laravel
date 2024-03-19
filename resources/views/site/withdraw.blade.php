@@ -22,15 +22,20 @@
         <div class="col-md-6 mt-5 mb-4">
                 <div class="card cardTrade">
                     <div class="card-title">
-                        <h5>SAQUE 
-                            <img src="/img/icon/brl-icon.png"  width="35"><h5>
-
+                        <h4>NOVO SAQUE</h4>
                     </div>
                     <div class="card-body bodyCard">
 
+                        <P>Valor de saque disponível:</P>
+                        <img src="/img/icon/brl-icon.png"  width="35"> BRL
+
+                        :
+
+                        R$ {{ $saldo['BRL']['available'] }}
+
                         <form method="post" action="">
                             @csrf
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-3 mt-4">
                                 <span class="input-group-text" id="basic-addon1">R$</span>
                                 <input type="text" class="form-control" id="BRLwithdraw" placeholder="0,00"
                                     aria-label="Username" aria-describedby="basic-addon1"
