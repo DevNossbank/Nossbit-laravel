@@ -10,7 +10,7 @@ class EmailController extends Controller
 {
     public function enviarEmail($data, $proofOfAddress,$photoProof)
     {
-       ///dd($data);
+       //dd($data);
       // $dato=$data['name'];
        //$dato;
       // dd($photoProof);

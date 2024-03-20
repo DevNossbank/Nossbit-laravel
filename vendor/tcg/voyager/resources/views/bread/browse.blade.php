@@ -29,6 +29,7 @@
         @endcan
         @foreach($actions as $action)
             @if (method_exists($action, 'massAction'))
+            
                 @include('voyager::bread.partials.actions', ['action' => $action, 'data' => null])
             @endif
         @endforeach
@@ -409,23 +410,24 @@
 
 
 function liberarAcesso(event, dataId) {
-    alert(dataId);
-    event.preventDefault(); // Evita o comportamento padrão do link
+    //event.preventDefault(); // Evita o comportamento padrão do link
+
+    // Imprime os dados antes de enviar a solicitação
+    console.log('Dados a serem enviados:', dataId);
 
     // Faz uma requisição Ajax para executar a action
     $.ajax({
-        url: '/admin/actions/liberar_acesso/' + dataId, // Substitua pela URL correta da sua action
+        url: '/liberar-acesso',
         type: 'POST',
         data: {
-            _token: '{{ csrf_token() }}', // Adicione o token CSRF para segurança
+            _token: '{{ csrf_token() }}',
+            dataId: dataId, // Adicione o dataId aos dados da solicitação
         },
         success: function(response) {
-            // Lida com a resposta do servidor, se necessário
-            console.log(response);
+            console.log('Resposta do servidor:', response);
         },
         error: function(xhr, status, error) {
-            // Lida com erros, se necessário
-            console.error(error);
+            console.error('Erro na solicitação Ajax:', error);
         }
     });
 }

@@ -17,6 +17,8 @@ use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\LiberarAcessoController;
+
 
 
 
@@ -39,9 +41,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-
-
 
 
 
@@ -86,3 +85,7 @@ Route::get('/enviar-email-teste', [EmailController::class, 'enviarEmailTeste'])-
 //Route::post('/enviar-email', [EmailController::class, 'enviarEmailTeste'])->name('enviar-email');
 
 Route::post('/send-verification-code', [RegisterController::class, 'sendVerificationCode'])->name('send-verification-code');
+
+
+
+Route::get('/liberar-acesso/{userId?}', [LiberarAcessoController::class, 'liberarAcesso'])->name('o-papi');

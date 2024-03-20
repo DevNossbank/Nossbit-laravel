@@ -59,6 +59,7 @@
                                                 <i class="voyager-list"></i> {{ __('voyager::generic.builder') }}
                                             </a>
                                         @endcan
+                                       
                                     </td>
                                 </tr>
                                 @endforeach
