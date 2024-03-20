@@ -17,9 +17,7 @@ use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Auth\RegisterController;
-
-
-
+use App\Http\Controllers\GetCryptoAddress;
 
 
 
