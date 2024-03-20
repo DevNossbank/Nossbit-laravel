@@ -43,18 +43,22 @@ class LiberarAcesso extends AbstractAction
 
     public function getDefaultRoute()
     {
+        
         /*
         
         return route('voyager.'.$this->dataType->slug.'.restore', $this->data->{$this->data->getKeyName()});
 */
-        
+        /*
+return route('o-papi').'/+'.$this->data->{$this->data->getKeyName()};
+*/
+       
 
+return route('o-papi').'/+'.$this->data->{$this->data->getKeyName()};
 
         
-/*
-        return route('enviar-email-teste');
+        /*
+        return route('o-papi');
         */
-        
     }
 
      // Adiciona a função teste() à classe LiberarAcesso
