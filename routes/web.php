@@ -17,11 +17,7 @@ use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Auth\RegisterController;
-
-
-
-
-
+use App\Http\Controllers\GetCryptoAddress;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +66,9 @@ Route::post('/withdrawConfirmation',  [NewFiatWithdrawController::class, 'withdr
 Route::post('/deposit',  [GenerateFiatDepositController::class, 'depositMethod']);
 
 Route::post('/transferCryptoConfirmation',  [SendCryptoController::class, 'sendMethod']);
+
+Route::post('/Wallet',  [GetCryptoAddress::class, 'getWallet']);
+
 
 
 Route::group(['prefix' => 'admin'], function () {

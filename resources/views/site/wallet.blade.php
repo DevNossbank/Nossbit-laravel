@@ -19,13 +19,14 @@
 
         <div class="col-12 row mt-1 mb-5 d-flex flex-wrap gap-2" style="padding-bottom:100px;padding-top:50px;">
 
-            <div class="col brlsaldo saldoEmMoedas">
+            <div class="col brlsaldo borderSaldo">
 
                 <div class="row padding pt-4">
                     <div class="col-md-7">
                         <h4 class="fw-bold" id="token">BRL </h4>
-                        <h5 id="network">BRL</h5>
-                        <p>Rede: BRL</p>
+                        <br>
+                        <br>
+                        <br>
                         <br>
                     </div>
                     <div class="col-md-5">
@@ -42,14 +43,10 @@
 
                 </div>
 
-                <div class="darkEnd">
-                    <p class="text-center pt-3"><img src="/img/wallet/wallet.svg"  width="20"> Ver endereço</p>
-                </div>
-
 
             </div>
 
-            <div class="col usdtsaldo saldoEmMoedas" id="saldoEmMoedas">
+            <div class="col usdtsaldo saldoEmMoedas borderSaldo" id="saldoEmMoedas">
 
                 <div class="row padding pt-4">
                     <div class="col-md-7">
@@ -78,7 +75,7 @@
 
             </div>
 
-            <div class="col solsaldo saldoEmMoedas">
+            <div class="col solsaldo saldoEmMoedas borderSaldo">
 
                 <div class="row padding pt-4">
                     <div class="col-md-7">
@@ -108,7 +105,7 @@
 
             </div>
 
-            <div class="col btcsaldo saldoEmMoedas">
+            <div class="col btcsaldo saldoEmMoedas borderSaldo">
 
                 <div class="row padding pt-4">
                     <div class="col-md-7">
@@ -137,7 +134,7 @@
 
             </div>
 
-            <div class="col ethsaldo saldoEmMoedas ">
+            <div class="col ethsaldo saldoEmMoedas borderSaldo">
 
                 <div class="row padding pt-4">
                     <div class="col-md-7">

@@ -16,9 +16,23 @@
 }
 
 .qrcode{
-    border-left: 0.2px solid #ffffff76;
+   /* border-left: 0.2px solid #ffffff76;*/
 }
 
 .modal-header{
     border-bottom: none;
+}
+
+hr{
+    width: 90% !important;
+}
+
+.addressWallet{
+    color: white !important;
+    background-color: #353434 !important;
+    border: 1px solid #e7e7e7;
+}
+
+.form-check-input {
+    background-color: #353434 !important;
 }
