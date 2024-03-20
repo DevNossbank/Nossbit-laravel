@@ -15,6 +15,10 @@
         <h1 class="txt-bem-vindo">Negociar</h1>
                 <span class="amarelo ">Compre e venda cripto de forma simplificada com a nossa plataforma hoje mesmo!</span>
 
+                @if (Route::has('trades'))
+                <h5><a class="nav-link text-end mt-4" href="{{ route('trades') }}">{{ __('Minhas Negociações') }}</a></h5>
+                @endif 
+
                 <div class="col-md-5 mt-2">
                     <!-- TradingView Widget BEGIN -->
                     <div class="tradingview-widget-container">
@@ -167,9 +171,7 @@
                 </div>
             </div>  
             
-            @if (Route::has('trades'))
-            <h5><u><a class="nav-link text-end mt-4" href="{{ route('trades') }}">{{ __('Ver todas as minhas negociações') }}</a></u></h5>
-        @endif 
+           
        </div>
     </div>
 
