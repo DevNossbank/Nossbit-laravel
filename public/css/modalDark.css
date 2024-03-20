@@ -1,0 +1,24 @@
+.modal-content{
+    background-color: #353434 !important;
+    color: #fff;
+    border: 1px solid;
+    border-color: #fff;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.modal{
+    padding: 0%;
+}
+
+.modal{
+    background-color: #0000007d !important;
+}
+
+.qrcode{
+    border-left: 0.2px solid #ffffff76;
+}
+
+.modal-header{
+    border-bottom: none;
+}

@@ -94,3 +94,8 @@ padding-bottom: 80px;
         height: 400px !important;
     }
 }
+
+.grayButton{
+    background-color: #353434;
+    width: fit-content;
+}

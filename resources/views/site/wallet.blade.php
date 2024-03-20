@@ -17,14 +17,16 @@
                 Sempre atualizado de acordo com sua movimentação.</p>
         </div>
 
-        <div class="col-12 row mt-4 mb-5 d-flex flex-wrap gap-2" style="padding-bottom:100px;padding-top:50px;">
+        <div class="col-12 row mt-1 mb-5 d-flex flex-wrap gap-2" style="padding-bottom:100px;padding-top:50px;">
 
             <div class="col brlsaldo saldoEmMoedas">
 
                 <div class="row padding pt-4">
                     <div class="col-md-7">
-                        <h3 class="fw-bold">BRL </h3>
-                        <h5>BRL</h5>
+                        <h4 class="fw-bold" id="token">BRL </h4>
+                        <h5 id="network">BRL</h5>
+                        <p>Rede: BRL</p>
+                        <br>
                     </div>
                     <div class="col-md-5">
                         <img src="/img/wallet/brlW.svg"  width="73">
@@ -47,12 +49,14 @@
 
             </div>
 
-            <div class="col usdtsaldo saldoEmMoedas  ">
+            <div class="col usdtsaldo saldoEmMoedas" id="saldoEmMoedas">
 
                 <div class="row padding pt-4">
                     <div class="col-md-7">
-                        <h3 class="fw-bold">USDT </h3>
-                        <h5>USDT</h5>
+                        <h4 class="fw-bold" id="token">USDT </h4>
+                        <h5 id="network">USDT</h5>
+                        <p>Rede: Ethereum [ERC-20]</p>
+
                     </div>
                     <div class="col-md-5">
                         <img src="/img/wallet/usdtW.svg"  width="73">
@@ -78,8 +82,11 @@
 
                 <div class="row padding pt-4">
                     <div class="col-md-7">
-                        <h3 class="fw-bold">SOL </h3>
-                        <h5>SOL</h5>
+                        <h4 class="fw-bold" id="token">Solana </h4>
+                        <h5 id="network">SOL</h5>
+                        <p>Rede: SOL</p>
+                        <br>
+
                     </div>
                     <div class="col-md-5">
                         <img src="/img/wallet/solW.svg"  width="73">
@@ -105,8 +112,10 @@
 
                 <div class="row padding pt-4">
                     <div class="col-md-7">
-                        <h3 class="fw-bold">BTC </h3>
-                        <h5>BTC</h5>
+                        <h4 class="fw-bold" id="token">Bitcoin </h4>
+                        <h5 id="network">BTC</h5>
+                        <p>Rede: Bitcoin</p>
+                        <br>
                     </div>
                     <div class="col-md-5">
                         <img src="/img/wallet/btcW.svg"  width="73">
@@ -132,8 +141,9 @@
 
                 <div class="row padding pt-4">
                     <div class="col-md-7">
-                        <h3 class="fw-bold">ETH </h3>
-                        <h5>ETH</h5>
+                        <h4 class="fw-bold" id="token">Ethereum </h4>
+                        <h5 id="network">ETH</h5>
+                        <p>Rede: Ethereum [ERC-20]</p>
                     </div>
                     <div class="col-md-5">
                         <img src="/img/wallet/ethW.svg"  width="73">
@@ -146,6 +156,7 @@
 
                     <p>Saldo:</p>
                     <h3>{{ $saldo['ETH']['available'] }}</h3>
+                 
 
                 </div>
 
@@ -154,6 +165,7 @@
                 </div>
 
             </div>
+
            
         </div>
 
@@ -165,4 +177,6 @@
 
 <script src="https://jsuites.net/v4/jsuites.js"></script>
 
+
+@include('site.modals.viewCryptoAddress')
 @endsection

@@ -51,23 +51,25 @@
 
                             <hr class="mt-3">
 
-                            <h5 class="fw-bold mt-3">Para prosseguir com a transação, confirme abaixo: </h5>
+                            <p>Observação: A NOSSBIT não possui representantes, não promete lucros em investimentos, nem solicita que você realize envios para outras carteiras.
+                            </p>
+                            <h5 class="fw-bold mt-3">Para prosseguir com o saque, você deve: </h5>
                             <div class="form-check mt-1">
                                 <input class="form-check-input" type="checkbox" value="" id="checkbox1">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                        Certifico que conferi o endereço de carteira inserido.
+                                    Certificar-se que o endereço e a rede selecionada estão corretos*.
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkbox2">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                        Certifico que os envios são irreversíveis e dados inseridos incorretamente podem causar perdas.
+                                    Declarar que está ciente de que envios são irreversíveis, e dados inseridos incorretamente podem ocasionar em perdas*.
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="checkbox3">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                        Certifico que conferi a rede selecionada.
+                                    Enviar criptos a terceiros com promessas de retornos podem resultar em perdas*.
                                 </label>
                             </div>
 
