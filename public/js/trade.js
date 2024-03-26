@@ -7,13 +7,13 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('#selectExchangeCoin').on('change', function () {
+    $('#selectExchangeCoin').on('focusout', function () {
        tradePrice();
     });
 });
 
 $(document).ready(function () {
-    $('#selectReceipt').on('change', function () {
+    $('#selectReceipt').on('focusout', function () {
        tradePrice();
     });
 });

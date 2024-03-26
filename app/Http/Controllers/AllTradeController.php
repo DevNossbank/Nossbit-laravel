@@ -26,7 +26,7 @@ class AllTradeController extends Controller
     protected function allTrade(Request $request)
     {
         $request->validate([
-            'coin' => 'nullable|in:USDT,ETH,BTC,SOL',
+            'coin' => 'nullable|in:USDT,ETH,BTC,SOL,USDC,TRX',
         ]);
 
 

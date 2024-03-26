@@ -35,6 +35,15 @@
     background-color: #5672DE;
 }
 
+.usdcsaldo{
+    background-color: #005ec3;
+}
+
+.trxsaldo{
+    background-color: #BD001F;
+}
+
+
 .darkEnd{
     background-color: #000;
     color:#fff;

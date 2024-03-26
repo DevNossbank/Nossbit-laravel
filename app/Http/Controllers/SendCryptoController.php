@@ -19,7 +19,8 @@ class SendCryptoController extends Controller
         $this->authenticationHeaderService = $authenticationHeaderService;
     }
 
-    private function getNetwork($value){
+    private function getNetwork($value)
+    {
         $network = '';
 
         switch ($value) {
@@ -32,6 +33,9 @@ class SendCryptoController extends Controller
             case 'Ethereum [ERC-20]':
                 $network = 'eth';
                 break;
+            case 'Tron':
+                $network = 'trx';
+                break;
         }
 
         return $network;
@@ -43,8 +47,8 @@ class SendCryptoController extends Controller
         $request->validate([
             'Value' => 'required|max:255',
             'Wallet' => 'required|min:25',
-            'Coin' => 'required|in:USDT,ETH,BTC,SOL',
-            'Network' => 'required|in:Ethereum [ERC-20],Bitcoin,Solana',
+            'Coin' => 'required|in:USDT,ETH,BTC,SOL,USDC,TRX',
+            'Network' => 'required|in:Ethereum [ERC-20],Bitcoin,Solana,Tron',
         ]);
 
         $cryptoValueWithoutFormatation = $request->input('Value');
@@ -62,7 +66,7 @@ class SendCryptoController extends Controller
         $headers = $this->authenticationHeaderService->getHeaders();
 
 
-        $body = '{"address":"'.$walletID.'",  "coin": "'.$coin.'", "amount": '.$value.', "network": "'.$networkForAPI.'" }';
+        $body = '{"address":"' . $walletID . '",  "coin": "' . $coin . '", "amount": ' . $value . ', "network": "' . $networkForAPI . '" }';
 
         $response = $this->guzzleService->sendRequest('POST', $apiUrl, $body, $headers);
 
@@ -70,11 +74,11 @@ class SendCryptoController extends Controller
 
         $data = json_decode($content, true);
 
-       if ($data['success']) {
+        if ($data['success']) {
             $success = $data['success'];
 
             return $success;
-       } else {
+        } else {
             return response()->json(['error' => 'Erro ao fazer transferencia.']);
         }
 
