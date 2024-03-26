@@ -16,12 +16,25 @@ class LiberarAcessoController extends Controller
     if ($user) {
         // Faça o que for necessário com o usuário, por exemplo, exibindo informações
         $kyc = $user->status_kyc;
-        dd($kyc);
+        if($kyc==null){
+            //dd("Ele é Nulo");
+            
+            $user->status_kyc = "LIBERADO";
+            $user->save();
+            
+            return redirect('admin/users')->with(['message' => 'Acesso liberado com sucesso', 'alert-type' => 'success']);
+
+
+        } 
+        
     } else {
         // O usuário não foi encontrado, trate esse caso adequadamente
         // Por exemplo, pode retornar uma resposta HTTP adequada
         return response()->json(['message' => 'Usuário não encontrado'], 404);
     }
-    var_dump($userId); // Exibe o ID do usuário obtido da URL
+   // var_dump($userId); // Exibe o ID do usuário obtido da URL
 }
 }
+
+
+

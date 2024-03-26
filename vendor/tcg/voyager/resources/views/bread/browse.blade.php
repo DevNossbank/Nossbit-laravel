@@ -260,11 +260,18 @@
                                         {{-- Abaixo apaguei para demonstração --}}
 
                                           
-                                            @foreach($actions as $action)
-                                                @if (!method_exists($action, 'massAction'))
-                                                    @include('voyager::bread.partials.actions', ['action' => $action])
-                                                @endif
-                                            @endforeach
+                                        @foreach($actions as $action)
+    {{-- Verifica se a propriedade 'status_kyc' está presente --}}
+    @if (isset($action->data))
+        {{-- Faça algo com a propriedade 'status_kyc' --}}
+        <p>Status KYC: {{ $action->data }}</p>
+    @else
+        {{-- Faça algo se 'status_kyc' não estiver presente --}}
+        <p>Status KYC não encontrado</p>
+    @endif
+@endforeach
+
+
                                         
                                         <!--
                                             {{-- Acima apaguei para demonstração --}}
