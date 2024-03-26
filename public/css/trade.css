@@ -96,6 +96,46 @@ padding-bottom: 80px;
 }
 
 .grayButton{
+    border: 0.2px solid #fecf00;
+}
+
+
+.img-flag
+{
+	width:25px
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    border: 1px solid #ffa706 !important;
+    background: #191818;
+    border-radius: 5px;
+    /*width: 100%;*/
+    width: 100%;
+    padding: 5px;
+    position: relative;
+    display: inline-block;
+    color: #ffffffa8;
+}
+
+.select2-container .select2-selection--single {
+    border-radius: 100px;
     background-color: #353434;
-    width: fit-content;
+    width: 100%;
+
+    border-style: none;
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    display: none;
+}
+
+.select2-search--dropdown {
+    background-color: #191818;
+
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+    max-height: 800px;
+    overflow-y: hidden;
+    background-color: #1F1E1E;
 }
