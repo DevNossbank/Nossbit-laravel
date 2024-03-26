@@ -2,6 +2,11 @@
 @section('title', 'Index')
 @section('content') 
 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+
 <link rel="stylesheet" type="text/css" href="/css/index.css">
 <link rel="stylesheet" type="text/css" href="/css/generalStyles.css">
 <link rel="stylesheet" type="text/css" href="/css/trade.css">
@@ -16,7 +21,7 @@
                 <span class="amarelo ">Compre e venda cripto de forma simplificada com a nossa plataforma hoje mesmo!</span>
 
                 @if (Route::has('trades'))
-                <h5><a class="nav-link text-end mt-4" href="{{ route('trades') }}">{{ __('Minhas Negociações') }}</a></h5>
+                <h5><a class="nav-link text-end mt-4" href="{{ route('trades') }}"><button type="button" class="btn btn-dark grayButton"><img src="/img/receipt-text.svg"  width="25" > {{ __('Minhas Negociações') }}</button></a></h5>
                 @endif 
 
                 <div class="col-md-5 mt-2">
@@ -95,27 +100,27 @@
                         <label for="exampleFormControlInput1" class="form-label">Trocar:</label>
 
                             <div class="row">
-                                <div class="col-9">
+                                <div class="col-8">
                                     <div class="input-group mb-3">
                                         <input type="text" id="ExchangeValue" class="form-control" name="ExchangeValue"
                                             placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1"
                                             data-mask='#,##0.00'>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-4">
                                     <div class="select">
-                                        <select class="selectTrocar" id="selectExchangeCoin">
-                                            <option selected>Selecionar</option>
-
-                                            <option value="BRL">BRL <img src="http://127.0.0.1:8000/img/index/celular.png" alt="BRL"></option>
+                                        <select class="selectTrocar" id="selectExchangeCoin" >
+                                            <option value="" selected>Selecionar</option>
+                                            <option value="BRL">BRL</option>
                                             <option value="USDT">USDT</option>
                                             <option value="BTC">BTC</option>
                                             <option value="ETH">ETH</option>
                                             <option value="SOL">SOL</option>
 
                                         </select>
-                                        <div class="select_arrow">
-                                        </div>
+
+                                        <!--<div class="select_arrow">
+                                        </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +133,7 @@
 
                             <label for="exampleFormControlInput1" class="form-label">Receber:</label>
                             <div class="row">
-                                <div class="col-9">
+                                <div class="col-8">
                                     <div class="input-group mb-3">
                                         <input type="text" id="ReceiptValue" class="form-control" name="ReceiptValue"
                                             placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1"
@@ -136,10 +141,10 @@
                                     </div>
 
                                 </div>
-                                <div class="col-3">
+                                <div class="col-4">
                                     <div class="select">
                                         <select id="selectReceipt">
-                                            <option selected>Selecionar</option>
+                                            <option value="" selected>Selecionar</option>
                                             <option value="BRL">BRL</option>
                                             <option value="USDT">USDT</option>
                                             <option value="BTC">BTC</option>
@@ -177,7 +182,6 @@
 
     <script src="https://jsuites.net/v4/jsuites.js"></script>
 
-
     <!--Tirar daqui depois-->
     <script>
         // Seleciona os elementos
@@ -198,13 +202,67 @@
             }
         }
 
-        selectExchangeCoin.addEventListener('change', function() {
+        function formatState (state) {
+        if (!state.id) {
+            return state.text;
+        }
+        var baseUrl = "img/icon"; //Na pasta em questão adicione as imagens. Cada imagem deverá ter o nome igual ao value correspodente no option
+        var $state = $(
+            '<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '-icon.png" class="img-flag" /> ' + state.text + '</span>'
+        );
+        return $state;
+        };
+
+     
+
+        $("#selectExchangeCoin").on('change', function() {
             adjustOptions(this.value, selectReceipt);
+        }).select2({
+            templateResult: formatState
         });
 
-        selectReceipt.addEventListener('change', function() {
+        $("#selectReceipt").on('change', function() {
+            adjustOptions(this.value, selectExchangeCoin);
+        }).select2({
+            templateResult: formatState
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+  /* $("#selectExchangeCoin").select2({
+		templateResult: formatState
+	});*/
+       
+
+
+       /* selectExchangeCoin.addEventListener('change', function() {
+         
+
+            adjustOptions(this.value, selectReceipt);
+
+        
+        
+        });*/
+        /*selectReceipt.addEventListener('change', function() {
             adjustOptions(this.value, selectExchangeCoin);
         });
+
+        $("#selectReceipt").select2({
+		templateResult: formatState
+	});*/
 
    </script>
     <script type="module" src=" {{ asset('js/trade.js') }}"></script>

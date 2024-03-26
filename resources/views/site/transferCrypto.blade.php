@@ -1,16 +1,23 @@
 @extends('layouts.app')
 @section('title', 'My Wallet')
 @section('content') 
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+
+
+
 <link rel="stylesheet" type="text/css" href="/css/generalStyles.css">
 <link rel="stylesheet" type="text/css" href="/css/card.css">
 <link rel="stylesheet" type="text/css" href="/css/table.css">
 <link rel="stylesheet" type="text/css" href="/css/buttonGradient.css">
-<link rel="stylesheet" type="text/css" href="/css/trade.css">
+<link rel="stylesheet" type="text/css" href="/css/transferCrypto.css">
 <link rel="stylesheet" type="text/css" href="/css/statusColor.css">
 <link rel="stylesheet" type="text/css" href="/css/accordion.css">
 <link rel="stylesheet" type="text/css" href="/css/scroll.css">
-
-
 
 <div class="container">
 
@@ -195,7 +202,20 @@ var optionsMap = {
     'SOL': ['Solana'],
 };
 
-selectTransferCoin.addEventListener('change', function() {
+
+/*Funcao das imagens select*/
+function formatState (state) {
+    if (!state.id) {
+        return state.text;
+    }
+    var baseUrl = "img/icon"; //Na pasta em questão adicione as imagens. Cada imagem deverá ter o nome igual ao value correspodente no option
+    var $state = $(
+       '<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '-icon.png" class="img-flag" /> ' + state.text + '</span>'
+    );
+    return $state;
+};
+
+$("#selectTransferCoin").on('change', function() {
     selectTransferNetwork.disabled = false;
 
     var options = optionsMap[selectTransferCoin.value];
@@ -210,7 +230,10 @@ selectTransferCoin.addEventListener('change', function() {
         option.text = options[i];
         selectTransferNetwork.appendChild(option);
     }
+    }).select2({
+     templateResult: formatState
 });
+
 
 </script>
 

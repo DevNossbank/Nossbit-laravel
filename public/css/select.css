@@ -10,8 +10,8 @@
         cursor: pointer;
         padding: 7px 17px;
         outline: 0;
-        border: 1px solid #ffa706;
-        border-radius: 100px;
+        border: 1px solid #ffa706 !important;
+        border-radius: 5px;
         background: #191818;
         color: #7b7b7b;
         appearance: none;
@@ -30,7 +30,7 @@
             opacity: 0.7;
             pointer-events: none;
         }
-.select_arrow {
+/*.select_arrow {
     position: absolute;
     top: 15px;
     right: 27px;
@@ -42,7 +42,7 @@
     padding: 3px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-}
+}*/
 .select select:hover ~ .select_arrow,
 .select select:focus ~ .select_arrow {
     border-color: #000000;

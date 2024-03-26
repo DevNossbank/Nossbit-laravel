@@ -1,9 +1,13 @@
 .saldoEmMoedas{
-    border-radius: 10%;
+    /*border-radius: 10%;*/
    /* margin-left: 10px;*/
 
 }
 
+.borderSaldo{
+    border-radius: 10%;
+
+}
 
 .padding{
     padding-left: 25px;
@@ -48,3 +52,4 @@
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
+

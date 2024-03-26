@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\GuzzleService;
-use App\Http\Controllers\Helper\EncryptionController;
 use App\Services\AuthenticationHeaderService;
 
 
