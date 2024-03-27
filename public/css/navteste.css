@@ -25,9 +25,11 @@
     font-size: 20px;
 }
 
-.nav-link:hover{
-    color: #aaaaaa !important;
+.nav-hover:hover{
+    opacity: 1;
+    border-bottom: 1px solid rgb(244, 204, 62) !important;
 }
+
 
 .loginText {
     color: rgb(244, 204, 62) !important;

@@ -21,7 +21,7 @@
                 <span class="amarelo ">Compre e venda cripto de forma simplificada com a nossa plataforma hoje mesmo!</span>
 
                 @if (Route::has('trades'))
-                <h5><a class="nav-link text-end mt-4" href="{{ route('trades') }}"><button type="button" class="btn btn-dark grayButton"><img src="/img/receipt-text.svg"  width="25" > {{ __('Minhas Negociações') }}</button></a></h5>
+                <h5><a class="nav-link text-end mt-3" href="{{ route('trades') }}"><button type="button" class="btn btn-dark grayButton"><img src="/img/receipt-text.svg"  width="25" > {{ __('Minhas Negociações') }}</button></a></h5>
                 @endif 
 
                 <div class="col-md-5 mt-2">
@@ -42,6 +42,12 @@
                                     ],
                                     [
                                         "BINANCE:SOLBRL|60M"
+                                    ],
+                                    [
+                                        "BINANCE:USDCUSD|60M"
+                                    ],
+                                    [
+                                        "BINANCE:TRXUSD|60M"
                                     ]
                                     ],
                                     "chartOnly": true,
@@ -116,6 +122,9 @@
                                             <option value="BTC">BTC</option>
                                             <option value="ETH">ETH</option>
                                             <option value="SOL">SOL</option>
+                                            <option value="TRX">TRX</option>
+                                            <option value="USDC">USDC</option>
+
 
                                         </select>
 
@@ -150,6 +159,8 @@
                                             <option value="BTC">BTC</option>
                                             <option value="ETH">ETH</option>
                                             <option value="SOL">SOL</option>
+                                            <option value="TRX">TRX</option>
+                                            <option value="USDC">USDC</option>
                                         </select>
                                         <div class="select_arrow">
                                         </div>

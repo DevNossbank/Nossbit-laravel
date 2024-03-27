@@ -26,7 +26,8 @@
                                 <option value="ETH">ETH</option>
                                 <option value="BTC">BTC</option>
                                 <option value="SOL">SOL</option>
-            
+                                <option value="USDC">USDC</option>
+                                <option value="TRX">TRX</option>
                                 <!-- ... -->
                             </select>
                         </div>

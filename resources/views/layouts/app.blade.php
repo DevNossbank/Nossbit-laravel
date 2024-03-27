@@ -45,32 +45,32 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         @if (Route::has('trade'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('trade') }}">{{ __('Negociar') }}</a>
+                            <li class="nav-item ml-5">
+                                <a class="nav-link nav-hover" href="{{ route('trade') }}">{{ __('Negociar') }}</a>
                             </li>
                         @endif
 
                         @if (Route::has('wallet'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('wallet') }}">{{ __('Minha carteira') }}</a>
+                            <a class="nav-link nav-hover" href="{{ route('wallet') }}">{{ __('Minha carteira') }}</a>
                         </li>
                          @endif
 
                          @if (Route::has('transferCrypto'))
                          <li class="nav-item">
-                             <a class="nav-link" href="{{ route('transferCrypto') }}">{{ __('Transferir') }}</a>
+                             <a class="nav-link nav-hover" href="{{ route('transferCrypto') }}">{{ __('Transferir') }}</a>
                          </li>
                           @endif
 
                           @if (Route::has('withdraw'))
                           <li class="nav-item">
-                              <a class="nav-link" href="{{ route('withdraw') }}">{{ __('Sacar') }}</a>
+                              <a class="nav-link nav-hover" href="{{ route('withdraw') }}">{{ __('Sacar') }}</a>
                           </li>
                            @endif
 
                          @if (Route::has('deposit'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('deposit') }}">{{ __('Depositar') }}</a>
+                            <a class="nav-link nav-hover" href="{{ route('deposit') }}">{{ __('Depositar') }}</a>
                         </li>
                          @endif
                          

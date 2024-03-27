@@ -50,6 +50,8 @@
                                     <option value="BTC">BTC</option>
                                     <option value="ETH">ETH</option>
                                     <option value="SOL">SOL</option>
+                                    <option value="USDC">USDC</option>
+                                    <option value="TRX">TRX</option>
                                 </select>
                             </div>
 
@@ -60,6 +62,7 @@
                                     <option value="eth20">Ethereum [ERC-20]</option>
                                     <option value="bitcoin">Bitcoin</option>
                                     <option value="solana">Solana</option>
+                                    <option value="Tron">Tron</option>
                                 </select>
                             </div>
                         </div>
@@ -200,6 +203,8 @@ var optionsMap = {
     'BTC': ['Bitcoin'],
     'ETH': ['Ethereum [ERC-20]'],
     'SOL': ['Solana'],
+    'USDC': ['Ethereum [ERC-20]'],
+    'TRX': ['Tron'],
 };
 
 
