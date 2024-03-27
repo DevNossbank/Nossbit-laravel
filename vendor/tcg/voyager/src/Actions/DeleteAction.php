@@ -18,10 +18,15 @@ class DeleteAction extends AbstractAction
     {
         return 'delete';
     }
+   
+   
+
 
     public function getAttributes()
     {
+       
         return [
+            
             'class'   => 'btn btn-sm btn-danger pull-right delete',
             'data-id' => $this->data->{$this->data->getKeyName()},
             'id'      => 'delete-'.$this->data->{$this->data->getKeyName()},

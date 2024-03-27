@@ -259,17 +259,24 @@
 
                                         {{-- Abaixo apaguei para demonstração --}}
 
-                                          
-                                        @foreach($actions as $action)
-    {{-- Verifica se a propriedade 'status_kyc' está presente --}}
-    @if (isset($action->data))
-        {{-- Faça algo com a propriedade 'status_kyc' --}}
-        <p>Status KYC: {{ $action->data }}</p>
-    @else
-        {{-- Faça algo se 'status_kyc' não estiver presente --}}
-        <p>Status KYC não encontrado</p>
-    @endif
-@endforeach
+                                      
+                                       
+                                    
+   
+                                    @php
+                                        $status_kyc = $data->status_kyc;
+                                    @endphp
+
+                                    @if($status_kyc !== NULL)
+                                        Usuário já está Liberado
+                                    @else
+                                    @include('voyager::bread.partials.actions', ['action' => $action])
+                                    @endif
+
+    
+
+
+
 
 
                                         
