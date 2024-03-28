@@ -24,19 +24,29 @@ class GuzzleService
         'body' => $body,
         'verify' => false,
     ];
-
+//$requestOption;
     // Exibe ou faz log dos cabeçalhos antes de enviar a requisição
-    //dump($requestOptions);
+    //dd($requestOptions);
 
     // Retorna a resposta da requisição
-    $response = $this->client->request($method, $url, $requestOptions);
+  // dd( $response = $this->client->request($method, $url, $requestOptions));
+ // dd($method,$url,$requestOptions);
 
-    // Cabeçalhos da resposta
-    $responseHeaders = $response->getHeaders();
-    //dump($responseHeaders);
-
-    // Retorna a resposta da requisição
-    return $response;
+    try{
+        $response = $this->client->request($method, $url, $requestOptions);
+        //dd($requestOptions,$method,$url);
+         // Cabeçalhos da resposta
+         $responseHeaders = $response->getHeaders();
+         //dd($requestOptions,$method,$url);
+         //dump($responseHeaders);
+     
+         // Retorna a resposta da requisição
+         return $response;
+    }
+    catch (Error $e){
+        return $e;
+    }
+   
 }
 
 
