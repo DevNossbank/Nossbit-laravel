@@ -2,10 +2,10 @@
 @section('title', 'Index')
 @section('content') 
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/css/select2.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
+
+
 
 <link rel="stylesheet" type="text/css" href="/css/index.css">
 <link rel="stylesheet" type="text/css" href="/css/generalStyles.css">
@@ -191,91 +191,14 @@
        </div>
     </div>
 
-    <script src="https://jsuites.net/v4/jsuites.js"></script>
-
-    <!--Tirar daqui depois-->
-    <script>
-        // Seleciona os elementos
-        var selectExchangeCoin = document.getElementById('selectExchangeCoin');
-        var selectReceipt = document.getElementById('selectReceipt');
-
-        // Função para ajustar as opções
-        function adjustOptions(selectedValue, selectElement) {
-            var options = selectElement.options;
-            for (var i = 0; i < options.length; i++) {
-                if (selectedValue === 'BRL' && options[i].value !== 'BRL') {
-                    options[i].disabled = false;
-                } else if (selectedValue !== 'BRL' && options[i].value === 'BRL') {
-                    options[i].disabled = false;
-                } else {
-                    options[i].disabled = true;
-                }
-            }
-        }
-
-        function formatState (state) {
-        if (!state.id) {
-            return state.text;
-        }
-        var baseUrl = "img/icon"; //Na pasta em questão adicione as imagens. Cada imagem deverá ter o nome igual ao value correspodente no option
-        var $state = $(
-            '<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '-icon.png" class="img-flag" /> ' + state.text + '</span>'
-        );
-        return $state;
-        };
-
-     
-
-        $("#selectExchangeCoin").on('change', function() {
-            adjustOptions(this.value, selectReceipt);
-        }).select2({
-            templateResult: formatState
-        });
-
-        $("#selectReceipt").on('change', function() {
-            adjustOptions(this.value, selectExchangeCoin);
-        }).select2({
-            templateResult: formatState
-        });
 
 
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-        
-  /* $("#selectExchangeCoin").select2({
-		templateResult: formatState
-	});*/
-       
-
-
-       /* selectExchangeCoin.addEventListener('change', function() {
-         
-
-            adjustOptions(this.value, selectReceipt);
-
-        
-        
-        });*/
-        /*selectReceipt.addEventListener('change', function() {
-            adjustOptions(this.value, selectExchangeCoin);
-        });
-
-        $("#selectReceipt").select2({
-		templateResult: formatState
-	});*/
-
-   </script>
     <script type="module" src=" {{ asset('js/trade.js') }}"></script>
+
     @include('site.modals.confirmTrade')
 @endsection
