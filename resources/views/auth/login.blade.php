@@ -11,9 +11,49 @@
         <div class="col-md-8">
             <div class="card">
 
+  
                 <div class="card-body">
                     <h3 class="text-center fw-bold">Faça seu Login</h3>
                     <p class="text-center">E desbrave o mundo crypto.</p>
+                    
+                    @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                    <div class="alert alert-danger">
+                        <ul>
+                            
+                                <li>{{ $error }}</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="modal show d-block" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="errorModalLabel">Erro</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <script>
+                        $(document).ready(function() {
+                            $('#errorModal').modal('show');
+                        });
+                    </script>
+                @endif
+                
+                    
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

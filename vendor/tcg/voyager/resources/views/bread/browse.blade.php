@@ -257,33 +257,24 @@
                                         
                                         <td class="no-sort no-click bread-actions">
 
-                                        {{-- Abaixo apaguei para demonstração --}}
+                                        {{-- Função de separação entre quem tem o KYC Aprovado e quem não foi aprovado --}}
 
-                                      
-                                       
-                                    
-   
-                                    @php
-                                        $status_kyc = $data->status_kyc;
-                                    @endphp
+                                            @php
+                                                $status_kyc = $data->status_kyc;
+                                            @endphp
 
-                                    @if($status_kyc !== NULL)
-                                        Usuário já está Liberado
-                                    @else
-                                    @include('voyager::bread.partials.actions', ['action' => $action])
-                                    @endif
-
-    
-
-
-
-
+                                            @if($status_kyc !== "LIBERADO")
+                                            @include('voyager::bread.partials.actions', ['action' => $action])
+                                            @else
+                                             
+                                             Usuário já está Liberado
+                                            @endif
 
                                         
                                         <!--
                                             {{-- Acima apaguei para demonstração --}}
                                             <button class="btn btn-sm btn-danger pull-right delete"> Liberar Usuário</button>
--->
+                                        -->
 
                                         </td>
                                     </tr>

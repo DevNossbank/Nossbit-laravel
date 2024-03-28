@@ -18,6 +18,7 @@ use App\Http\Controllers\EmailController;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\GetCryptoAddress;
+use App\Http\Controllers\LiberarAcessoController;
 
 
 
